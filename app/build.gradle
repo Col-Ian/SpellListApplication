@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.example.spelllistapplication'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.spelllistapplication"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -71,4 +71,7 @@ dependencies {
     def room_version = "2.5.2"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+
+    // Extend list of icons
+    implementation("androidx.compose.material:material-icons-extended-android:1.5.1")
 }

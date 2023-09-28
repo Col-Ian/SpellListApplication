@@ -10,9 +10,8 @@ import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.navigation.Screen
 import com.example.spelllistapplication.navigation.SpellTabletAppRouter
+import com.example.spelllistapplication.navigation.TopTab
 import com.example.spelllistapplication.screens.CharacterScreen
-import com.example.spelllistapplication.screens.CreateCharacterScreen
-import com.example.spelllistapplication.screens.SpellListScreen
 
 @Composable
 fun SpellTabletApp (
@@ -24,21 +23,8 @@ fun SpellTabletApp (
             .fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ){
-//        Crossfade(targetState = SpellTabletAppRouter.currentScreen) {currentState->
-//            when(currentState.value){
-//                is Screen.CharacterSelectScreen ->{
-//                    Screen.CharacterSelectScreen()
-//                }
-//                is Screen.CreateCharacterScreen ->{
-//                    Screen.CreateCharacterScreen()
-//                }
-//                is Screen.SpellListScreen ->{
-//                    Screen.SpellListScreen()
-//                }
-//            }
-//        }
 //        SpellListScreen()
-//        CreateCharacterScreen()
-        CharacterScreen(state = state, onEvent = onEvent)
+//        CharacterScreen(state = state, onEvent = onEvent)
+        TopTab(state = state, onEvent = onEvent)
     }
 }
