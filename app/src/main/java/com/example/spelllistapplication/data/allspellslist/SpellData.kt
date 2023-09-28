@@ -1,9 +1,11 @@
-package com.example.spelllistapplication.data
+package com.example.spelllistapplication.data.allspellslist
 
 // Class for our data model
 data class SpellDataModel (
     val spellLevel: Int,
-    val spellClass: String,
+//    val spellClass: String,
+    val spellClass: List<String>,
+    val spellClassPreview: List<String>,
     val spellTitle: String,
     val spellPreviewDescription: String,
     val spellSourceBookPreview: String,

@@ -6,12 +6,19 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.spelllistapplication.data.characterdata.CharacterEvent
+import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.navigation.Screen
 import com.example.spelllistapplication.navigation.SpellTabletAppRouter
+import com.example.spelllistapplication.screens.CharacterScreen
+import com.example.spelllistapplication.screens.CreateCharacterScreen
 import com.example.spelllistapplication.screens.SpellListScreen
 
 @Composable
-fun SpellTabletApp () {
+fun SpellTabletApp (
+    state: CharacterState,
+    onEvent: (CharacterEvent) -> Unit
+) {
     Surface(
         modifier = Modifier
             .fillMaxSize(),
@@ -30,6 +37,8 @@ fun SpellTabletApp () {
 //                }
 //            }
 //        }
-    SpellListScreen()
+//        SpellListScreen()
+//        CreateCharacterScreen()
+        CharacterScreen(state = state, onEvent = onEvent)
     }
 }

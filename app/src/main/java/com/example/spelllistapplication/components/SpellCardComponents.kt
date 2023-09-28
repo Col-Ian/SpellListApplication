@@ -10,31 +10,27 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
-import com.example.spelllistapplication.data.SpellData
-import com.example.spelllistapplication.data.SpellDataModel
+import com.example.spelllistapplication.data.allspellslist.SpellData
+import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 
 
 // 1st layer completed as per demo
@@ -56,7 +52,7 @@ fun SpellBox(
     LazyColumn(
         modifier = modifier
     ){
-        items(items = SpellData.items, itemContent = {item ->
+        items(items = SpellData.items, itemContent = { item ->
             SpellList(item)
         })
     }
@@ -111,6 +107,7 @@ fun SpellPreview(item: SpellDataModel){
     Row(
         modifier = Modifier
             .fillMaxWidth(),
+        verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Column {
@@ -130,8 +127,8 @@ fun SpellPreview(item: SpellDataModel){
                 )
             }
         }
-        Column {
-            Text(text = item.spellClass)
+        Column(horizontalAlignment = Alignment.End){
+            Text(text = item.spellClassPreview.joinToString { it })
             Text(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
         }
     }
@@ -151,7 +148,7 @@ fun SpellFullDescription(item: SpellDataModel){
         text = item.spellTitle
         )
         Text("Source: ${ item.spellSourceBookFull }")
-        Text("Classes: ${item.spellClass} ${item.spellLevel}")
+        Text("Classes: "+ item.spellClass.joinToString { "$it ${item.spellLevel}" })
         Text("School: ${item.spellSchool}")
         Text("Casting Time: ${item.spellCastingTime}")
         Text("Range: ${item.spellRange}")
