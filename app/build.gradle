@@ -72,6 +72,6 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
-    // Extend list of icons
+    // Extend list of icons. Needed for HorizontalPager in TopTab.
     implementation("androidx.compose.material:material-icons-extended-android:1.5.1")
 }

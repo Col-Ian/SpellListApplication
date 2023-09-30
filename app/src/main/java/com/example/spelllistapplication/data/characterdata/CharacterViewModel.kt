@@ -16,12 +16,12 @@ class CharacterViewModel(
     private val dao: CharacterDao
 ):ViewModel(){
     // Default sort type
-    private val _sortType = MutableStateFlow(SortType.FIRST_NAME)
+    private val _sortType = MutableStateFlow(SortType.CHARACTER_NAME)
 
     private val _characters = _sortType
         .flatMapLatest { sortType->
             when(sortType){
-                SortType.FIRST_NAME->dao.getContactsOrderedByName()
+                SortType.CHARACTER_NAME->dao.getCharactersOrderedByName()
             }
         }.stateIn(viewModelScope,SharingStarted.WhileSubscribed(), emptyList())
 
@@ -67,8 +67,7 @@ class CharacterViewModel(
                     characterName = characterName,
                     characterClass = characterClass,
                     characterLevel = characterLevel,
-                    characterKeyAbilityMod = characterKeyAbilityMod,
-//                    characterSavedSpells = listOf()
+                    characterKeyAbilityMod = characterKeyAbilityMod
                 )
                 viewModelScope.launch {
                     dao.upsertCharacter(character)

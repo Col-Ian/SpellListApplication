@@ -16,6 +16,6 @@ interface CharacterDao{
     suspend fun deleteCharacter(character: Character)
 
     // Sorting options if needed later
-    @Query("SELECT * FROM character ORDER BY characterName ASC")
-    fun getContactsOrderedByName(): Flow<List<Character>>
+    @Query("SELECT * FROM character ORDER BY characterName COLLATE NOCASE ASC")
+    fun getCharactersOrderedByName(): Flow<List<Character>>
 }

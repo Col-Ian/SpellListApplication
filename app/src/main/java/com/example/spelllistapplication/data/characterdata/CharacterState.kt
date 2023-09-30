@@ -7,7 +7,7 @@ data class CharacterState (
     val characterLevel: Int = 0,
     val characterKeyAbilityMod: Int = 0,
 
-    val sortType: SortType = SortType.FIRST_NAME,
+    val sortType: SortType = SortType.CHARACTER_NAME,
     // If a user is adding a new contact, this will show the AddCharacterDialog
     val isAddingCharacter: Boolean = false
 )

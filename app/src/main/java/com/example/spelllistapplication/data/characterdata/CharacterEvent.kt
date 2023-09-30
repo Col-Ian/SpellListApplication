@@ -18,5 +18,5 @@ sealed interface CharacterEvent {
 
 // To add potential character screen sort options if requested
 enum class SortType {
-    FIRST_NAME
+    CHARACTER_NAME
 }

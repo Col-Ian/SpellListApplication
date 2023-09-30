@@ -1,5 +1,6 @@
 package com.example.spelllistapplication.navigation
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -48,7 +49,7 @@ fun TopTab(
     )
 
     var selectedTabIndex by remember {
-        mutableIntStateOf(0)
+        mutableStateOf(0)
     }
 
     val pagerState = rememberPagerState() {
@@ -60,8 +61,9 @@ fun TopTab(
     }
     // Use isScrollInProgress to prevent de-syncing if there's an animation for swiping when you click on a button instead.
     LaunchedEffect(pagerState.currentPage, pagerState.isScrollInProgress){
-        if(!pagerState.isScrollInProgress)
-        selectedTabIndex = pagerState.currentPage
+        if(!pagerState.isScrollInProgress) {
+            selectedTabIndex = pagerState.currentPage
+        }
     }
     Column(
         modifier = Modifier

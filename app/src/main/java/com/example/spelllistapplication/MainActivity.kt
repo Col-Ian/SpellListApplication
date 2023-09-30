@@ -17,18 +17,18 @@ import com.example.spelllistapplication.ui.theme.SpellListApplicationTheme
 class MainActivity : ComponentActivity() {
 
     // Initialize the database instead of dependency injection
-    private val db by lazy {
+    private val dbCharacter by lazy {
         Room.databaseBuilder(
             applicationContext,
             CharacterDatabase::class.java,
             "characters.db"
         ).build()
     }
-    private val viewModel by viewModels<CharacterViewModel>(
+    private val viewModelCharacter by viewModels<CharacterViewModel>(
         factoryProducer = {
             object : ViewModelProvider.Factory{
                 override fun<T : ViewModel> create(modelClass: Class<T>): T{
-                    return CharacterViewModel(db.dao) as T
+                    return CharacterViewModel(dbCharacter.dao) as T
                 }
             }
         }
@@ -37,8 +37,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SpellListApplicationTheme {
-                val state by viewModel.state.collectAsState()
-                SpellTabletApp(state = state, onEvent = viewModel::onEvent)
+                val state by viewModelCharacter.state.collectAsState()
+                SpellTabletApp(state = state, onEvent = viewModelCharacter::onEvent)
             }
         }
     }

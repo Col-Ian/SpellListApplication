@@ -69,7 +69,7 @@ fun AddCharacterDialog(
                         onEvent(CharacterEvent.SetCharacterName(it))
                     },
                     placeholder = {
-                        Text(text = "First name")
+                        Text(text = "Character Name")
                     }
                 )
                 Row(

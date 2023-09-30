@@ -1,10 +1,17 @@
-package com.example.spelllistapplication.data.allspellslist
+package com.example.spelllistapplication.data.characterspelllist
 
-// Class for our data model
-data class SpellDataModel (
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class CustomList(
+    @PrimaryKey(autoGenerate = true)
+    val id:Int = 1,
+    val characterFk: Int,
     val spellLevel: Int,
-    val spellClass: List<String>,
-    val spellClassPreview: List<String>,
+    // Class not needed as of now.
+//    val spellClass: String,
+//    val spellClassPreview: String,
     val spellTitle: String,
     val spellPreviewDescription: String,
     val spellSourceBookPreview: String,
@@ -16,6 +23,6 @@ data class SpellDataModel (
     val spellTargets: String,
     val spellDuration: String,
     val spellSavingThrow: String,
-    val spellResistance : String,
+    val spellResistance: String,
     val spellDescriptionFull: String,
 )
