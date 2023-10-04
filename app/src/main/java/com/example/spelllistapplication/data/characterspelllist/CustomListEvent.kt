@@ -3,7 +3,8 @@ package com.example.spelllistapplication.data.characterspelllist
 
 sealed interface CustomListEvent {
 
-    object SaveSpellToCharacter: CustomListEvent
+    object SaveSpell: CustomListEvent
+    class GetSpellByCharacterAndLevel(characterId: Int, spellLevel: Int) : CustomListEvent
 
     data class SetCharacterFk(val characterFk:Int): CustomListEvent
     data class SetSpellLevel(val spellLevel:Int): CustomListEvent
@@ -21,5 +22,31 @@ sealed interface CustomListEvent {
     data class SetSpellResistance(val spellResistance:String):CustomListEvent
     data class SetSpellDescriptionFull(val spellDescriptionFull:String):CustomListEvent
 
+    data class SetSpellState(
+        val characterFk:Int,
+        val spellLevel:Int,
+        val spellTitle:String,
+        val spellPreviewDescription:String,
+        val spellSourceBookPreview:String,
+        val spellSourcePage:String,
+        val spellSourceBookFull:String,
+        val spellSchool:String,
+        val spellCastingTime:String,
+        val spellRange:String,
+        val spellTargets:String,
+        val spellDuration:String,
+        val spellSavingThrow:String,
+        val spellResistance:String,
+        val spellDescriptionFull:String
+        ):CustomListEvent
+
     data class DeleteSpell(val customList: CustomList): CustomListEvent
+
+    // testing stuff
+    data class SortCustomList(val sortType: SortType): CustomListEvent
+}
+
+// testing stuff
+enum class SortType{
+    SPELL_TITLE
 }

@@ -3,7 +3,7 @@ package com.example.spelllistapplication.data.characterspelllist
 data class CustomListState(
     val customLists: List<CustomList> = emptyList(),
     val characterFk: Int = 0,
-    val spellLevel: Int = 0,
+    val spellLevel: Int = -1,
     val spellTitle: String = "",
     val spellPreviewDescription: String = "",
     val spellSourceBookPreview: String = "",
@@ -16,5 +16,8 @@ data class CustomListState(
     val spellDuration: String = "",
     val spellSavingThrow: String = "",
     val spellResistance: String = "",
-    val spellDescriptionFull: String = ""
+    val spellDescriptionFull: String = "",
+
+// testing stuff
+    val sortType: SortType = SortType.SPELL_TITLE
 )

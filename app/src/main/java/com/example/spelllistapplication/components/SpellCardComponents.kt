@@ -15,7 +15,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
-import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -27,33 +26,39 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.spelllistapplication.components.spellcards.addSpell
+import com.example.spelllistapplication.data.viewmodels.CharacterFkViewModel
 import com.example.spelllistapplication.data.allspellslist.SpellData
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
+import com.example.spelllistapplication.data.characterdata.CharacterEvent
+import com.example.spelllistapplication.data.characterdata.CharacterState
+import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
+import com.example.spelllistapplication.data.characterspelllist.CustomListState
 
 
-// 1st layer completed as per demo
 @Composable
 fun SpellCard(
-    modifier: Modifier = Modifier
-) {
-    Surface( modifier ){
-        SpellBox()
-    }
-}
-
-// Lazy Column
-@Preview
-@Composable
-fun SpellBox(
+    characterState: CharacterState,
+    customListState: CustomListState,
+    onEventCharacter: (CharacterEvent) -> Unit,
+    onEventCustomList: (CustomListEvent) -> Unit,
     modifier: Modifier = Modifier
 ){
     LazyColumn(
         modifier = modifier
     ){
-        items(items = SpellData.items, itemContent = { item ->
-            SpellList(item)
+        items(
+            items = SpellData.items,
+            itemContent = { item ->
+            SpellList(
+                characterState = characterState,
+                customListState = customListState,
+                onEventCharacter = onEventCharacter,
+                onEventCustomList = onEventCustomList,
+                item
+            )
         })
     }
 }
@@ -63,6 +68,10 @@ fun SpellBox(
 // Each individual Spell card to display
 @Composable
 fun SpellList(
+    characterState: CharacterState,
+    customListState: CustomListState,
+    onEventCharacter: (CharacterEvent) -> Unit,
+    onEventCustomList: (CustomListEvent) -> Unit,
     item: SpellDataModel,
     modifier: Modifier = Modifier
 ){
@@ -81,7 +90,13 @@ fun SpellList(
             if (expanded.value) {
                 SpellFullDescription(item)
             } else {
-                SpellPreview(item)
+                SpellPreview(
+                    characterState = characterState,
+                    customListState = customListState,
+                    onEventCharacter = onEventCharacter,
+                    onEventCustomList = onEventCustomList,
+                    item
+                )
             }
             IconButton(onClick = { expanded.value = !expanded.value},
                 modifier = Modifier
@@ -98,7 +113,14 @@ fun SpellList(
 
 // To display when the Spell is collapsed
 @Composable
-fun SpellPreview(item: SpellDataModel){
+fun SpellPreview(
+    characterState: CharacterState,
+    customListState: CustomListState,
+    onEventCharacter: (CharacterEvent) -> Unit,
+    onEventCustomList: (CustomListEvent) -> Unit,
+    item: SpellDataModel
+){
+    val viewModel: CharacterFkViewModel = viewModel()
     Text(
         textAlign = TextAlign.Center,
         text = item.spellTitle
@@ -113,7 +135,15 @@ fun SpellPreview(item: SpellDataModel){
         Column {
             Text(text = "Level ${item.spellLevel}")
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+
+                    if(viewModel.characterFkTemp.value < -1){
+//                        Toast.makeText(LocalContext.current, "Please select a character first.", Toast.LENGTH_LONG).show()
+                    } else{
+                        addSpell(characterFk = viewModel.characterFkTemp.value, item = item, state = customListState, onEventCustomList = onEventCustomList, viewModel = viewModel)
+//                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
+                    }
+                          },
                 modifier = Modifier
                     .background(
                         MaterialTheme.colorScheme.secondary,
@@ -176,6 +206,8 @@ fun SpellFullDescription(item: SpellDataModel){
 
     }
 }
+
+
 
 
 

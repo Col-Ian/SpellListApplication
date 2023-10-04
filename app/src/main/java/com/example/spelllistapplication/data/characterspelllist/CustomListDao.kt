@@ -2,6 +2,8 @@ package com.example.spelllistapplication.data.characterspelllist
 
 import androidx.room.Dao
 import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
@@ -21,4 +23,7 @@ interface CustomListDao {
     """
     )
     fun getSpellByCharacterAndLevel(characterId:Int, spellLevel:Int):Flow<List<CustomList>>
+
+    @Query("SELECT * FROM customlist ORDER BY spellTitle ASC")
+    fun getSpellsOrderedByName():Flow<List<CustomList>>
 }

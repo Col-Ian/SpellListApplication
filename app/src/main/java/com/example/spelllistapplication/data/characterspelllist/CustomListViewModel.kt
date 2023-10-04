@@ -2,15 +2,41 @@ package com.example.spelllistapplication.data.characterspelllist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+//import com.example.spelllistapplication.data.characterdata.CharacterState
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class CustomListViewModel(
     private val dao: CustomListDao
 ):ViewModel() {
+//    val state = MutableStateFlow(CustomListState())
+
+    // Testing******************
+    private val _sortType = MutableStateFlow(SortType.SPELL_TITLE)
+
+    private val _customLists = _sortType
+        .flatMapLatest { sortType ->
+            when(sortType){
+                SortType.SPELL_TITLE->dao.getSpellsOrderedByName()
+            }
+        }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())
 
     private val _state = MutableStateFlow(CustomListState())
+
+    val state = combine(_state,_sortType,_customLists){ state, sortType, customLists->
+        state.copy(
+            customLists = customLists,
+            sortType = sortType
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), CustomListState())
+    // Testing******************
 
     fun onEvent(event: CustomListEvent){
         when(event){
@@ -21,22 +47,22 @@ class CustomListViewModel(
                 }
             }
             // Add a spell to a character's list
-            CustomListEvent.SaveSpellToCharacter -> {
-                val characterFk = _state.value.characterFk
-                val spellLevel = _state.value.spellLevel
-                val spellTitle = _state.value.spellTitle
-                val spellPreviewDescription = _state.value.spellPreviewDescription
-                val spellSourceBookPreview = _state.value.spellSourceBookPreview
-                val spellSourcePage = _state.value.spellSourcePage
-                val spellSourceBookFull = _state.value.spellSourceBookFull
-                val spellSchool = _state.value.spellSchool
-                val spellCastingTime = _state.value.spellCastingTime
-                val spellRange = _state.value.spellRange
-                val spellTargets = _state.value.spellTargets
-                val spellDuration = _state.value.spellDuration
-                val spellSavingThrow = _state.value.spellSavingThrow
-                val spellResistance = _state.value.spellResistance
-                val spellDescriptionFull = _state.value.spellDescriptionFull
+            CustomListEvent.SaveSpell -> {
+                val characterFk = state.value.characterFk
+                val spellLevel = state.value.spellLevel
+                val spellTitle = state.value.spellTitle
+                val spellPreviewDescription = state.value.spellPreviewDescription
+                val spellSourceBookPreview = state.value.spellSourceBookPreview
+                val spellSourcePage = state.value.spellSourcePage
+                val spellSourceBookFull = state.value.spellSourceBookFull
+                val spellSchool = state.value.spellSchool
+                val spellCastingTime = state.value.spellCastingTime
+                val spellRange = state.value.spellRange
+                val spellTargets = state.value.spellTargets
+                val spellDuration = state.value.spellDuration
+                val spellSavingThrow = state.value.spellSavingThrow
+                val spellResistance = state.value.spellResistance
+                val spellDescriptionFull = state.value.spellDescriptionFull
 
                 val customList = CustomList(
                     characterFk = characterFk,
@@ -61,7 +87,7 @@ class CustomListViewModel(
                 // Reset values to default
                 _state.update {
                     it.copy(
-                    characterFk = 0,
+                    characterFk = -1,
                     spellLevel = 0,
                     spellTitle = "",
                     spellPreviewDescription = "",
@@ -181,6 +207,36 @@ class CustomListViewModel(
                 _state.update {
                     it.copy(
                         spellTitle = event.spellTitle
+                    )
+                }
+            }
+
+            is CustomListEvent.GetSpellByCharacterAndLevel -> {
+                dao.getSpellByCharacterAndLevel(characterId = state.value.characterFk, spellLevel = state.value.spellLevel)
+            }
+
+            is CustomListEvent.SortCustomList -> {
+                _sortType.value = event.sortType
+            }
+
+            is CustomListEvent.SetSpellState -> {
+                _state.update {
+                    it.copy(
+                        characterFk = event.characterFk,
+                        spellLevel = event.spellLevel,
+                        spellTitle = event.spellTitle,
+                        spellPreviewDescription = event.spellPreviewDescription,
+                        spellSourceBookPreview = event.spellSourceBookPreview,
+                        spellSourcePage = event.spellSourcePage,
+                        spellSourceBookFull = event.spellSourceBookFull,
+                        spellSchool = event.spellSchool,
+                        spellCastingTime = event.spellCastingTime,
+                        spellRange = event.spellRange,
+                        spellTargets = event.spellTargets,
+                        spellDuration = event.spellDuration,
+                        spellSavingThrow = event.spellSavingThrow,
+                        spellResistance = event.spellResistance,
+                        spellDescriptionFull = event.spellDescriptionFull
                     )
                 }
             }

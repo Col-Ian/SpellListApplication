@@ -9,14 +9,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.spelllistapplication.components.SpellCard
+import com.example.spelllistapplication.data.characterdata.CharacterEvent
+import com.example.spelllistapplication.data.characterdata.CharacterState
+import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
+import com.example.spelllistapplication.data.characterspelllist.CustomListState
 
 @Composable
-fun SpellListScreen (){
+fun SpellListScreen (
+    characterState: CharacterState,
+    customListState: CustomListState,
+    onEventCharacter: (CharacterEvent) -> Unit,
+    onEventCustomList: (CustomListEvent) -> Unit
+){
     Surface(
         modifier = Modifier
             .fillMaxSize()
             .background(color = MaterialTheme.colorScheme.background)
     ) {
-        SpellCard()
+        SpellCard(
+            characterState = characterState,
+            customListState = customListState,
+            onEventCharacter = onEventCharacter,
+            onEventCustomList = onEventCustomList)
     }
 }

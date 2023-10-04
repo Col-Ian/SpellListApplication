@@ -74,4 +74,7 @@ dependencies {
 
     // Extend list of icons. Needed for HorizontalPager in TopTab.
     implementation("androidx.compose.material:material-icons-extended-android:1.5.1")
+
+    // ViewModel for shared ViewModel for characterFk confirmation
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
 }
