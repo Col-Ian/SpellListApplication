@@ -8,7 +8,7 @@ data class Character(
     val characterName: String,
     val characterClass: String,
     val characterLevel: Int,
-    val characterKeyAbilityMod: Int,
+    val characterKeyAbilityScore: Int,
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
 )

@@ -58,7 +58,7 @@ class CharacterViewModel(
                 val characterName = state.value.characterName
                 val characterClass = state.value.characterClass
                 val characterLevel = state.value.characterLevel
-                val characterKeyAbilityMod = state.value.characterKeyAbilityMod
+                val characterKeyAbilityMod = state.value.characterKeyAbilityScore
 
                 if (characterName.isBlank() || characterClass.isBlank()){
                     return // Level and ability mod are default 0.
@@ -67,7 +67,7 @@ class CharacterViewModel(
                     characterName = characterName,
                     characterClass = characterClass,
                     characterLevel = characterLevel,
-                    characterKeyAbilityMod = characterKeyAbilityMod
+                    characterKeyAbilityScore = characterKeyAbilityMod
                 )
                 viewModelScope.launch {
                     dao.upsertCharacter(character)
@@ -79,7 +79,7 @@ class CharacterViewModel(
                         characterName = "",
                         characterClass = "",
                         characterLevel = 0,
-                        characterKeyAbilityMod = 0
+                        characterKeyAbilityScore = 0
                     )
                 }
             }
@@ -90,10 +90,10 @@ class CharacterViewModel(
                     )
                 }
             }
-            is CharacterEvent.SetCharacterKeyAbilityMod -> {
+            is CharacterEvent.SetCharacterKeyAbilityScore -> {
                 _state.update {
                     it.copy(
-                        characterKeyAbilityMod = event.characterKeyAbilityMod
+                        characterKeyAbilityScore = event.characterKeyAbilityScore
                     )
                 }
             }
@@ -120,6 +120,11 @@ class CharacterViewModel(
             }
             is CharacterEvent.SortCharacters -> {
                 _sortType.value = event.sortType
+            }
+
+            CharacterEvent.updateAbilityScore -> {
+                val abilityScore = state.value.characterKeyAbilityScore
+
             }
         }
     }

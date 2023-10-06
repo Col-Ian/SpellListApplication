@@ -7,7 +7,8 @@ sealed interface CharacterEvent {
     data class SetCharacterName(val characterName:String): CharacterEvent
     data class SetCharacterClass(val characterClass:String): CharacterEvent
     data class SetCharacterLevel(val characterLevel:Int): CharacterEvent
-    data class SetCharacterKeyAbilityMod(val characterKeyAbilityMod:Int): CharacterEvent
+    data class SetCharacterKeyAbilityScore(val characterKeyAbilityScore:Int): CharacterEvent
+    object updateAbilityScore:CharacterEvent
 
     data class DeleteCharacter(val character: Character): CharacterEvent
     data class SortCharacters(val sortType: SortType): CharacterEvent

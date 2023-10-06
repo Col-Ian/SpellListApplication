@@ -1,9 +1,11 @@
 package com.example.spelllistapplication.components.spellcards
 
-import com.example.spelllistapplication.data.viewmodels.CharacterFkViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
+import com.example.spelllistapplication.data.viewmodels.SpellsKnownCurrentViewModel
 
 
 fun addSpell(
@@ -11,9 +13,8 @@ fun addSpell(
     item: SpellDataModel,
     state: CustomListState,
     onEventCustomList: (CustomListEvent) -> Unit,
-    viewModel: CharacterFkViewModel
+    viewModel: SetCharacterViewModel
 ){
-
     onEventCustomList(CustomListEvent.SetSpellState(
         characterFk = viewModel.characterFkTemp.value,
         spellLevel = item.spellLevel,
@@ -32,4 +33,5 @@ fun addSpell(
         spellDescriptionFull = item.spellDescriptionFull
     ))
     onEventCustomList(CustomListEvent.SaveSpell)
+
 }

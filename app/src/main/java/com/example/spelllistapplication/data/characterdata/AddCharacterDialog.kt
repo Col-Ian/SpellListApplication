@@ -40,7 +40,7 @@ fun AddCharacterDialog(
     onEvent: (CharacterEvent) -> Unit,
     modifier: Modifier = Modifier
 ){
-    val radioOptions = listOf("Mystic", "Technomancer", "Witchwarper")
+    val radioOptions = listOf("Mystic","Precog", "Technomancer", "Witchwarper")
     val (selectedOption, onOptionSelected) = remember {
         mutableStateOf(radioOptions[0] )
     }
@@ -84,7 +84,7 @@ fun AddCharacterDialog(
                 }
                 val keyAbilityScore = if (selectedOption == radioOptions[0]){
                     "Wis"
-                } else if(selectedOption == radioOptions[1]) {
+                } else if(selectedOption == radioOptions[1] || selectedOption == radioOptions[2]) {
                     "Int"
                 } else{
                     "Cha"
@@ -100,11 +100,11 @@ fun AddCharacterDialog(
                 }
                 Box() {
                     CustomNumberTextField(
-                        labelValue = "$keyAbilityScore Modifier",
+                        labelValue = "$keyAbilityScore Score",
                         numberInput = characterKeyAbilityValue
                     )
                     if (characterKeyAbilityValue.value.isDigitsOnly() && characterKeyAbilityValue.value.isNotBlank()) {
-                        onEvent(CharacterEvent.SetCharacterKeyAbilityMod(characterKeyAbilityValue.value.toInt()))
+                        onEvent(CharacterEvent.SetCharacterKeyAbilityScore(characterKeyAbilityValue.value.toInt()))
                     }
                 }
             }

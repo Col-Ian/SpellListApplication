@@ -26,6 +26,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -36,12 +38,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.spellcards.removeSpell
-import com.example.spelllistapplication.data.viewmodels.CharacterFkViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomList
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
+import com.example.spelllistapplication.data.viewmodels.SpellsKnownCurrentViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 
 
 @Composable
@@ -51,7 +55,9 @@ fun CustomListScreen(
     onEventCharacter: (CharacterEvent) -> Unit,
     onEventCustomList: (CustomListEvent) -> Unit
 ){
-    val viewModel: CharacterFkViewModel = viewModel()
+    val viewModel: SetCharacterViewModel = viewModel()
+    val spellsKnownCurrent: SpellsKnownCurrentViewModel = viewModel()
+
     if (viewModel.characterFkTemp.value == -1) {
         Column(
             modifier = Modifier
@@ -69,7 +75,7 @@ fun CustomListScreen(
         Column(modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())) {
-            Row(
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(color = MaterialTheme.colorScheme.primary)
@@ -82,6 +88,12 @@ fun CustomListScreen(
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp
                 )
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                ) {
+                    Text(text = "Spells Known: ${spellsKnownCurrent.zeroLevelSpellsKnownCurrent.value}/Total")
+                }
             }
             customListState.customLists.forEach{
                 CustomSpellCard(
@@ -215,7 +227,7 @@ fun CustomSpellCard(
     onEventCharacter: (CharacterEvent) -> Unit,
     onEventCustomList: (CustomListEvent) -> Unit,
     it: CustomList,
-    viewModel: CharacterFkViewModel,
+    viewModel: SetCharacterViewModel,
     levelOfSpell: Int
 ){
 
@@ -346,7 +358,3 @@ fun CLSpellFullDescription(item: CustomList){
 
     }
 }
-
-
-
-

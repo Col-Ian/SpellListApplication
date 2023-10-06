@@ -36,14 +36,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.spellcards.addSpell
-import com.example.spelllistapplication.data.viewmodels.CharacterFkViewModel
-import com.example.spelllistapplication.data.allspellslist.SpellData
+import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
 import com.example.spelllistapplication.data.viewmodels.SearchBarViewModel
+import com.example.spelllistapplication.data.viewmodels.SpellsKnownCurrentViewModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -58,7 +58,8 @@ fun SpellCard(
     val viewModelSearch = viewModel<SearchBarViewModel>()
     val searchText by viewModelSearch.searchText.collectAsState()
     val spellData by viewModelSearch.spellData.collectAsState()
-    val isSearching by viewModelSearch.isSearching.collectAsState()
+    // Needed to add a buffer timer if we search an outside resource
+//    val isSearching by viewModelSearch.isSearching.collectAsState()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -143,7 +144,8 @@ fun SpellPreview(
     onEventCustomList: (CustomListEvent) -> Unit,
     item: SpellDataModel
 ){
-    val viewModel: CharacterFkViewModel = viewModel()
+    val viewModel: SetCharacterViewModel = viewModel()
+    val spellsKnownCurrent : SpellsKnownCurrentViewModel = viewModel()
     Text(
         textAlign = TextAlign.Center,
         text = item.spellTitle
@@ -164,6 +166,7 @@ fun SpellPreview(
 //                        Toast.makeText(LocalContext.current, "Please select a character first.", Toast.LENGTH_LONG).show()
                     } else{
                         addSpell(characterFk = viewModel.characterFkTemp.value, item = item, state = customListState, onEventCustomList = onEventCustomList, viewModel = viewModel)
+                        addSpellKnown(spellLevel = item.spellLevel, spellsKnownCurrent = spellsKnownCurrent)
 //                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
                     }
                           },
@@ -230,7 +233,40 @@ fun SpellFullDescription(item: SpellDataModel){
     }
 }
 
+// Function to increase the size of spellsKnownCurrently
+fun addSpellKnown(spellLevel:Int, spellsKnownCurrent: SpellsKnownCurrentViewModel){
+    if (spellLevel == 0) {
+        spellsKnownCurrent.zeroLevelSpellsKnownCurrent.intValue++
+    } else if (spellLevel == 1) {
+        spellsKnownCurrent.firstLevelSpellsKnownCurrent.intValue++
+    } else if (spellLevel == 2) {
+            spellsKnownCurrent.secondLevelSpellsKnownCurrent.intValue++
+    } else if (spellLevel == 3) {
+        spellsKnownCurrent.thirdLevelSpellsKnownCurrent.intValue++
+    } else if (spellLevel == 4) {
+        spellsKnownCurrent.fourthLevelSpellsKnownCurrent.intValue++
+    } else if (spellLevel == 5) {
+        spellsKnownCurrent.fifthLevelSpellsKnownCurrent.intValue++
+    } else if (spellLevel == 6) {
+        spellsKnownCurrent.sixthLevelSpellsKnownCurrent.intValue++
+    }
+}
 
-
-
-
+// Function to decrease the size of spellsKnownCurrently
+fun removeSpellKnown(spellLevel:Int, spellsKnownCurrent: SpellsKnownCurrentViewModel){
+    if (spellLevel == 0) {
+        spellsKnownCurrent.zeroLevelSpellsKnownCurrent.intValue--
+    } else if (spellLevel == 1) {
+        spellsKnownCurrent.firstLevelSpellsKnownCurrent.intValue--
+    } else if (spellLevel == 2) {
+        spellsKnownCurrent.secondLevelSpellsKnownCurrent.intValue--
+    } else if (spellLevel == 3) {
+        spellsKnownCurrent.thirdLevelSpellsKnownCurrent.intValue--
+    } else if (spellLevel == 4) {
+        spellsKnownCurrent.fourthLevelSpellsKnownCurrent.intValue--
+    } else if (spellLevel == 5) {
+        spellsKnownCurrent.fifthLevelSpellsKnownCurrent.intValue--
+    } else if (spellLevel == 6) {
+        spellsKnownCurrent.sixthLevelSpellsKnownCurrent.intValue--
+    }
+}

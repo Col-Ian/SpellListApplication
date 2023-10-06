@@ -23,7 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.spelllistapplication.data.viewmodels.CharacterFkViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.characterdata.AddCharacterDialog
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
@@ -34,7 +34,7 @@ fun CharacterScreen(
     characterState: CharacterState,
     onEvent: (CharacterEvent) -> Unit
 ){
-    val viewModel: CharacterFkViewModel = viewModel()
+    val viewModel: SetCharacterViewModel = viewModel()
     Scaffold(
         floatingActionButton = {
                                FloatingActionButton(onClick = {
@@ -75,7 +75,7 @@ fun CharacterScreen(
                 ) {
                     Column(
                         modifier = Modifier
-                            .weight(1f)
+                            .fillMaxWidth()
                     ) {
                         Text(
                             text = character.characterName 
