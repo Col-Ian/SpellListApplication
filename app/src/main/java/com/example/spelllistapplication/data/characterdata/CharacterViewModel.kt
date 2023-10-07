@@ -122,10 +122,6 @@ class CharacterViewModel(
                 _sortType.value = event.sortType
             }
 
-            CharacterEvent.updateAbilityScore -> {
-                val abilityScore = state.value.characterKeyAbilityScore
-
-            }
         }
     }
 }

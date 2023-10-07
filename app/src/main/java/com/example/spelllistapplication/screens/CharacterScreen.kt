@@ -58,15 +58,16 @@ fun CharacterScreen(
                 .fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ){
+
             items(characterState.characters){ character ->
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(MaterialTheme.colorScheme.background)
                         .clickable {
-                            if (viewModel.characterFkTemp.value != character.id){
+                            if (viewModel.characterFkTemp.value != character.id) {
                                 viewModel.characterFkTemp.value = character.id
-                            } else if (viewModel.characterFkTemp.value == character.id){
+                            } else if (viewModel.characterFkTemp.value == character.id) {
                                 viewModel.characterFkTemp.value = -1
                             }
                         },
@@ -78,10 +79,10 @@ fun CharacterScreen(
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = character.characterName 
+                            text = character.characterName
                         )
                         Row(horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text(text = character.characterClass)   
+                            Text(text = character.characterClass)
                             Text(text = "Level: ${character.characterLevel}")
                         }
                         IconButton(onClick = {

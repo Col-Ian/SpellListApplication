@@ -1,6 +1,7 @@
 package com.example.spelllistapplication.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -100,6 +101,8 @@ fun SpellList(
     modifier: Modifier = Modifier
 ){
     val expanded = remember { mutableStateOf(false) }
+    val viewModel: SetCharacterViewModel = viewModel()
+    val spellsKnownCurrent : SpellsKnownCurrentViewModel = viewModel()
 
     Surface(
         color = MaterialTheme.colorScheme.primary,
@@ -108,7 +111,8 @@ fun SpellList(
             .fillMaxWidth()
     ) {
         Column(
-            modifier = modifier,
+            modifier = modifier
+                    .clickable { expanded.value = !expanded.value },
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (expanded.value) {
@@ -122,14 +126,20 @@ fun SpellList(
                     item
                 )
             }
-            IconButton(onClick = { expanded.value = !expanded.value},
+            IconButton(onClick = {
+                if(viewModel.characterFkTemp.value < -1){
+//                        Toast.makeText(LocalContext.current, "Please select a character first.", Toast.LENGTH_LONG).show()
+                } else{
+                    addSpell(characterFk = viewModel.characterFkTemp.value, item = item, state = customListState, onEventCustomList = onEventCustomList, viewModel = viewModel)
+                    addSpellKnown(spellLevel = item.spellLevel, spellsKnownCurrent = spellsKnownCurrent)
+//                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
+                }
+            },
                 modifier = Modifier
                     .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)
                     .size(24.dp),
             ) {
-                val arrowPointingDirection = if(expanded.value) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown
-                val arrowDescription = if ( expanded.value) "Show Less" else "Show More"
-                Icon(imageVector = arrowPointingDirection, contentDescription = arrowDescription)
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Spell")
             }
         }
     }
@@ -144,8 +154,8 @@ fun SpellPreview(
     onEventCustomList: (CustomListEvent) -> Unit,
     item: SpellDataModel
 ){
-    val viewModel: SetCharacterViewModel = viewModel()
-    val spellsKnownCurrent : SpellsKnownCurrentViewModel = viewModel()
+
+
     Text(
         textAlign = TextAlign.Center,
         text = item.spellTitle
@@ -159,29 +169,6 @@ fun SpellPreview(
     ) {
         Column {
             Text(text = "Level ${item.spellLevel}")
-            IconButton(
-                onClick = {
-
-                    if(viewModel.characterFkTemp.value < -1){
-//                        Toast.makeText(LocalContext.current, "Please select a character first.", Toast.LENGTH_LONG).show()
-                    } else{
-                        addSpell(characterFk = viewModel.characterFkTemp.value, item = item, state = customListState, onEventCustomList = onEventCustomList, viewModel = viewModel)
-                        addSpellKnown(spellLevel = item.spellLevel, spellsKnownCurrent = spellsKnownCurrent)
-//                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
-                    }
-                          },
-                modifier = Modifier
-                    .background(
-                        MaterialTheme.colorScheme.secondary,
-                        shape = CircleShape
-                    )
-                    .size(24.dp),
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Add,
-                    contentDescription = "Add to character list"
-                )
-            }
         }
         Column(horizontalAlignment = Alignment.End){
             Text(text = item.spellClassPreview.joinToString { it })
@@ -212,23 +199,6 @@ fun SpellFullDescription(item: SpellDataModel){
         Text("Duration: ${item.spellDuration}")
         Text("Saving Throw: ${item.spellSavingThrow}; Spell Resistance ${item.spellResistance}")
         Text("Description: ${item.spellDescriptionFull}")
-        Box(contentAlignment = Alignment.BottomStart)
-        {
-            IconButton(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .background(
-                        MaterialTheme.colorScheme.secondary,
-                        shape = CircleShape
-                    )
-                    .size(24.dp),
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Add,
-                    contentDescription = "Add to character list"
-                )
-            }
-        }
 
     }
 }

@@ -4,6 +4,7 @@ package com.example.spelllistapplication.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -103,7 +104,8 @@ fun CustomListScreen(
                     onEventCustomList = onEventCustomList,
                     it = it,
                     viewModel = viewModel,
-                    levelOfSpell = 0
+                    levelOfSpell = 0,
+                    spellsKnownCurrent
                 )
             }
             Row(
@@ -128,7 +130,8 @@ fun CustomListScreen(
                     onEventCustomList = onEventCustomList,
                     it = it,
                     viewModel = viewModel,
-                    levelOfSpell = 1
+                    levelOfSpell = 1,
+                    spellsKnownCurrent
                 )
             }
             Row(
@@ -153,7 +156,8 @@ fun CustomListScreen(
                     onEventCustomList = onEventCustomList,
                     it = it,
                     viewModel = viewModel,
-                    levelOfSpell = 2
+                    levelOfSpell = 2,
+                    spellsKnownCurrent
                 )
             }
         }
@@ -228,9 +232,10 @@ fun CustomSpellCard(
     onEventCustomList: (CustomListEvent) -> Unit,
     it: CustomList,
     viewModel: SetCharacterViewModel,
-    levelOfSpell: Int
+    levelOfSpell: Int,
+    spellsKnownCurrentViewModel: SpellsKnownCurrentViewModel
 ){
-
+    val expanded = remember { mutableStateOf(false) }
     Surface(
         color = MaterialTheme.colorScheme.primary,
         modifier = Modifier
@@ -238,11 +243,11 @@ fun CustomSpellCard(
             .padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
         Column(
-            modifier = Modifier,
+            modifier = Modifier
+                .clickable { expanded.value = !expanded.value },
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (it.characterFk == viewModel.characterFkTemp.intValue && it.spellLevel == levelOfSpell) {
-                val expanded = remember { mutableStateOf(false) }
                 if (expanded.value) {
                     CLSpellFullDescription(it)
                 } else {
@@ -255,15 +260,21 @@ fun CustomSpellCard(
                     )
                 }
                 IconButton(
-                    onClick = { expanded.value = !expanded.value },
+                    onClick = {
+                        removeSpell(customList = it, onEvent = onEventCustomList)
+//                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
+                    },
                     modifier = Modifier
-                        .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)
+                        .background(
+                            MaterialTheme.colorScheme.secondary,
+                            shape = CircleShape
+                        )
                         .size(24.dp),
                 ) {
-                    val arrowPointingDirection =
-                        if (expanded.value) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown
-                    val arrowDescription = if (expanded.value) "Show Less" else "Show More"
-                    Icon(imageVector = arrowPointingDirection, contentDescription = arrowDescription)
+                    Icon(
+                        imageVector = Icons.Default.Delete,
+                        contentDescription = "Add to character list"
+                    )
                 }
             }
         }
@@ -292,23 +303,6 @@ fun CLSpellPreview(
     ) {
         Column {
             Text(text = "Level ${item.spellLevel}")
-            IconButton(
-                onClick = {
-                        removeSpell(customList = item, onEvent = onEventCustomList)
-//                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
-                    },
-                modifier = Modifier
-                    .background(
-                        MaterialTheme.colorScheme.secondary,
-                        shape = CircleShape
-                    )
-                    .size(24.dp),
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Delete,
-                    contentDescription = "Add to character list"
-                )
-            }
         }
         Column(horizontalAlignment = Alignment.End){
             Text(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
@@ -338,23 +332,7 @@ fun CLSpellFullDescription(item: CustomList){
         Text("Duration: ${item.spellDuration}")
         Text("Saving Throw: ${item.spellSavingThrow}; Spell Resistance ${item.spellResistance}")
         Text("Description: ${item.spellDescriptionFull}")
-        Box(contentAlignment = Alignment.BottomStart)
-        {
-            IconButton(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .background(
-                        MaterialTheme.colorScheme.secondary,
-                        shape = CircleShape
-                    )
-                    .size(24.dp),
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Add,
-                    contentDescription = "Add to character list"
-                )
-            }
-        }
+
 
     }
 }
