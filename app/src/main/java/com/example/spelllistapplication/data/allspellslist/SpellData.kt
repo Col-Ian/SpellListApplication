@@ -1,11 +1,9 @@
 package com.example.spelllistapplication.data.allspellslist
 
-import kotlinx.coroutines.flow.*
 // Class for our data model
 data class SpellDataModel (
-    val spellLevel: Int,
-    val spellClass: List<String>,
-    val spellClassPreview: List<String>,
+    val spellClassWithLevel: List<String>,
+    val spellClassesWithLevelPreview: List<String>,
     val spellTitle: String,
     val spellPreviewDescription: String,
     val spellSourceBookPreview: String,
@@ -37,5 +35,23 @@ data class SpellDataModel (
         }
 
     }
+    fun doesMatchFilterListsQuery(query: String): Boolean{
+        val matchingCombinationsLists =
+            // Levels will only be searchable with a class attached, since some spells vary levels based on class
+            spellClassWithLevel
+            // Drop " level" to just search classes
+//            spellClassWithLevel.dropLast(2)
+
+        return matchingCombinationsLists.any{
+            it.contains(query)
+        }
+    }
+    fun doesMatchFilterBookQuery(query: String): Boolean{
+        val matchingCombinationsString = listOf(
+            spellSourceBookFull
+        )
+        return matchingCombinationsString.any { it.contains(query) }
+    }
+
 }
 

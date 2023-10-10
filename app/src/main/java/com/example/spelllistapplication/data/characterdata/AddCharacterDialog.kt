@@ -40,9 +40,10 @@ fun AddCharacterDialog(
     onEvent: (CharacterEvent) -> Unit,
     modifier: Modifier = Modifier
 ){
-    val radioOptions = listOf("Mystic","Precog", "Technomancer", "Witchwarper")
+    val radioOptionsTop = listOf("Mystic","Precog")
+    val radioOptionsBottom = listOf("Technomancer", "Witchwarper")
     val (selectedOption, onOptionSelected) = remember {
-        mutableStateOf(radioOptions[0] )
+        mutableStateOf(radioOptionsTop[0] )
     }
 
     // Default values to 0 since we are converting to Int in our onEvent
@@ -77,14 +78,24 @@ fun AddCharacterDialog(
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    radioOptions.forEach{ label->
+                    radioOptionsTop.forEach{ label->
                         CustomRadioButton(labelValue = label, selectedOption = selectedOption, onOptionSelected = onOptionSelected)
                         onEvent(CharacterEvent.SetCharacterClass(selectedOption))
                     }
                 }
-                val keyAbilityScore = if (selectedOption == radioOptions[0]){
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    radioOptionsBottom.forEach{ label->
+                        CustomRadioButton(labelValue = label, selectedOption = selectedOption, onOptionSelected = onOptionSelected)
+                        onEvent(CharacterEvent.SetCharacterClass(selectedOption))
+                    }
+                }
+                val keyAbilityScore = if (selectedOption == radioOptionsTop[0]){
                     "Wis"
-                } else if(selectedOption == radioOptions[1] || selectedOption == radioOptions[2]) {
+                } else if(selectedOption == radioOptionsTop[1] || selectedOption == radioOptionsBottom[0]) {
                     "Int"
                 } else{
                     "Cha"
@@ -150,20 +161,22 @@ fun CustomRadioButton(
                 onClick = {
                     onOptionSelected(labelValue)
                 }
-            )
+            ),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
+        RadioButton(
+            modifier = Modifier
+//                .align(alignment = Alignment.CenterHorizontally)
+            ,
+            selected = (labelValue == selectedOption),
+            onClick = { onOptionSelected(labelValue) }
+        )
         Text(
             modifier = Modifier,
             textAlign = TextAlign.Center,
             text = labelValue
         )
-        RadioButton(
-            modifier = Modifier
-                .align(alignment = Alignment.CenterHorizontally),
-            selected = (labelValue == selectedOption),
-            onClick = { onOptionSelected(labelValue) }
-        )
-
     }
 }
 

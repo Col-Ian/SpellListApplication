@@ -93,7 +93,7 @@ fun CustomListScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                 ) {
-                    Text(text = "Spells Known: ${spellsKnownCurrent.zeroLevelSpellsKnownCurrent.value}/Total")
+                    Text(text = "Spells Known: Total")
                 }
             }
             customListState.customLists.forEach{

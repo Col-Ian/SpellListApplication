@@ -3,7 +3,6 @@ package com.example.spelllistapplication.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,9 +16,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material.icons.filled.ArrowDownward
+import androidx.compose.material.icons.filled.ArrowUpward
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -43,7 +45,7 @@ import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.SearchBarViewModel
+import com.example.spelllistapplication.data.viewmodels.FiltersAndSearchBarViewModel
 import com.example.spelllistapplication.data.viewmodels.SpellsKnownCurrentViewModel
 
 
@@ -56,26 +58,172 @@ fun SpellCard(
     onEventCustomList: (CustomListEvent) -> Unit,
     modifier: Modifier = Modifier
 ){
-    val viewModelSearch = viewModel<SearchBarViewModel>()
-    val searchText by viewModelSearch.searchText.collectAsState()
-    val spellData by viewModelSearch.spellData.collectAsState()
+    // **************************************************************************
+    // Filter values
+
+    val viewModelFilters = viewModel<FiltersAndSearchBarViewModel>()
+    val searchText by viewModelFilters.searchText.collectAsState()
+    val spellData by viewModelFilters.spellData.collectAsState()
     // Needed to add a buffer timer if we search an outside resource
 //    val isSearching by viewModelSearch.isSearching.collectAsState()
+
+    val showFilters = remember { mutableStateOf(false) }
+    // Class filters
+    val classOptions = listOf("All","Mystic", "Precog", "Technomancer", "Witchwarper")
+
+    val (selectedClass, onClassSelected) = remember {
+        mutableStateOf( classOptions[0] )
+    }
+
+    // Level filters
+    val levelOptions = listOf("Any","0", "1", "2", "3", "4", "5", "6")
+
+    val (selectedLevel, onLevelSelected) = remember {
+        mutableStateOf( levelOptions[0] )
+    }
+
+    if (selectedClass == "All") {
+        viewModelFilters.onFilterClassAndLevelChange("")
+    } else if (selectedLevel == "Any"){
+        viewModelFilters.onFilterClassAndLevelChange(selectedClass)
+    } else {
+        viewModelFilters.onFilterClassAndLevelChange("$selectedClass $selectedLevel")
+    }
+
+    // Book filters, maybe turn into resource to add more simply later
+    val bookOptions = listOf("All","Core Rulebook")
+
+    val (selectedBook, onBookSelected) = remember {
+        mutableStateOf( bookOptions[0] )
+    }
+
+    if (selectedBook == "All") {
+        viewModelFilters.onFilterSourceBookChange("")
+    } else{
+        viewModelFilters.onFilterSourceBookChange(selectedBook)
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
     ) {
         TextField(
             value = searchText,
-            onValueChange = viewModelSearch::onSearchTextChange,
+            onValueChange = viewModelFilters::onSearchTextChange,
             modifier = Modifier.fillMaxWidth(),
-            placeholder = { Text(text = "Search")}
+            placeholder = { Text(text = "Spell Title")}
         )
+
+        if (showFilters.value){
+            Column(Modifier.fillMaxWidth()) {
+                val expandedClass = remember { mutableStateOf(false) }
+
+                ExposedDropdownMenuBox(
+                    expanded = expandedClass.value,
+                    onExpandedChange = {newValue -> expandedClass.value = newValue}
+                ) {
+                    TextField(
+                        value = selectedClass,
+                        onValueChange = viewModelFilters::onFilterClassAndLevelChange,
+                        readOnly = true,
+                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedClass.value) },
+                        modifier = Modifier.menuAnchor(),
+                        label = { Text(text = "Class")}
+                    )
+                    ExposedDropdownMenu(
+                        expanded = expandedClass.value,
+                        onDismissRequest = { expandedClass.value = false }) {
+                        classOptions.forEach { item->
+                            DropdownMenuItem(
+                                text = { Text(text = item) },
+                                onClick = {
+                                    onClassSelected(item)
+                                    expandedClass.value = false
+                                }
+                            )
+                        }
+                    }
+                }
+                val expandedLevel = remember { mutableStateOf(false) }
+
+                if(selectedClass == "All"){
+                    Text(text = "Please select a class to filter levels")
+                } else {
+                    ExposedDropdownMenuBox(
+                        expanded = expandedLevel.value,
+                        onExpandedChange = {newValue -> expandedLevel.value = newValue}
+                    ) {
+                        TextField(
+                            value = selectedLevel,
+                            onValueChange = viewModelFilters::onFilterClassAndLevelChange,
+                            readOnly = true,
+                            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedLevel.value) },
+                            modifier = Modifier.menuAnchor(),
+                            label = { Text(text = "Level")}
+                        )
+                        ExposedDropdownMenu(
+                            expanded = expandedLevel.value,
+                            onDismissRequest = { expandedLevel.value = false }) {
+                            levelOptions.forEach { item->
+                                DropdownMenuItem(
+                                    text = { Text(text = item) },
+                                    onClick = {
+                                        onLevelSelected(item)
+                                        expandedLevel.value = false
+                                    }
+                                )
+                            }
+                        }
+                    }
+                }
+                val expandedBook = remember { mutableStateOf(false) }
+
+                ExposedDropdownMenuBox(
+                    expanded = expandedBook.value,
+                    onExpandedChange = {newValue -> expandedBook.value = newValue}
+                ) {
+                    TextField(
+                        value = selectedBook,
+                        onValueChange = viewModelFilters::onFilterSourceBookChange,
+                        readOnly = true,
+                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedBook.value) },
+                        modifier = Modifier.menuAnchor(),
+                        label = { Text(text = "Source Book")}
+                    )
+                    ExposedDropdownMenu(
+                        expanded = expandedBook.value,
+                        onDismissRequest = { expandedBook.value = false }) {
+                        bookOptions.forEach { item->
+                            DropdownMenuItem(
+                                text = { Text(text = item) },
+                                onClick = {
+                                    onBookSelected(item)
+                                    expandedBook.value = false
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        IconButton(onClick = { showFilters.value = !showFilters.value }) {
+            if (showFilters.value){
+                Icon(
+                    imageVector = Icons.Default.ArrowUpward,
+                    contentDescription = "Hide filters"
+                )
+            } else {
+                Icon(
+                    imageVector = Icons.Default.ArrowDownward,
+                    contentDescription = "Show filters"
+                )
+            }
+        }
         Spacer(modifier = Modifier.height(8.dp))
         LazyColumn(
             modifier = modifier
         ){
-            items(spellData){ item ->
+            items(spellData.sortedBy { it.spellTitle }){ item ->
                 SpellList(
                     characterState = characterState,
                     customListState = customListState,
@@ -131,7 +279,6 @@ fun SpellList(
 //                        Toast.makeText(LocalContext.current, "Please select a character first.", Toast.LENGTH_LONG).show()
                 } else{
                     addSpell(characterFk = viewModel.characterFkTemp.value, item = item, state = customListState, onEventCustomList = onEventCustomList, viewModel = viewModel)
-                    addSpellKnown(spellLevel = item.spellLevel, spellsKnownCurrent = spellsKnownCurrent)
 //                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
                 }
             },
@@ -154,8 +301,6 @@ fun SpellPreview(
     onEventCustomList: (CustomListEvent) -> Unit,
     item: SpellDataModel
 ){
-
-
     Text(
         textAlign = TextAlign.Center,
         text = item.spellTitle
@@ -167,13 +312,9 @@ fun SpellPreview(
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Column {
-            Text(text = "Level ${item.spellLevel}")
-        }
-        Column(horizontalAlignment = Alignment.End){
-            Text(text = item.spellClassPreview.joinToString { it })
-            Text(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
-        }
+        Text(text = item.spellClassesWithLevelPreview.joinToString { it })
+
+        Text(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
     }
 }
 
@@ -191,7 +332,7 @@ fun SpellFullDescription(item: SpellDataModel){
         text = item.spellTitle
         )
         Text("Source: ${ item.spellSourceBookFull }")
-        Text("Classes: "+ item.spellClass.joinToString { "$it ${item.spellLevel}" })
+        Text("Classes: "+ item.spellClassWithLevel.joinToString { it })
         Text("School: ${item.spellSchool}")
         Text("Casting Time: ${item.spellCastingTime}")
         Text("Range: ${item.spellRange}")

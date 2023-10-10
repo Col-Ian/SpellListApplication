@@ -17,7 +17,7 @@ fun addSpell(
 ){
     onEventCustomList(CustomListEvent.SetSpellState(
         characterFk = viewModel.characterFkTemp.value,
-        spellLevel = item.spellLevel,
+        spellLevel = 0, // This is going to turn into an if statement when changes are made make "class level" instead of two separate elements, 0 as a placeholder
         spellTitle = item.spellTitle,
         spellPreviewDescription = item.spellPreviewDescription,
         spellSourceBookPreview = item.spellSourceBookPreview,
