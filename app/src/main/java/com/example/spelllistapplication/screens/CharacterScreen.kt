@@ -65,10 +65,10 @@ fun CharacterScreen(
                         .fillMaxWidth()
                         .background(MaterialTheme.colorScheme.background)
                         .clickable {
-                            if (viewModel.characterFkTemp.value != character.id) {
-                                viewModel.characterFkTemp.value = character.id
-                            } else if (viewModel.characterFkTemp.value == character.id) {
-                                viewModel.characterFkTemp.value = -1
+                            if (viewModel.characterFkTemp.intValue != character.id) {
+                                viewModel.characterFkTemp.intValue = character.id
+                            } else if (viewModel.characterFkTemp.intValue == character.id) {
+                                viewModel.characterFkTemp.intValue = -1
                             }
                         },
                     horizontalArrangement = Arrangement.Center,
@@ -87,8 +87,8 @@ fun CharacterScreen(
                         }
                         IconButton(onClick = {
                             // So our characterFk doesn't get stuck on an invalid character
-                            if(viewModel.characterFkTemp.value == character.id){
-                                viewModel.characterFkTemp.value = -1
+                            if(viewModel.characterFkTemp.intValue == character.id){
+                                viewModel.characterFkTemp.intValue = -1
                             }
                             // Before deleting character, remove all spells set for character from db.
                             onEvent(CharacterEvent.DeleteCharacter(character))

@@ -100,7 +100,7 @@ fun AddCharacterDialog(
                 } else{
                     "Cha"
                 }
-                Box() {
+                Box {
                     CustomNumberTextField(
                         labelValue = "Level",
                         numberInput = characterLevelValue
@@ -109,7 +109,7 @@ fun AddCharacterDialog(
                         onEvent(CharacterEvent.SetCharacterLevel(characterLevelValue.value.toInt()))
                     }
                 }
-                Box() {
+                Box {
                     CustomNumberTextField(
                         labelValue = "$keyAbilityScore Score",
                         numberInput = characterKeyAbilityValue

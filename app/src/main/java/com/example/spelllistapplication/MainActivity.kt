@@ -8,7 +8,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.room.Room
 import com.example.spelllistapplication.app.SpellTabletApp
 import com.example.spelllistapplication.data.characterdata.CharacterDatabase

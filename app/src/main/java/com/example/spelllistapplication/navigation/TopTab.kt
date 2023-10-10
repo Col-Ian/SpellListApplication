@@ -116,9 +116,7 @@ fun TopTab(
                     CharacterScreen(characterState = characterState, onEvent = onEventCharacter)
                 } else if (tabItems[index].screenSelected == "CustomListScreen"){
                     CustomListScreen(
-                        characterState = characterState,
                         customListState = customListState,
-                        onEventCharacter = onEventCharacter,
                         onEventCustomList = onEventCustomList
                     )
                 }else{

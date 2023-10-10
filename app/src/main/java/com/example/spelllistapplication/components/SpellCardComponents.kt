@@ -91,7 +91,7 @@ fun SpellCard(
     }
 
     // Book filters, maybe turn into resource to add more simply later
-    val bookOptions = listOf("All","Core Rulebook")
+    val bookOptions = listOf("All","Core Rulebook", "Galactic Magic")
 
     val (selectedBook, onBookSelected) = remember {
         mutableStateOf( bookOptions[0] )
@@ -250,8 +250,7 @@ fun SpellList(
 ){
     val expanded = remember { mutableStateOf(false) }
     val viewModel: SetCharacterViewModel = viewModel()
-    val spellsKnownCurrent : SpellsKnownCurrentViewModel = viewModel()
-
+    
     Surface(
         color = MaterialTheme.colorScheme.primary,
         modifier = Modifier
@@ -267,21 +266,21 @@ fun SpellList(
                 SpellFullDescription(item)
             } else {
                 SpellPreview(
-                    characterState = characterState,
-                    customListState = customListState,
-                    onEventCharacter = onEventCharacter,
-                    onEventCustomList = onEventCustomList,
                     item
                 )
             }
-            IconButton(onClick = {
-                if(viewModel.characterFkTemp.value < -1){
-//                        Toast.makeText(LocalContext.current, "Please select a character first.", Toast.LENGTH_LONG).show()
-                } else{
-                    addSpell(characterFk = viewModel.characterFkTemp.value, item = item, state = customListState, onEventCustomList = onEventCustomList, viewModel = viewModel)
-//                        Toast.makeText(LocalContext.current, "Spell added.", Toast.LENGTH_SHORT).show()
-                }
-            },
+            IconButton(
+                onClick = {
+                    if (viewModel.characterFkTemp.intValue < -1) {
+
+                    } else {
+                        addSpell(
+                            item = item,
+                            onEventCustomList = onEventCustomList,
+                            viewModel = viewModel
+                        )
+                    }
+                },
                 modifier = Modifier
                     .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)
                     .size(24.dp),
@@ -295,17 +294,16 @@ fun SpellList(
 // To display when the Spell is collapsed
 @Composable
 fun SpellPreview(
-    characterState: CharacterState,
-    customListState: CustomListState,
-    onEventCharacter: (CharacterEvent) -> Unit,
-    onEventCustomList: (CustomListEvent) -> Unit,
     item: SpellDataModel
 ){
     Text(
         textAlign = TextAlign.Center,
         text = item.spellTitle
     )
-    Text(text = item.spellPreviewDescription)
+    Text(
+        textAlign = TextAlign.Center,
+        text = item.spellPreviewDescription
+    )
     Row(
         modifier = Modifier
             .fillMaxWidth(),
@@ -336,12 +334,34 @@ fun SpellFullDescription(item: SpellDataModel){
         Text("School: ${item.spellSchool}")
         Text("Casting Time: ${item.spellCastingTime}")
         Text("Range: ${item.spellRange}")
-        Text("Targets: ${item.spellTargets}")
+        if(item.spellTargets != ""){
+            Text("Targets: ${item.spellTargets}")
+        }
         Text("Duration: ${item.spellDuration}")
-        Text("Saving Throw: ${item.spellSavingThrow}; Spell Resistance ${item.spellResistance}")
+        if(item.spellSavingThrow != "" && item.spellResistance != ""){
+            Text("Saving Throw: ${item.spellSavingThrow}; Spell Resistance ${item.spellResistance}")
+        }
         Text("Description: ${item.spellDescriptionFull}")
 
     }
+}
+
+fun doesCharacterHaveSpell(
+    characterState: CharacterState,
+    customListState: CustomListState,
+    onEventCharacter: (CharacterEvent) -> Unit,
+    onEventCustomList: (CustomListEvent) -> Unit,
+    item: SpellDataModel,
+    viewModel: SetCharacterViewModel,
+    modifier: Modifier = Modifier
+): Boolean{
+    customListState.customLists.forEach(
+        if (customListState.characterFk == viewModel.characterFkTemp.intValue && customListState.spellTitle == item.spellTitle){
+            return (true)
+        } else{
+            return false
+        }
+    )
 }
 
 // Function to increase the size of spellsKnownCurrently

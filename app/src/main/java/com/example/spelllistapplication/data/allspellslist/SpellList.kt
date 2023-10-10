@@ -1,23 +1,23 @@
 package com.example.spelllistapplication.data.allspellslist
 
 
-//SpellDataModel(
-//spellClassWithLevel = listOf("Mystic 0","Technomancer 0","Witchwarper 0"),
-//spellClassesWithLevelPreview = listOf("Myst 0","Tchn 0","WtchW 0"),
-//spellTitle = "",
-//spellPreviewDescription = "",
-//spellSourceBookPreview = "",
-//spellSourcePage = "",
-//spellSourceBookFull = "",
-//spellSchool = "",
-//spellCastingTime = "",
-//spellRange = "",
-//spellTargets = "",
-//spellDuration = "",
-//spellSavingThrow = "",
-//spellResistance = "",
-//spellDescriptionFull = "",
-//)
+//, SpellDataModel(
+//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
+//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+//      spellTitle = "",
+//      spellPreviewDescription = "",
+//      spellSourceBookPreview = "",
+//      spellSourcePage = "",
+//      spellSourceBookFull = "",
+//      spellSchool = "",
+//      spellCastingTime = "",
+//      spellRange = "",
+//      spellTargets = "",
+//      spellDuration = "",
+//      spellSavingThrow = "",
+//      spellResistance = "",
+//      spellDescriptionFull = "",
+//  )
 
 // List to pull data from
 // For our ID, we will be using the spellTitle
@@ -145,5 +145,21 @@ var SpellData = listOf(
                 "In addition, unlike most healing, when you cast mystic cure as a spell of 4th-level or higher, you have two options to enhance its effects. The first option is to restore an extra 5d8 Hit Points with a 4th-level mystic cure spell, an extra 7d8 Hit Points with a 5th-level mystic cure spell, or an extra 9d8 Hit Points with a 6th-level mystic cure spell. The second option is to bring a target that died within 2 rounds back to life. In addition to healing such a creature, the spell returns the target to life, and the target takes a temporary negative level for 24 hours. This spell can’t resuscitate creatures slain by death effects, creatures turned into undead, or creatures whose bodies were destroyed, significantly mutilated, disintegrated, and so on.\n" +
                 "\n" +
                 "Casting this spell doesn’t provoke attacks of opportunity.",
+    ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Precog 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Prcg 2"),
+        spellTitle = "Accelerate Step",
+        spellPreviewDescription = "Gain concealment while moving your speed.",
+        spellSourceBookPreview = "Glt Mgc",
+        spellSourcePage = "67",
+        spellSourceBookFull = "Galactic Magic pg. 67",
+        spellSchool = "transmutation",
+        spellCastingTime = "1 standard action",
+        spellRange = "personal",
+        spellTargets = "",
+        spellDuration = "1 round/level",
+        spellSavingThrow = "",
+        spellResistance = "",
+        spellDescriptionFull = "Drawing upon the Dimension of Time, you speed your steps until your every movement is a blur of motion. While you move up to your speed, charge, run, or step, you have concealment against attackers.",
     )
 )
