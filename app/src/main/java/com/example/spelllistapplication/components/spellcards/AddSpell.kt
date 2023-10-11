@@ -5,8 +5,10 @@ import android.widget.Toast
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
 import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewModel
+import com.example.spelllistapplication.data.viewmodels.spellsKnownMaximum
 
 
 fun addSpell(
@@ -14,6 +16,7 @@ fun addSpell(
     onEventCustomList: (CustomListEvent) -> Unit,
     setCharacterViewModel: SetCharacterViewModel,
     setTempSpellLevelViewModel: SetTempSpellLevelViewModel,
+    setCharacterLevelViewModel: SetCharacterLevelViewModel,
     characterClass: SetCharacterClassViewModel,
     context: Context
 ){
@@ -25,8 +28,10 @@ fun addSpell(
     if (setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue == -2){
         Toast.makeText(context,"No character selected.", Toast.LENGTH_SHORT).show()
     } else if (setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue == -1){
-        Toast.makeText(context,"Character is not the correct class for this spell.", Toast.LENGTH_SHORT).show()
-    } else{
+        Toast.makeText(context,"Wrong class for this spell.", Toast.LENGTH_SHORT).show()
+    } else if (spellsKnownMaximum(setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue, setCharacterLevelViewModel.characterLevelViewModel.intValue ) == 0){
+        Toast.makeText(context,"No spell slots of this level.", Toast.LENGTH_SHORT).show()
+    }else{
         onEventCustomList(CustomListEvent.SetSpellState(
             characterFk = setCharacterViewModel.characterFkTemp.intValue,
             spellLevel = setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue,

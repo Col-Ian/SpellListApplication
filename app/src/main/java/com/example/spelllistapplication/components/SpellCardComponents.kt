@@ -18,6 +18,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
@@ -48,6 +49,7 @@ import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
 import com.example.spelllistapplication.data.viewmodels.FiltersAndSearchBarViewModel
 import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
 import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewModel
 import com.example.spelllistapplication.data.viewmodels.SpellsKnownCurrentViewModel
 
@@ -254,6 +256,7 @@ fun SpellList(
     val expanded = remember { mutableStateOf(false) }
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
     val setTempSpellLevelViewModel: SetTempSpellLevelViewModel = viewModel()
+    val setCharacterLevelViewModel: SetCharacterLevelViewModel = viewModel()
     val characterClass: SetCharacterClassViewModel = viewModel()
     val context = LocalContext.current
     
@@ -275,26 +278,45 @@ fun SpellList(
                     item
                 )
             }
-            IconButton(
-                onClick = {
-                    if (setCharacterViewModel.characterFkTemp.intValue < -1) {
-
-                    } else {
-                        addSpell(
-                            item = item,
-                            onEventCustomList = onEventCustomList,
-                            setCharacterViewModel = setCharacterViewModel,
-                            setTempSpellLevelViewModel = setTempSpellLevelViewModel,
-                            characterClass = characterClass,
-                            context
-                        )
-                    }
-                },
-                modifier = Modifier
+            // Validate spell is already in character's list
+            val characterHasSpell = remember {
+                mutableStateOf(false)
+            }
+            for (spell in customListState.customLists) {
+                if (spell.characterFk == setCharacterViewModel.characterFkTemp.intValue && spell.spellTitle == item.spellTitle) {
+                    characterHasSpell.value = true
+                }
+            }
+            if (characterHasSpell.value) {
+                Icon(modifier = Modifier
                     .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)
                     .size(24.dp),
-            ) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Spell")
+                    imageVector = Icons.Default.CheckCircle,
+                    contentDescription = "Spell in list for character."
+                )
+            } else {
+                IconButton(
+                    onClick = {
+                        if (setCharacterViewModel.characterFkTemp.intValue < -1) {
+
+                        } else {
+                            addSpell(
+                                item = item,
+                                onEventCustomList = onEventCustomList,
+                                setCharacterViewModel = setCharacterViewModel,
+                                setTempSpellLevelViewModel = setTempSpellLevelViewModel,
+                                setCharacterLevelViewModel = setCharacterLevelViewModel,
+                                characterClass = characterClass,
+                                context
+                            )
+                        }
+                    },
+                    modifier = Modifier
+                        .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)
+                        .size(24.dp),
+                ) {
+                    Icon(imageVector = Icons.Default.Add, contentDescription = "Add Spell")
+                }
             }
         }
     }
