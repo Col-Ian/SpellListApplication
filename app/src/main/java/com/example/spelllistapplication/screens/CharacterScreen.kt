@@ -27,6 +27,10 @@ import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.characterdata.AddCharacterDialog
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
+import com.example.spelllistapplication.data.viewmodels.SetCharacterAbilityScoreViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
+import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,7 +38,11 @@ fun CharacterScreen(
     characterState: CharacterState,
     onEvent: (CharacterEvent) -> Unit
 ){
-    val viewModel: SetCharacterViewModel = viewModel()
+    val setCharacterViewModel: SetCharacterViewModel = viewModel()
+    val setCharacterClassViewModel: SetCharacterClassViewModel = viewModel()
+    val setCharacterLevelViewModel: SetCharacterLevelViewModel = viewModel()
+    val setCharacterAbilityScoreViewModel: SetCharacterAbilityScoreViewModel = viewModel()
+    val setTempSpellLevelViewModel: SetTempSpellLevelViewModel = viewModel()
     Scaffold(
         floatingActionButton = {
                                FloatingActionButton(onClick = {
@@ -65,10 +73,22 @@ fun CharacterScreen(
                         .fillMaxWidth()
                         .background(MaterialTheme.colorScheme.background)
                         .clickable {
-                            if (viewModel.characterFkTemp.intValue != character.id) {
-                                viewModel.characterFkTemp.intValue = character.id
-                            } else if (viewModel.characterFkTemp.intValue == character.id) {
-                                viewModel.characterFkTemp.intValue = -1
+                            if (setCharacterViewModel.characterFkTemp.intValue != character.id) {
+                                setCharacterViewModel.characterFkTemp.intValue = character.id
+                                setCharacterClassViewModel.characterClassViewModel.value =
+                                    character.characterClass
+                                setCharacterLevelViewModel.characterLevelViewModel.intValue =
+                                    character.characterLevel
+                                setCharacterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue =
+                                    character.characterKeyAbilityScore
+                                setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue = -1
+                            } else if (setCharacterViewModel.characterFkTemp.intValue == character.id) {
+                                setCharacterViewModel.characterFkTemp.intValue = -1
+                                setCharacterClassViewModel.characterClassViewModel.value = ""
+                                setCharacterLevelViewModel.characterLevelViewModel.intValue = 0
+                                setCharacterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue =
+                                    0
+                                setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue = -2
                             }
                         },
                     horizontalArrangement = Arrangement.Center,
@@ -87,8 +107,8 @@ fun CharacterScreen(
                         }
                         IconButton(onClick = {
                             // So our characterFk doesn't get stuck on an invalid character
-                            if(viewModel.characterFkTemp.intValue == character.id){
-                                viewModel.characterFkTemp.intValue = -1
+                            if(setCharacterViewModel.characterFkTemp.intValue == character.id){
+                                setCharacterViewModel.characterFkTemp.intValue = -1
                             }
                             // Before deleting character, remove all spells set for character from db.
                             onEvent(CharacterEvent.DeleteCharacter(character))
@@ -101,5 +121,6 @@ fun CharacterScreen(
                 }
             }
         }
+
     }
 }

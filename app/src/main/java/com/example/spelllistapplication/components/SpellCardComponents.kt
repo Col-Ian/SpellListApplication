@@ -35,6 +35,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -46,6 +47,8 @@ import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
 import com.example.spelllistapplication.data.viewmodels.FiltersAndSearchBarViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewModel
 import com.example.spelllistapplication.data.viewmodels.SpellsKnownCurrentViewModel
 
 
@@ -249,7 +252,10 @@ fun SpellList(
     modifier: Modifier = Modifier
 ){
     val expanded = remember { mutableStateOf(false) }
-    val viewModel: SetCharacterViewModel = viewModel()
+    val setCharacterViewModel: SetCharacterViewModel = viewModel()
+    val setTempSpellLevelViewModel: SetTempSpellLevelViewModel = viewModel()
+    val characterClass: SetCharacterClassViewModel = viewModel()
+    val context = LocalContext.current
     
     Surface(
         color = MaterialTheme.colorScheme.primary,
@@ -271,13 +277,16 @@ fun SpellList(
             }
             IconButton(
                 onClick = {
-                    if (viewModel.characterFkTemp.intValue < -1) {
+                    if (setCharacterViewModel.characterFkTemp.intValue < -1) {
 
                     } else {
                         addSpell(
                             item = item,
                             onEventCustomList = onEventCustomList,
-                            viewModel = viewModel
+                            setCharacterViewModel = setCharacterViewModel,
+                            setTempSpellLevelViewModel = setTempSpellLevelViewModel,
+                            characterClass = characterClass,
+                            context
                         )
                     }
                 },

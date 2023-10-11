@@ -12,7 +12,7 @@ class SetCharacterViewModel : ViewModel(){
 
 // Set currently selected character's class so the user can only add spells of that class
 class SetCharacterClassViewModel : ViewModel(){
-    val characterClassViewModel = mutableStateOf("")
+    var characterClassViewModel = mutableStateOf("")
 }
 
 // Set level and Ability Score for the functions below
@@ -23,6 +23,13 @@ class SetCharacterLevelViewModel : ViewModel(){
 class SetCharacterAbilityScoreViewModel : ViewModel(){
     val characterAbilityScoreViewModel = mutableIntStateOf(0)
 }
+
+// Used to validate a character's class for adding a spell.
+// -2 will mean no character selected. It will be -1 by default when character is selected
+class SetTempSpellLevelViewModel: ViewModel(){
+    val tempSpellLevelViewModel = mutableIntStateOf(-2)
+}
+
 
 // Used to calculate the total spells per day a character gets based on the spells level, and their level and ability score
 fun spellsPerDay(spellLevel: Int, characterLevel: Int, abilityScore: Int): Int {

@@ -33,7 +33,9 @@ import com.example.spelllistapplication.components.spellcards.removeSpell
 import com.example.spelllistapplication.data.characterspelllist.CustomList
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
+import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
 import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.data.viewmodels.spellsKnownMaximum
 
 
 @Composable
@@ -41,9 +43,11 @@ fun CustomListScreen(
     customListState: CustomListState,
     onEventCustomList: (CustomListEvent) -> Unit
 ){
-    val viewModel: SetCharacterViewModel = viewModel()
+    val setCharacterViewModel: SetCharacterViewModel = viewModel()
+    val characterLevelViewModel: SetCharacterLevelViewModel = viewModel()
+    val characterLevel = characterLevelViewModel.characterLevelViewModel.intValue
 
-    if (viewModel.characterFkTemp.intValue == -1) {
+    if (setCharacterViewModel.characterFkTemp.intValue == -1) {
         Column(
             modifier = Modifier
                 .fillMaxSize(),
@@ -77,18 +81,18 @@ fun CustomListScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                 ) {
-                    Text(text = "Spells Known: Total")
+                    Text(text = "Total Spells Known: ${spellsKnownMaximum(0, characterLevel)}")
                 }
             }
             customListState.customLists.forEach{
                 CustomSpellCard(
                     onEventCustomList = onEventCustomList,
                     it = it,
-                    viewModel = viewModel,
+                    viewModel = setCharacterViewModel,
                     levelOfSpell = 0
                 )
             }
-            Row(
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(color = MaterialTheme.colorScheme.primary)
@@ -101,12 +105,18 @@ fun CustomListScreen(
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp
                 )
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                ) {
+                    Text(text = "Total Spells Known: ${spellsKnownMaximum(1, characterLevel)}")
+                }
             }
             customListState.customLists.forEach{
                 CustomSpellCard(
                     onEventCustomList = onEventCustomList,
                     it = it,
-                    viewModel = viewModel,
+                    viewModel = setCharacterViewModel,
                     levelOfSpell = 1
                 )
             }
@@ -128,7 +138,7 @@ fun CustomListScreen(
                 CustomSpellCard(
                     onEventCustomList = onEventCustomList,
                     it = it,
-                    viewModel = viewModel,
+                    viewModel = setCharacterViewModel,
                     levelOfSpell = 2
                 )
             }

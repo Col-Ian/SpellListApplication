@@ -41,8 +41,8 @@ var SpellData = listOf(
         spellResistance = "yes",
         spellDescriptionFull = "This spell short-circuits the mind of a humanoid creature with a CR of 3 or lower so that it is dazed (unable to take actions, but taking no penalty to AC). Humanoids of CR 4 or higher are not affected. After a creature has been dazed by this spell, it is immune to it for 1 minute.",
     ), SpellDataModel(
-        spellClassWithLevel = listOf("Mystic"),
-        spellClassesWithLevelPreview = listOf("Myst"),
+        spellClassWithLevel = listOf("Mystic 0"),
+        spellClassesWithLevelPreview = listOf("Myst 0"),
         spellTitle = "Detect Magic",
         spellPreviewDescription = "Detect spells and magic items within 60 feet.",
         spellSourceBookPreview = "CRB",
@@ -57,8 +57,8 @@ var SpellData = listOf(
         spellResistance = "no",
         spellDescriptionFull = "You detect all magic spells, effects, items, and objects (including those on or affecting creatures you can see), as well as hybrid items, in the area. You can’t detect magical traps in this way, as they are created with additional magic that wards them from this common spell. Each round you concentrate on the same area, you can determine if one magic source you detect is from a spell, magic item, or other effect, and the caster level (or item level) of the effect. You can’t determine if there are magic sources in areas you can’t see, or if there was a magic source in an area at one time but that has since expired.",
     ), SpellDataModel(
-        spellClassWithLevel = listOf("Mystic"),
-        spellClassesWithLevelPreview = listOf("Myst"),
+        spellClassWithLevel = listOf("Mystic 0"),
+        spellClassesWithLevelPreview = listOf("Myst 0"),
         spellTitle = "Stabilize",
         spellPreviewDescription = "Cause a dying creature to stabilize.",
         spellSourceBookPreview = "CRB",
@@ -73,8 +73,8 @@ var SpellData = listOf(
         spellResistance = "yes (harmless)",
         spellDescriptionFull = "If the target of this spell has 0 Hit Points and is dying, it automatically stabilizes. If the creature later takes damage, it is no longer stable.",
     ), SpellDataModel(
-        spellClassWithLevel = listOf("Mystic"),
-        spellClassesWithLevelPreview = listOf("Myst"),
+        spellClassWithLevel = listOf("Mystic 0"),
+        spellClassesWithLevelPreview = listOf("Myst 0"),
         spellTitle = "Telepathic Message",
         spellPreviewDescription = "Send a short telepathic message and hear simple telepathic replies.",
         spellSourceBookPreview = "CRB",
