@@ -33,9 +33,11 @@ import com.example.spelllistapplication.components.spellcards.removeSpell
 import com.example.spelllistapplication.data.characterspelllist.CustomList
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
+import com.example.spelllistapplication.data.viewmodels.SetCharacterAbilityScoreViewModel
 import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
 import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.viewmodels.spellsKnownMaximum
+import com.example.spelllistapplication.data.viewmodels.spellsPerDay
 
 
 @Composable
@@ -46,6 +48,9 @@ fun CustomListScreen(
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
     val characterLevelViewModel: SetCharacterLevelViewModel = viewModel()
     val characterLevel = characterLevelViewModel.characterLevelViewModel.intValue
+
+    val characterAbilityScoreViewModel: SetCharacterAbilityScoreViewModel = viewModel()
+    val characterAbilityScore = characterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue
 
     if (setCharacterViewModel.characterIdTemp.intValue == -1) {
         Column(
@@ -60,7 +65,6 @@ fun CustomListScreen(
                 text = "Please return to the character tab to select a character")
         }
     } else{
-        //use a box with verticalScroll later with a lazy column and items instead of forEach loops
         Column(modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())) {
@@ -79,9 +83,11 @@ fun CustomListScreen(
                 )
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(text = "Total Spells Known: ${spellsKnownMaximum(0, characterLevel)}")
+                    Text(text = "Spells Per Day ${spellsPerDay(0,characterLevel, characterAbilityScore)}")
                 }
             }
             customListState.customLists.forEach{
@@ -107,9 +113,11 @@ fun CustomListScreen(
                 )
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Text(text = "Total Spells Known: ${spellsKnownMaximum(1, characterLevel)}")
+                    Text(text = "Maximum Spells Known: ${spellsKnownMaximum(1, characterLevel)}")
+                    Text(text = "Spells Per Day ${spellsPerDay(1,characterLevel, characterAbilityScore)}")
                 }
             }
             customListState.customLists.forEach{
@@ -120,27 +128,165 @@ fun CustomListScreen(
                     levelOfSpell = 1
                 )
             }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(color = MaterialTheme.colorScheme.primary)
-                    .padding(4.dp)
-            ) {
-                Text(
+            if (spellsKnownMaximum(2, characterLevel) > 0) {
+                Column(
                     modifier = Modifier
-                        .padding(4.dp),
-                    text = "Level 2",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp
-                )
+                        .fillMaxWidth()
+                        .background(color = MaterialTheme.colorScheme.primary)
+                        .padding(4.dp)
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .padding(4.dp),
+                        text = "Level 2",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
+                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Total Spells Known: ${spellsKnownMaximum(2, characterLevel)}")
+                        Text(text = "Spells Per Day ${spellsPerDay(2,characterLevel, characterAbilityScore)}")
+                    }
+                }
+                customListState.customLists.forEach {
+                    CustomSpellCard(
+                        onEventCustomList = onEventCustomList,
+                        it = it,
+                        viewModel = setCharacterViewModel,
+                        levelOfSpell = 2
+                    )
+                }
             }
-            customListState.customLists.forEach{
-                CustomSpellCard(
-                    onEventCustomList = onEventCustomList,
-                    it = it,
-                    viewModel = setCharacterViewModel,
-                    levelOfSpell = 2
-                )
+            if (spellsKnownMaximum(3, characterLevel) > 0) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(color = MaterialTheme.colorScheme.primary)
+                        .padding(4.dp)
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .padding(4.dp),
+                        text = "Level 3",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
+                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Total Spells Known: ${spellsKnownMaximum(3, characterLevel)}")
+                        Text(text = "Spells Per Day ${spellsPerDay(3,characterLevel, characterAbilityScore)}")
+                    }
+                }
+                customListState.customLists.forEach {
+                    CustomSpellCard(
+                        onEventCustomList = onEventCustomList,
+                        it = it,
+                        viewModel = setCharacterViewModel,
+                        levelOfSpell = 3
+                    )
+                }
+            }
+            if (spellsKnownMaximum(4, characterLevel) > 0) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(color = MaterialTheme.colorScheme.primary)
+                        .padding(4.dp)
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .padding(4.dp),
+                        text = "Level 4",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
+                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Total Spells Known: ${spellsKnownMaximum(4, characterLevel)}")
+                        Text(text = "Spells Per Day ${spellsPerDay(4,characterLevel, characterAbilityScore)}")
+                    }
+                }
+                customListState.customLists.forEach {
+                    CustomSpellCard(
+                        onEventCustomList = onEventCustomList,
+                        it = it,
+                        viewModel = setCharacterViewModel,
+                        levelOfSpell = 4
+                    )
+                }
+            }
+            if (spellsKnownMaximum(5, characterLevel) > 0) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(color = MaterialTheme.colorScheme.primary)
+                        .padding(4.dp)
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .padding(4.dp),
+                        text = "Level 5",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
+                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Total Spells Known: ${spellsKnownMaximum(5, characterLevel)}")
+                        Text(text = "Spells Per Day ${spellsPerDay(5,characterLevel, characterAbilityScore)}")
+                    }
+                }
+                customListState.customLists.forEach {
+                    CustomSpellCard(
+                        onEventCustomList = onEventCustomList,
+                        it = it,
+                        viewModel = setCharacterViewModel,
+                        levelOfSpell = 5
+                    )
+                }
+            }
+            if (spellsKnownMaximum(6, characterLevel) > 0) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(color = MaterialTheme.colorScheme.primary)
+                        .padding(4.dp)
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .padding(4.dp),
+                        text = "Level 6",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
+                    )
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(text = "Total Spells Known: ${spellsKnownMaximum(6, characterLevel)}")
+                        Text(text = "Spells Per Day ${spellsPerDay(6,characterLevel, characterAbilityScore)}")
+                    }
+                }
+                customListState.customLists.forEach {
+                    CustomSpellCard(
+                        onEventCustomList = onEventCustomList,
+                        it = it,
+                        viewModel = setCharacterViewModel,
+                        levelOfSpell = 6
+                    )
+                }
             }
         }
     }
