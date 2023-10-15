@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -96,7 +97,17 @@ fun SpellCard(
     }
 
     // Book filters, maybe turn into resource to add more simply later
-    val bookOptions = listOf("All","Core Rulebook", "Galactic Magic")
+    val bookOptions = listOf(
+        "All",
+        "Core Rulebook",
+        "Adventure Path",
+        "Armory",
+        "Character Operations Manual",
+        "Drift Crisis",
+        "Galactic Magic",
+        "Interstellar Species",
+        "Near Space"
+    )
 
     val (selectedBook, onBookSelected) = remember {
         mutableStateOf( bookOptions[0] )
@@ -295,21 +306,18 @@ fun SpellList(
                     contentDescription = "Spell in list for character."
                 )
             } else {
+//                if (!characterHasSpell.value){
                 IconButton(
                     onClick = {
-                        if (setCharacterViewModel.characterFkTemp.intValue < -1) {
-
-                        } else {
-                            addSpell(
-                                item = item,
-                                onEventCustomList = onEventCustomList,
-                                setCharacterViewModel = setCharacterViewModel,
-                                setTempSpellLevelViewModel = setTempSpellLevelViewModel,
-                                setCharacterLevelViewModel = setCharacterLevelViewModel,
-                                characterClass = characterClass,
-                                context
-                            )
-                        }
+                        addSpell(
+                            item = item,
+                            onEventCustomList = onEventCustomList,
+                            setCharacterViewModel = setCharacterViewModel,
+                            setTempSpellLevelViewModel = setTempSpellLevelViewModel,
+                            setCharacterLevelViewModel = setCharacterLevelViewModel,
+                            characterClass = characterClass,
+                            context
+                        )
                     },
                     modifier = Modifier
                         .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)

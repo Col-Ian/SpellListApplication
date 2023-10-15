@@ -45,10 +45,17 @@ class CharacterViewModel(
             }
 
             // Set our AddCharacterDialog back to hidden
-            CharacterEvent.HideDialog -> {
+            CharacterEvent.HideAddCharacterDialog -> {
                 _state.update {
                     it.copy(
                         isAddingCharacter = false
+                    )
+                }
+            }
+            CharacterEvent.HideDeleteCharacterDialog -> {
+                _state.update {
+                    it.copy(
+                        isDeletingCharacter = false
                     )
                 }
             }
@@ -111,17 +118,23 @@ class CharacterViewModel(
                     )
                 }
             }
-            CharacterEvent.ShowDialog->{
+            CharacterEvent.ShowAddCharacterDialog->{
                 _state.update {
                     it.copy(
                         isAddingCharacter = true
                     )
                 }
             }
+            CharacterEvent.ShowDeleteCharacterDialog -> {
+                _state.update {
+                    it.copy(
+                        isDeletingCharacter = true
+                    )
+                }
+            }
             is CharacterEvent.SortCharacters -> {
                 _sortType.value = event.sortType
             }
-
         }
     }
 }

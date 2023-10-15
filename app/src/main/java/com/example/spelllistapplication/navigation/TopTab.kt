@@ -113,7 +113,12 @@ fun TopTab(
                     .fillMaxSize(),
             ){
                 if(tabItems[index].screenSelected == "CharacterScreen") {
-                    CharacterScreen(characterState = characterState, onEvent = onEventCharacter)
+                    CharacterScreen(
+                        customListState = customListState,
+                        characterState = characterState,
+                        onCharacterEvent = onEventCharacter,
+                        onCustomListEvent = onEventCustomList
+                    )
                 } else if (tabItems[index].screenSelected == "CustomListScreen"){
                     CustomListScreen(
                         customListState = customListState,
@@ -124,7 +129,8 @@ fun TopTab(
                         characterState = characterState,
                         customListState = customListState,
                         onEventCharacter = onEventCharacter,
-                        onEventCustomList = onEventCustomList)
+                        onEventCustomList = onEventCustomList
+                    )
                 }
             }
         }

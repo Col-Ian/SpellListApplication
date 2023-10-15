@@ -12,8 +12,11 @@ sealed interface CharacterEvent {
     data class DeleteCharacter(val character: Character): CharacterEvent
     data class SortCharacters(val sortType: SortType): CharacterEvent
 
-    object ShowDialog: CharacterEvent
-    object HideDialog: CharacterEvent
+    object ShowAddCharacterDialog: CharacterEvent
+    object HideAddCharacterDialog: CharacterEvent
+
+    object ShowDeleteCharacterDialog: CharacterEvent
+    object HideDeleteCharacterDialog: CharacterEvent
 }
 
 // To add potential character screen sort options if requested

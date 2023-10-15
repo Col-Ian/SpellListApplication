@@ -12,10 +12,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -27,6 +28,9 @@ import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.characterdata.AddCharacterDialog
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
+import com.example.spelllistapplication.data.characterdata.DeleteCharacterDialog
+import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
+import com.example.spelllistapplication.data.characterspelllist.CustomListState
 import com.example.spelllistapplication.data.viewmodels.SetCharacterAbilityScoreViewModel
 import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
 import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
@@ -35,8 +39,10 @@ import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewMod
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CharacterScreen(
+    customListState: CustomListState,
     characterState: CharacterState,
-    onEvent: (CharacterEvent) -> Unit
+    onCharacterEvent: (CharacterEvent) -> Unit,
+    onCustomListEvent: (CustomListEvent) -> Unit
 ){
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
     val setCharacterClassViewModel: SetCharacterClassViewModel = viewModel()
@@ -46,7 +52,7 @@ fun CharacterScreen(
     Scaffold(
         floatingActionButton = {
                                FloatingActionButton(onClick = {
-                                   onEvent(CharacterEvent.ShowDialog)
+                                   onCharacterEvent(CharacterEvent.ShowAddCharacterDialog)
                                }) {
                                    Icon(
                                        imageVector = Icons.Default.Add,
@@ -58,7 +64,7 @@ fun CharacterScreen(
             .fillMaxSize()
     ) {padding->
         if (characterState.isAddingCharacter){
-            AddCharacterDialog(state = characterState, onEvent = onEvent)
+            AddCharacterDialog(state = characterState, onEvent = onCharacterEvent)
         }
         LazyColumn(
             contentPadding = padding,
@@ -105,18 +111,27 @@ fun CharacterScreen(
                             Text(text = character.characterClass)
                             Text(text = "Level: ${character.characterLevel}")
                         }
-                        IconButton(onClick = {
-                            // So our characterFk doesn't get stuck on an invalid character
-                            if(setCharacterViewModel.characterFkTemp.intValue == character.id){
-                                setCharacterViewModel.characterFkTemp.intValue = -1
-                            }
-                            // Before deleting character, remove all spells set for character from db.
-                            onEvent(CharacterEvent.DeleteCharacter(character))
-                        }) {
-                            Icon(imageVector = Icons.Default.Delete,
-                                contentDescription = "Delete contact"
+                        if (characterState.isDeletingCharacter && setCharacterViewModel.characterFkTemp.intValue == character.id){
+                            DeleteCharacterDialog(
+                                state = customListState,
+                                onCharacterEvent = onCharacterEvent,
+                                onCustomListEvent = onCustomListEvent,
+                                character = character
                             )
                         }
+                        if(setCharacterViewModel.characterFkTemp.intValue == character.id){
+                            Button(onClick = {
+                                // So our characterFk doesn't get stuck on an invalid character
+
+                                // Before deleting character, remove all spells set for character from db.
+                                onCharacterEvent(CharacterEvent.ShowDeleteCharacterDialog)
+                            }) {
+                                Icon(imageVector = Icons.Default.Delete,
+                                    contentDescription = "Delete contact"
+                                )
+                            }
+                        }
+
                     }
                 }
             }

@@ -57,7 +57,7 @@ fun AddCharacterDialog(
     AlertDialog(
         modifier = modifier,
         onDismissRequest = {
-            onEvent(CharacterEvent.HideDialog)
+            onEvent(CharacterEvent.HideAddCharacterDialog)
         },
         title = { Text(text = "Add Character")},
         text = {
@@ -139,7 +139,7 @@ fun AddCharacterDialog(
             ){
                 Button(onClick = {
                     onEvent(CharacterEvent.SaveCharacter)
-                    onEvent(CharacterEvent.HideDialog)
+                    onEvent(CharacterEvent.HideAddCharacterDialog)
                 }) {
                     Text(text = "Create Character")
                 }
