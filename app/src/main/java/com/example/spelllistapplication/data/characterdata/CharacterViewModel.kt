@@ -60,6 +60,39 @@ class CharacterViewModel(
                 }
             }
 
+            CharacterEvent.UpdateCharacter->{
+                val characterName = state.value.characterName
+                val characterClass = state.value.characterClass
+                val characterLevel = state.value.characterLevel
+                val characterKeyAbilityMod = state.value.characterKeyAbilityScore
+                val characterId = state.value.characterId
+
+                if (characterName.isBlank() || characterClass.isBlank()){
+                    return // Level and ability mod are default 0.
+                }
+                val character = Character(
+                    characterName = characterName,
+                    characterClass = characterClass,
+                    characterLevel = characterLevel,
+                    characterKeyAbilityScore = characterKeyAbilityMod,
+                    id = characterId
+                )
+                viewModelScope.launch {
+                    dao.upsertCharacter(character)
+                }
+
+                // Reset values to default.
+                _state.update {
+                    it.copy(
+                        characterName = "",
+                        characterClass = "",
+                        characterLevel = 0,
+                        characterKeyAbilityScore = 0,
+                        characterId = -1
+                    )
+                }
+            }
+
             // Save a Character
             CharacterEvent.SaveCharacter -> {
                 val characterName = state.value.characterName
@@ -134,6 +167,41 @@ class CharacterViewModel(
             }
             is CharacterEvent.SortCharacters -> {
                 _sortType.value = event.sortType
+            }
+
+            is CharacterEvent.SetCharacterId -> {
+                _state.update {
+                    it.copy(
+                        characterId = event.characterId
+                    )
+                }
+            }
+
+            CharacterEvent.HideUpdateCharacterDialog -> {
+                _state.update {
+                    it.copy(
+                        isUpdatingCharacter = false
+                    )
+                }
+            }
+            CharacterEvent.ShowUpdateCharacterDialog -> {
+                _state.update {
+                    it.copy(
+                        isUpdatingCharacter = true
+                    )
+                }
+            }
+
+            is CharacterEvent.SetCharacterState -> {
+                _state.update{
+                    it.copy(
+                        characterId = event.characterId,
+                        characterName = event.characterName,
+                        characterClass = event.characterClass,
+                        characterLevel = event.characterLevel,
+                        characterKeyAbilityScore = event.characterKeyAbilityScore
+                    )
+                }
             }
         }
     }

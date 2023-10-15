@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -294,7 +293,7 @@ fun SpellList(
                 mutableStateOf(false)
             }
             for (spell in customListState.customLists) {
-                if (spell.characterFk == setCharacterViewModel.characterFkTemp.intValue && spell.spellTitle == item.spellTitle) {
+                if (spell.characterFk == setCharacterViewModel.characterIdTemp.intValue && spell.spellTitle == item.spellTitle) {
                     characterHasSpell.value = true
                 }
             }
@@ -395,7 +394,7 @@ fun doesCharacterHaveSpell(
     modifier: Modifier = Modifier
 ): Boolean{
     customListState.customLists.forEach(
-        if (customListState.characterFk == viewModel.characterFkTemp.intValue && customListState.spellTitle == item.spellTitle){
+        if (customListState.characterFk == viewModel.characterIdTemp.intValue && customListState.spellTitle == item.spellTitle){
             return (true)
         } else{
             return false

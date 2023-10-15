@@ -33,7 +33,7 @@ fun addSpell(
         Toast.makeText(context,"No spell slots of this level.", Toast.LENGTH_SHORT).show()
     }else{
         onEventCustomList(CustomListEvent.SetSpellState(
-            characterFk = setCharacterViewModel.characterFkTemp.intValue,
+            characterFk = setCharacterViewModel.characterIdTemp.intValue,
             spellLevel = setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue,
             spellTitle = item.spellTitle,
             spellPreviewDescription = item.spellPreviewDescription,

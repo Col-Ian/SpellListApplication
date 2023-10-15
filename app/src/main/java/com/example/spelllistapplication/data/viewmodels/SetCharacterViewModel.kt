@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 
 // To confirm our currently selected character
 class SetCharacterViewModel : ViewModel(){
-    val characterFkTemp = mutableIntStateOf(-1)
+    val characterIdTemp = mutableIntStateOf(-1)
 }
 
 // Set currently selected character's class so the user can only add spells of that class

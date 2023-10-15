@@ -12,7 +12,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material3.AlertDialog
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
@@ -29,6 +29,7 @@ import com.example.spelllistapplication.data.characterdata.AddCharacterDialog
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterdata.DeleteCharacterDialog
+import com.example.spelllistapplication.data.characterdata.UpdateCharacterDialog
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
 import com.example.spelllistapplication.data.viewmodels.SetCharacterAbilityScoreViewModel
@@ -79,8 +80,8 @@ fun CharacterScreen(
                         .fillMaxWidth()
                         .background(MaterialTheme.colorScheme.background)
                         .clickable {
-                            if (setCharacterViewModel.characterFkTemp.intValue != character.id) {
-                                setCharacterViewModel.characterFkTemp.intValue = character.id
+                            if (setCharacterViewModel.characterIdTemp.intValue != character.id) {
+                                setCharacterViewModel.characterIdTemp.intValue = character.id
                                 setCharacterClassViewModel.characterClassViewModel.value =
                                     character.characterClass
                                 setCharacterLevelViewModel.characterLevelViewModel.intValue =
@@ -88,8 +89,8 @@ fun CharacterScreen(
                                 setCharacterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue =
                                     character.characterKeyAbilityScore
                                 setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue = -1
-                            } else if (setCharacterViewModel.characterFkTemp.intValue == character.id) {
-                                setCharacterViewModel.characterFkTemp.intValue = -1
+                            } else if (setCharacterViewModel.characterIdTemp.intValue == character.id) {
+                                setCharacterViewModel.characterIdTemp.intValue = -1
                                 setCharacterClassViewModel.characterClassViewModel.value = ""
                                 setCharacterLevelViewModel.characterLevelViewModel.intValue = 0
                                 setCharacterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue =
@@ -111,7 +112,8 @@ fun CharacterScreen(
                             Text(text = character.characterClass)
                             Text(text = "Level: ${character.characterLevel}")
                         }
-                        if (characterState.isDeletingCharacter && setCharacterViewModel.characterFkTemp.intValue == character.id){
+                        // To show the delete character dialog
+                        if (characterState.isDeletingCharacter && setCharacterViewModel.characterIdTemp.intValue == character.id){
                             DeleteCharacterDialog(
                                 state = customListState,
                                 onCharacterEvent = onCharacterEvent,
@@ -119,17 +121,40 @@ fun CharacterScreen(
                                 character = character
                             )
                         }
-                        if(setCharacterViewModel.characterFkTemp.intValue == character.id){
-                            Button(onClick = {
-                                // So our characterFk doesn't get stuck on an invalid character
+                        // To show the update character dialog
+                        if(characterState.isUpdatingCharacter && setCharacterViewModel.characterIdTemp.intValue == character.id){
+                            UpdateCharacterDialog(
+                                state = characterState,
+                                onCharacterEvent = onCharacterEvent,
+                                character = character)
+                        }
 
-                                // Before deleting character, remove all spells set for character from db.
-                                onCharacterEvent(CharacterEvent.ShowDeleteCharacterDialog)
-                            }) {
-                                Icon(imageVector = Icons.Default.Delete,
-                                    contentDescription = "Delete contact"
-                                )
+                        // Buttons to appear when character is selected
+                        if(setCharacterViewModel.characterIdTemp.intValue == character.id){
+                            Row() {
+                                Button(onClick = {
+                                    onCharacterEvent(CharacterEvent.ShowDeleteCharacterDialog)
+                                }) {
+                                    Icon(imageVector = Icons.Default.Delete,
+                                        contentDescription = "Delete contact"
+                                    )
+                                }
+                                Button(onClick = {
+                                    onCharacterEvent(CharacterEvent.SetCharacterState(
+                                        characterId = character.id,
+                                        characterName = character.characterName,
+                                        characterClass = character.characterClass,
+                                        characterLevel = character.characterLevel,
+                                        characterKeyAbilityScore = character.characterKeyAbilityScore
+                                    ))
+                                    onCharacterEvent(CharacterEvent.ShowUpdateCharacterDialog)
+                                }) {
+                                    Icon(imageVector = Icons.Default.Edit,
+                                        contentDescription = "Update contact"
+                                    )
+                                }
                             }
+
                         }
 
                     }

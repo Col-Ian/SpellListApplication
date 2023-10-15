@@ -47,7 +47,7 @@ fun CustomListScreen(
     val characterLevelViewModel: SetCharacterLevelViewModel = viewModel()
     val characterLevel = characterLevelViewModel.characterLevelViewModel.intValue
 
-    if (setCharacterViewModel.characterFkTemp.intValue == -1) {
+    if (setCharacterViewModel.characterIdTemp.intValue == -1) {
         Column(
             modifier = Modifier
                 .fillMaxSize(),
@@ -165,7 +165,7 @@ fun CustomSpellCard(
                 .clickable { expanded.value = !expanded.value },
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            if (it.characterFk == viewModel.characterFkTemp.intValue && it.spellLevel == levelOfSpell) {
+            if (it.characterFk == viewModel.characterIdTemp.intValue && it.spellLevel == levelOfSpell) {
                 if (expanded.value) {
                     CLSpellFullDescription(it)
                 } else {
