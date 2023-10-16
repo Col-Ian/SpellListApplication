@@ -203,6 +203,18 @@ class CharacterViewModel(
                     )
                 }
             }
+
+            is CharacterEvent.ResetCharacterState -> {
+                _state.update {
+                    it.copy(
+                        characterId = -1,
+                        characterName = "",
+                        characterClass = "",
+                        characterLevel = 0,
+                        characterKeyAbilityScore = 0
+                    )
+                }
+            }
         }
     }
 }

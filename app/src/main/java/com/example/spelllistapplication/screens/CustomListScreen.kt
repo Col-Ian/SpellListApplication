@@ -87,7 +87,6 @@ fun CustomListScreen(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(text = "Total Spells Known: ${spellsKnownMaximum(0, characterLevel)}")
-                    Text(text = "Spells Per Day ${spellsPerDay(0,characterLevel, characterAbilityScore)}")
                 }
             }
             customListState.customLists.forEach{

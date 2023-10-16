@@ -40,6 +40,7 @@ fun UpdateCharacterDialog(
     val setCharacterClass: SetCharacterClassViewModel = viewModel()
     val characterClass = setCharacterClass.characterClassViewModel.value
 
+    // toString to validate inputs in the TextFields
     // Default values to 0 since we are converting to Int in our onEvent
     val characterLevelValue = remember {
         mutableStateOf(character.characterLevel.toString())
@@ -48,10 +49,13 @@ fun UpdateCharacterDialog(
         mutableStateOf(character.characterKeyAbilityScore.toString())
     }
 
+    val setCharacterViewModel: SetCharacterViewModel = viewModel()
+
     AlertDialog(
         modifier = modifier,
         onDismissRequest = {
-            onCharacterEvent(CharacterEvent.HideAddCharacterDialog)
+            onCharacterEvent(CharacterEvent.ResetCharacterState)
+            onCharacterEvent(CharacterEvent.HideUpdateCharacterDialog)
         },
         title = { Text(text = "Update Character")},
         text = {
@@ -113,6 +117,7 @@ fun UpdateCharacterDialog(
 
             ){
                 Button(onClick = {
+                    setCharacterViewModel.characterIdTemp.intValue = -1
                     onCharacterEvent(CharacterEvent.UpdateCharacter)
                     onCharacterEvent(CharacterEvent.HideUpdateCharacterDialog)
                 }) {

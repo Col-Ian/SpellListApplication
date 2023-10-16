@@ -31,6 +31,8 @@ sealed interface CharacterEvent {
         val characterLevel:Int,
         val characterKeyAbilityScore:Int
     ):CharacterEvent
+
+    object ResetCharacterState:CharacterEvent
 }
 
 // To add potential character screen sort options if requested
