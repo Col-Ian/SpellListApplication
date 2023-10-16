@@ -100,6 +100,7 @@ fun SpellCard(
         "All",
         "Core Rulebook",
         "Adventure Path",
+        "Alien Archive",
         "Armory",
         "Character Operations Manual",
         "Drift Crisis",
