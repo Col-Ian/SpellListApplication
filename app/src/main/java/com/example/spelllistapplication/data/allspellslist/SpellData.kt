@@ -20,7 +20,10 @@ data class SpellDataModel (
 ){
     // To be used in SearchBarViewModel
     fun doesMatchSearchQuery(query: String): Boolean{
-        val matchingCombinations = listOf(spellTitle)
+        val matchingCombinations = listOf(
+            spellTitle,
+            spellSchool
+        )
         // can add more fields if needed:
         /*
         * val matchingCombinations = listOf(

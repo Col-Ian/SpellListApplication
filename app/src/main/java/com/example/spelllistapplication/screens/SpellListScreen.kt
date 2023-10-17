@@ -6,7 +6,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.example.spelllistapplication.components.SpellCard
+import com.example.spelllistapplication.components.SpellList
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
@@ -24,7 +24,7 @@ fun SpellListScreen (
             .fillMaxSize()
             .background(color = MaterialTheme.colorScheme.background)
     ) {
-        SpellCard(
+        SpellList(
             characterState = characterState,
             customListState = customListState,
             onEventCharacter = onEventCharacter,

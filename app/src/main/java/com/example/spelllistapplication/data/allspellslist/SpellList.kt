@@ -1171,57 +1171,6 @@ var SpellData = listOf(
               "\n" +
               "If the spell is one that can’t be dispelled by dispel magic, break enchantment works only if that spell is 5th level or lower. If the effect comes from a permanent magic item, break enchantment doesn’t remove the curse from the item but it does free the victim from the item’s effects.",
   )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
 )
 
 

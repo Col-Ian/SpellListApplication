@@ -11,9 +11,11 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val DarkPurple = Color(0xFF16101A)
-val Purple = Color(0xFF6A35DB)
-val Pink = Color(0xFFC347D8)
-val Teal = Color(0xFF03DAC5)
 val Surface = Color.LightGray.copy(alpha = 0.65f)
 val OnSurface = Color.White
 val OnBackground = Color.White
+
+val DarkBlue = Color(46, 61, 102)
+val LightBlue = Color(193,226,244)
+val MediumBlue = Color(60,170,219)
+val BackgroundFadeBlue = Color(200, 227, 238)
