@@ -23,8 +23,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.spelllistapplication.components.spellcards.DropDownFilter
-import com.example.spelllistapplication.components.spellcards.SpellCard
+import com.example.spelllistapplication.components.spellinteractions.DropDownFilter
+import com.example.spelllistapplication.components.spelllistspellcards.SpellCard
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent

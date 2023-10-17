@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -19,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -116,7 +118,9 @@ fun UpdateCharacterDialog(
                 contentAlignment = Alignment.Center
 
             ){
-                Button(onClick = {
+                Button(
+                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+                    onClick = {
                     setCharacterViewModel.characterIdTemp.intValue = -1
                     onCharacterEvent(CharacterEvent.UpdateCharacter)
                     onCharacterEvent(CharacterEvent.HideUpdateCharacterDialog)

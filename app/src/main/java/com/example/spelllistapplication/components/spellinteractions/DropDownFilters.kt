@@ -1,4 +1,4 @@
-package com.example.spelllistapplication.components.spellcards
+package com.example.spelllistapplication.components.spellinteractions
 
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api

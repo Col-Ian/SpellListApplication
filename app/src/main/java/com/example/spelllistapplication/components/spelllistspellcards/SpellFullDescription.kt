@@ -1,4 +1,4 @@
-package com.example.spelllistapplication.components.spellcards
+package com.example.spelllistapplication.components.spelllistspellcards
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

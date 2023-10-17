@@ -1,4 +1,4 @@
-package com.example.spelllistapplication.components.spellcards
+package com.example.spelllistapplication.components.spellinteractions
 
 import com.example.spelllistapplication.data.characterspelllist.CustomList
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent

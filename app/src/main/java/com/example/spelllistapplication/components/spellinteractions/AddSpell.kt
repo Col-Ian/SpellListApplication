@@ -1,4 +1,4 @@
-package com.example.spelllistapplication.components.spellcards
+package com.example.spelllistapplication.components.spellinteractions
 
 import android.content.Context
 import android.widget.Toast
