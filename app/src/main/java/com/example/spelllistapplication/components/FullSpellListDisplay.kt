@@ -81,7 +81,9 @@ fun SpellList(
         "Drift Crisis",
         "Galactic Magic",
         "Interstellar Species",
-        "Near Space"
+        "Near Space",
+        "Galaxy Exploration Manual",
+        "Ports of Call"
     )
 
     val (selectedBook, onBookSelected) = remember {
@@ -157,9 +159,7 @@ fun SpellList(
         ){
             items(spellData.sortedBy { it.spellTitle }){ item ->
                 SpellCard(
-                    characterState = characterState,
                     customListState = customListState,
-                    onEventCharacter = onEventCharacter,
                     onEventCustomList = onEventCustomList,
                     item
                 )
