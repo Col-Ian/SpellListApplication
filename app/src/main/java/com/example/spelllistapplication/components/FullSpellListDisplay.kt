@@ -30,6 +30,8 @@ import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
 import com.example.spelllistapplication.data.viewmodels.FiltersAndSearchBarViewModel
+import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -46,6 +48,8 @@ fun SpellList(
     val viewModelFilters = viewModel<FiltersAndSearchBarViewModel>()
     val searchText by viewModelFilters.searchText.collectAsState()
     val spellData by viewModelFilters.spellData.collectAsState()
+
+    val setCharacterViewModel: SetCharacterViewModel = viewModel()
 
     val showFilters = remember { mutableStateOf(false) }
     // Class filters
@@ -158,10 +162,21 @@ fun SpellList(
             modifier = modifier
         ){
             items(spellData.sortedBy { it.spellTitle }){ item ->
+                // Needed here instead of the SpellCard() Composable to force recomposing when the character selected changes.
+                // Validate spell is already in character's list
+                val characterHasSpell = remember {
+                    mutableStateOf(false)
+                }
+                for (spell in customListState.customLists) {
+                    if (spell.characterFk == setCharacterViewModel.characterIdTemp.intValue && spell.spellTitle == item.spellTitle) {
+                        characterHasSpell.value = true
+                    }
+                }
                 SpellCard(
                     customListState = customListState,
                     onEventCustomList = onEventCustomList,
-                    item
+                    item,
+                    characterHasSpell = characterHasSpell.value
                 )
             }
         }

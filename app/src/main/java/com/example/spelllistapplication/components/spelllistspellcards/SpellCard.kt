@@ -38,7 +38,8 @@ import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewMod
 fun SpellCard(
     customListState: CustomListState,
     onEventCustomList: (CustomListEvent) -> Unit,
-    item: SpellDataModel
+    item: SpellDataModel,
+    characterHasSpell: Boolean
 ){
     val expanded = remember { mutableStateOf(false) }
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
@@ -46,6 +47,8 @@ fun SpellCard(
     val setCharacterLevelViewModel: SetCharacterLevelViewModel = viewModel()
     val characterClass: SetCharacterClassViewModel = viewModel()
     val context = LocalContext.current
+
+
 
     Box(
         // to add padding between cards
@@ -72,16 +75,8 @@ fun SpellCard(
                         item
                     )
                 }
-                // Validate spell is already in character's list
-                val characterHasSpell = remember {
-                    mutableStateOf(false)
-                }
-                for (spell in customListState.customLists) {
-                    if (spell.characterFk == setCharacterViewModel.characterIdTemp.intValue && spell.spellTitle == item.spellTitle) {
-                        characterHasSpell.value = true
-                    }
-                }
-                if (!characterHasSpell.value){
+
+                if (!characterHasSpell){
                     
                     IconButton(
                         onClick = {
@@ -99,7 +94,11 @@ fun SpellCard(
                             .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)
                             .size(24.dp),
                     ) {
-                        Icon(imageVector = Icons.Default.Add, contentDescription = "Add Spell")
+                        Icon(
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "Add Spell",
+                            tint = MaterialTheme.colorScheme.background
+                        )
                     }
                     Spacer(modifier = Modifier.padding(1.dp))
                 }

@@ -2,10 +2,12 @@ package com.example.spelllistapplication.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,36 +38,49 @@ fun LevelSpecificSpells(
     val characterAbilityScoreViewModel: SetCharacterAbilityScoreViewModel = viewModel()
     val characterAbilityScore = characterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue
 
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(color = MaterialTheme.colorScheme.primary)
-            .padding(4.dp)
+    Box(modifier = Modifier.padding(8.dp)
     ) {
-        Text(
+        Column(
             modifier = Modifier
-                .padding(4.dp),
-            text = "Level $spellLevel",
-            fontWeight = FontWeight.Bold,
-            fontSize = 16.sp
-        )
-        Row(
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+                .fillMaxWidth()
+                .background(
+                    color = MaterialTheme.colorScheme.primary,
+                    shape = RoundedCornerShape(12.dp)
+                )
+                .padding(8.dp)
         ) {
-            Text(text = "Maximum Spells Known: ${spellsKnownMaximum(spellLevel, characterLevel)}")
-            // Level 0 spells have infinite uses
-            if (spellLevel > 0) {
+            Text(
+                modifier = Modifier
+                    .padding(4.dp),
+                text = "Level $spellLevel",
+                fontWeight = FontWeight.Bold,
+                fontSize = 16.sp
+            )
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
                 Text(
-                    text = "Spells Per Day ${
-                        spellsPerDay(
+                    text = "Maximum Spells Known: ${
+                        spellsKnownMaximum(
                             spellLevel,
-                            characterLevel,
-                            characterAbilityScore
+                            characterLevel
                         )
                     }"
                 )
+                // Level 0 spells have infinite uses
+                if (spellLevel > 0) {
+                    Text(
+                        text = "Spells Per Day ${
+                            spellsPerDay(
+                                spellLevel,
+                                characterLevel,
+                                characterAbilityScore
+                            )
+                        }"
+                    )
+                }
             }
         }
     }
@@ -74,7 +89,7 @@ fun LevelSpecificSpells(
             onEventCustomList = onEventCustomList,
             it = it,
             viewModel = setCharacterViewModel,
-            levelOfSpell = 1
+            levelOfSpell = spellLevel
         )
     }
 }

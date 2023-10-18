@@ -35,25 +35,29 @@ fun CustomSpellCard(
     viewModel: SetCharacterViewModel,
     levelOfSpell: Int
 ){
-    val expanded = remember { mutableStateOf(false) }
-    val context = LocalContext.current
-    Box(
-        // to add padding between cards
-        modifier = Modifier.padding(4.dp)
-    ) {
+    if (it.characterFk == viewModel.characterIdTemp.intValue && it.spellLevel == levelOfSpell)
+    {
+        val expanded = remember { mutableStateOf(false) }
+        val context = LocalContext.current
         Box(
-            modifier = Modifier
-                .border(4.dp, MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(8.dp))
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.background, shape = RoundedCornerShape(8.dp))
-
+            // to add padding between cards
+            modifier = Modifier.padding(4.dp)
         ) {
-            Column(
+            Box(
                 modifier = Modifier
-                    .clickable { expanded.value = !expanded.value },
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .border(4.dp, MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(8.dp))
+                    .fillMaxWidth()
+                    .background(MaterialTheme.colorScheme.background, shape = RoundedCornerShape(8.dp))
+
             ) {
-                if (it.characterFk == viewModel.characterIdTemp.intValue && it.spellLevel == levelOfSpell) {
+                Column(
+                    modifier = Modifier
+                        .clickable { expanded.value = !expanded.value }
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp, vertical = 4.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+
                     if (expanded.value) {
                         CLSpellFullDescription(it)
                     } else {
@@ -71,11 +75,13 @@ fun CustomSpellCard(
                                 MaterialTheme.colorScheme.secondary,
                                 shape = CircleShape
                             )
-                            .size(24.dp),
+                            .size(24.dp)
+                            .padding(2.dp),
                     ) {
                         Icon(
                             imageVector = Icons.Default.Delete,
-                            contentDescription = "Add to character list"
+                            contentDescription = "Add to character list",
+                            tint = MaterialTheme.colorScheme.background
                         )
                     }
                 }
