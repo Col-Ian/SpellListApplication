@@ -39,7 +39,7 @@ fun SpellCard(
     customListState: CustomListState,
     onEventCustomList: (CustomListEvent) -> Unit,
     item: SpellDataModel,
-    characterHasSpell: Boolean
+    characterSelected: Int
 ){
     val expanded = remember { mutableStateOf(false) }
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
@@ -48,6 +48,15 @@ fun SpellCard(
     val characterClass: SetCharacterClassViewModel = viewModel()
     val context = LocalContext.current
 
+    // Validate spell is already in character's list
+    val characterHasSpell = remember {
+        mutableStateOf(false)
+    }
+    for (spell in customListState.customLists) {
+        if (spell.characterFk == characterSelected && spell.spellTitle == item.spellTitle) {
+            characterHasSpell.value = true
+        }
+    }
 
 
     Box(
@@ -76,7 +85,7 @@ fun SpellCard(
                     )
                 }
 
-                if (!characterHasSpell){
+                if (!characterHasSpell.value){
                     
                     IconButton(
                         onClick = {

@@ -23,7 +23,7 @@ fun DeleteCharacterDialog(
     AlertDialog(
         modifier = modifier,
         onDismissRequest = { onCharacterEvent(CharacterEvent.HideDeleteCharacterDialog) },
-        title = { Text(text = "Delete Character ${character.characterName}?")},
+        title = { Text(text = "Delete ${character.characterName}?")},
         confirmButton = {
             Button(onClick = {
                 for(spell in state.customLists){

@@ -49,7 +49,9 @@ fun SpellList(
     val searchText by viewModelFilters.searchText.collectAsState()
     val spellData by viewModelFilters.spellData.collectAsState()
 
+    // Need to set the characterSelected here to force a recompose on lazy list on change
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
+    val characterSelected = setCharacterViewModel.characterIdTemp.intValue
 
     val showFilters = remember { mutableStateOf(false) }
     // Class filters
@@ -84,9 +86,9 @@ fun SpellList(
         "Character Operations Manual",
         "Drift Crisis",
         "Galactic Magic",
+        "Galaxy Exploration Manual",
         "Interstellar Species",
         "Near Space",
-        "Galaxy Exploration Manual",
         "Ports of Call"
     )
 
@@ -162,21 +164,11 @@ fun SpellList(
             modifier = modifier
         ){
             items(spellData.sortedBy { it.spellTitle }){ item ->
-                // Needed here instead of the SpellCard() Composable to force recomposing when the character selected changes.
-                // Validate spell is already in character's list
-                val characterHasSpell = remember {
-                    mutableStateOf(false)
-                }
-                for (spell in customListState.customLists) {
-                    if (spell.characterFk == setCharacterViewModel.characterIdTemp.intValue && spell.spellTitle == item.spellTitle) {
-                        characterHasSpell.value = true
-                    }
-                }
                 SpellCard(
                     customListState = customListState,
                     onEventCustomList = onEventCustomList,
                     item,
-                    characterHasSpell = characterHasSpell.value
+                    characterSelected = characterSelected
                 )
             }
         }

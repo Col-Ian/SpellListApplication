@@ -72,7 +72,7 @@ fun CustomSpellCard(
                         },
                         modifier = Modifier
                             .background(
-                                MaterialTheme.colorScheme.secondary,
+                                MaterialTheme.colorScheme.primary,
                                 shape = CircleShape
                             )
                             .size(24.dp)

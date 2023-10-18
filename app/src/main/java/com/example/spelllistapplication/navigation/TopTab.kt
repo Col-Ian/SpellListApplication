@@ -10,10 +10,16 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Checklist
+import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.outlined.AccountBox
 import androidx.compose.material.icons.outlined.AccountCircle
+import androidx.compose.material.icons.outlined.Checklist
+import androidx.compose.material.icons.outlined.ChecklistRtl
+import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material.icons.outlined.List
+import androidx.compose.material.icons.outlined.ListAlt
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
@@ -48,8 +54,8 @@ fun TopTab(
         ),
         TabItem(
             title = "Saved Spells",
-            unselectedIcon = Icons.Outlined.AccountCircle,
-            selectedIcon = Icons.Filled.AccountCircle,
+            unselectedIcon = Icons.Outlined.Checklist,
+            selectedIcon = Icons.Filled.Checklist,
             screenSelected = "CustomListScreen"
         ),
         TabItem(
