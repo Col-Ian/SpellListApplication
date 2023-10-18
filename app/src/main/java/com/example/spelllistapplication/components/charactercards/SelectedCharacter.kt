@@ -10,7 +10,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -80,15 +82,20 @@ fun SelectedCharacter(
                 modifier = Modifier.padding(2.dp),
                 verticalArrangement = Arrangement.Center
             ) {
-                Button(onClick = {
+                Button(
+                    colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.onPrimary),
+                    onClick = {
                     onCharacterEvent(CharacterEvent.ShowDeleteCharacterDialog)
                 }) {
                     Icon(
                         imageVector = Icons.Default.Delete,
                         contentDescription = "Delete contact",
+                        tint = MaterialTheme.colorScheme.tertiary
                     )
                 }
-                Button(onClick = {
+                Button(
+                    colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.onPrimary),
+                    onClick = {
                     onCharacterEvent(
                         CharacterEvent.SetCharacterState(
                             characterId = character.id,
@@ -100,7 +107,8 @@ fun SelectedCharacter(
                     onCharacterEvent(CharacterEvent.ShowUpdateCharacterDialog)
                 }) {
                     Icon(imageVector = Icons.Default.Edit,
-                        contentDescription = "Update contact"
+                        contentDescription = "Update contact",
+                        tint = MaterialTheme.colorScheme.tertiary
                     )
                 }
 
