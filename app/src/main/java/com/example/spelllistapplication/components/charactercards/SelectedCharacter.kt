@@ -27,7 +27,7 @@ import com.example.spelllistapplication.data.characterdata.DeleteCharacterDialog
 import com.example.spelllistapplication.data.characterdata.UpdateCharacterDialog
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 
 @Composable
 fun SelectedCharacter(

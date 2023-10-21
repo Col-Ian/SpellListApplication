@@ -1,4 +1,4 @@
-package com.example.spelllistapplication.data.viewmodels
+package com.example.spelllistapplication.viewmodels
 
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf

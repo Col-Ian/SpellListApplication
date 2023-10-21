@@ -23,16 +23,16 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.charactercards.SelectedCharacter
 import com.example.spelllistapplication.components.charactercards.UnselectedCharacter
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.characterdata.AddCharacterDialog
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.SetCharacterAbilityScoreViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
-import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterAbilityScoreViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
+import com.example.spelllistapplication.viewmodels.SetTempSpellLevelViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

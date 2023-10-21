@@ -17,6 +17,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -24,14 +25,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.spelllistapplication.components.spellinteractions.AddSpellButtonValidation
 import com.example.spelllistapplication.components.spellinteractions.addSpell
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
-import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.SetTempSpellLevelViewModel
+import com.example.spelllistapplication.viewmodels.spellsKnownMaximum
 
 // Each individual Spell card to display
 @Composable
@@ -57,6 +60,27 @@ fun SpellCard(
             characterHasSpell.value = true
         }
     }
+
+    var spellLevel = -1
+
+    for(item in item.spellClassWithLevel){
+        if(item.dropLast(2) == characterClass.characterClassViewModel.value){
+            spellLevel = item.takeLast(1).toInt()
+        }
+    }
+
+    val spellSlots = spellsKnownMaximum(
+        characterLevel = setCharacterLevelViewModel.characterLevelViewModel.intValue,
+        spellLevel = spellLevel
+    )
+
+    val characterCanLearnSpell = AddSpellButtonValidation(
+        characterHasSpell = characterHasSpell,
+        characterSelected = setCharacterViewModel.characterIdTemp.intValue,
+        item = item,
+        characterClass = characterClass.characterClassViewModel.value,
+        spellSlots = spellSlots
+    )
 
 
     Box(
@@ -85,8 +109,7 @@ fun SpellCard(
                     )
                 }
 
-                if (!characterHasSpell.value){
-                    
+                if(characterCanLearnSpell){
                     IconButton(
                         onClick = {
                             addSpell(

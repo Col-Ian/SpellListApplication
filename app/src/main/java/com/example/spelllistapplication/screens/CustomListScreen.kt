@@ -14,9 +14,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.LevelSpecificSpells
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
-import com.example.spelllistapplication.data.viewmodels.spellsKnownMaximum
+import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.spellsKnownMaximum
 
 
 @Composable

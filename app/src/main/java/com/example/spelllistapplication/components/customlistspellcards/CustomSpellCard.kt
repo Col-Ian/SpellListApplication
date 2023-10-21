@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.example.spelllistapplication.components.spellinteractions.removeSpell
 import com.example.spelllistapplication.data.characterspelllist.CustomList
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 
 @Composable
 fun CustomSpellCard(

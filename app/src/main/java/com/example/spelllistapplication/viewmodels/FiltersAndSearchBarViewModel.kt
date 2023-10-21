@@ -1,4 +1,4 @@
-package com.example.spelllistapplication.data.viewmodels
+package com.example.spelllistapplication.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

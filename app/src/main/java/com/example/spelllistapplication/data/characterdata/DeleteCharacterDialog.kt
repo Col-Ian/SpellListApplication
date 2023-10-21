@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 
 @Composable
 fun DeleteCharacterDialog(

@@ -29,8 +29,8 @@ import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.FiltersAndSearchBarViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.FiltersAndSearchBarViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 
 

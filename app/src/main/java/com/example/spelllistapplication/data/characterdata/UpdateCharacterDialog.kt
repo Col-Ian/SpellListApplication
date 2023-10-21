@@ -24,8 +24,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)

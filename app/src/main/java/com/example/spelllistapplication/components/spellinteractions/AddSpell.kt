@@ -4,11 +4,11 @@ import android.content.Context
 import android.widget.Toast
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
-import com.example.spelllistapplication.data.viewmodels.SetCharacterClassViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
-import com.example.spelllistapplication.data.viewmodels.SetTempSpellLevelViewModel
-import com.example.spelllistapplication.data.viewmodels.spellsKnownMaximum
+import com.example.spelllistapplication.viewmodels.SetCharacterClassViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.SetTempSpellLevelViewModel
+import com.example.spelllistapplication.viewmodels.spellsKnownMaximum
 
 
 fun addSpell(
@@ -25,6 +25,8 @@ fun addSpell(
         if (spellClass.dropLast(2) == characterClass.characterClassViewModel.value)
             setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue = spellClass.takeLast(1).toInt()
     }
+
+    // In case AddSpellButtonValidation fails.
     if (setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue == -2){
         Toast.makeText(context,"No character selected.", Toast.LENGTH_SHORT).show()
     } else if (setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue == -1){

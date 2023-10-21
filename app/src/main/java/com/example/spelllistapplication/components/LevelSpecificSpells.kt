@@ -19,11 +19,11 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.customlistspellcards.CustomSpellCard
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.data.viewmodels.SetCharacterAbilityScoreViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterLevelViewModel
-import com.example.spelllistapplication.data.viewmodels.SetCharacterViewModel
-import com.example.spelllistapplication.data.viewmodels.spellsKnownMaximum
-import com.example.spelllistapplication.data.viewmodels.spellsPerDay
+import com.example.spelllistapplication.viewmodels.SetCharacterAbilityScoreViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
+import com.example.spelllistapplication.viewmodels.spellsKnownMaximum
+import com.example.spelllistapplication.viewmodels.spellsPerDay
 
 @Composable
 fun LevelSpecificSpells(
