@@ -20,6 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.spelllistapplication.components.textcomponents.character.CharacterHeadingSelected
+import com.example.spelllistapplication.components.textcomponents.character.CharacterSubHeading
 import com.example.spelllistapplication.data.characterdata.Character
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
@@ -68,14 +70,12 @@ fun SelectedCharacter(
             Column(
                 modifier = Modifier
                     .fillMaxHeight()
-                    .padding(2.dp)
+                    .padding(2.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(
-                    fontWeight = FontWeight.Bold,
-                    text = character.characterName
-                )
-                Text(text = character.characterClass)
-                Text(text = "Level: ${character.characterLevel}")
+                CharacterHeadingSelected(text = character.characterName)
+                CharacterSubHeading(text = character.characterClass)
+                CharacterSubHeading(text = "Level: ${character.characterLevel}")
             }
 
             Column(

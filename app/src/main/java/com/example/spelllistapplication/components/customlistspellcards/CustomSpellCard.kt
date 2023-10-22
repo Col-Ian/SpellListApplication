@@ -54,10 +54,9 @@ fun CustomSpellCard(
                     modifier = Modifier
                         .clickable { expanded.value = !expanded.value }
                         .fillMaxWidth()
-                        .padding(horizontal = 8.dp, vertical = 4.dp),
+                        .padding(vertical = 4.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-
                     if (expanded.value) {
                         CLSpellFullDescription(it)
                     } else {

@@ -78,7 +78,6 @@ fun CharacterScreen(
                             MaterialTheme.colorScheme.tertiary,
                             shape = RoundedCornerShape(8.dp)
                         )
-                        .padding(4.dp)
                         .clickable {
                             if (setCharacterViewModel.characterIdTemp.intValue != character.id) {
 

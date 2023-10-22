@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import com.example.spelllistapplication.components.textcomponents.character.CharacterHeadingUnselected
+import com.example.spelllistapplication.components.textcomponents.character.CharacterSubHeading
 import com.example.spelllistapplication.data.characterdata.Character
 
 @Composable
@@ -20,16 +22,13 @@ fun UnselectedCharacter(
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            fontWeight = FontWeight.Bold,
-            text = character.characterName
-        )
+        CharacterHeadingUnselected(text = character.characterName)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Text(text = character.characterClass)
-            Text(text = "Level: ${character.characterLevel}")
+            CharacterSubHeading(text = character.characterClass)
+            CharacterSubHeading(text = "Level: ${character.characterLevel}")
         }
     }
 }

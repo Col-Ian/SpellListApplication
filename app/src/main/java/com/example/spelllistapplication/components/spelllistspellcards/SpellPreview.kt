@@ -3,11 +3,12 @@ package com.example.spelllistapplication.components.spelllistspellcards
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
+import com.example.spelllistapplication.components.textcomponents.spellcard.SpellCardDescriptionPreview
+import com.example.spelllistapplication.components.textcomponents.spellcard.SpellCardFootNotes
+import com.example.spelllistapplication.components.textcomponents.spellcard.SpellCardHeading
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 
 // To display when the Spell is collapsed
@@ -15,22 +16,16 @@ import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 fun SpellPreview(
     item: SpellDataModel
 ){
-    Text(
-        textAlign = TextAlign.Center,
-        text = item.spellTitle
-    )
-    Text(
-        textAlign = TextAlign.Center,
-        text = item.spellPreviewDescription
-    )
+    SpellCardHeading(text = item.spellTitle)
+    SpellCardDescriptionPreview(text = item.spellPreviewDescription)
     Row(
         modifier = Modifier
             .fillMaxWidth(),
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Text(text = item.spellClassesWithLevelPreview.joinToString { it })
+        SpellCardFootNotes(text = item.spellClassesWithLevelPreview.joinToString { it })
 
-        Text(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
+        SpellCardFootNotes(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
     }
 }

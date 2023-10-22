@@ -1,42 +1,83 @@
 package com.example.spelllistapplication.components.spelllistspellcards
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.spelllistapplication.components.textcomponents.spellcard.SpellCardDescription
+import com.example.spelllistapplication.components.textcomponents.spellcard.SpellCardHeading
+import com.example.spelllistapplication.components.textcomponents.spellcard.SpellCardSubtitle
+import com.example.spelllistapplication.components.textcomponents.spellcard.SpellCardTitle
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 
 // To display when the Spell is expanded
 @Composable
-fun SpellFullDescription(item: SpellDataModel){
+fun SpellFullDescription(
+    item: SpellDataModel
+){
     Column(
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        Text(
-        modifier = Modifier
-            .padding(8.dp)
-            .fillMaxWidth(),
-        textAlign = TextAlign.Center,
-        text = item.spellTitle
-    )
-        Text("Source: ${ item.spellSourceBookFull }")
-        Text("Classes: "+ item.spellClassWithLevel.joinToString { it })
-        Text("School: ${item.spellSchool}")
-        Text("Casting Time: ${item.spellCastingTime}")
-        Text("Range: ${item.spellRange}")
+        SpellCardHeading(text = item.spellTitle)
+        Row {
+            SpellCardTitle(text = "Source")
+            SpellCardSubtitle(text = " ${item.spellSourceBookFull}")
+        }
+        Row {
+            SpellCardTitle(text = "Classes")
+            SpellCardSubtitle(text = " ${item.spellClassWithLevel.joinToString { it }}")
+        }
+        Row {
+            SpellCardTitle(text = "School")
+            SpellCardSubtitle(text = " ${item.spellSchool}")
+        }
+        Row {
+            SpellCardTitle(text = "Casting Time")
+            SpellCardSubtitle(text = " ${item.spellCastingTime}")
+        }
+        Row {
+            SpellCardTitle(text = "Range")
+            SpellCardSubtitle(text = " ${item.spellRange}")
+        }
         if(item.spellTargets != ""){
-            Text("Targets: ${item.spellTargets}")
+            Row {
+                SpellCardTitle(text = "Targets")
+                SpellCardSubtitle(text = " ${item.spellTargets}")
+            }
         }
-        Text("Duration: ${item.spellDuration}")
+        Row {
+            SpellCardTitle(text = "Duration")
+            SpellCardSubtitle(text = " ${item.spellDuration}")
+        }
         if(item.spellSavingThrow != "" && item.spellResistance != ""){
-            Text("Saving Throw: ${item.spellSavingThrow}; Spell Resistance ${item.spellResistance}")
+            Column{
+                Row {
+                    SpellCardTitle(text = "Saving Throw")
+                    SpellCardSubtitle(text = " ${item.spellSavingThrow}")
+                    Text(text = ";")
+                }
+                Row {
+                    SpellCardTitle(text = "Spell Resistance")
+                    SpellCardSubtitle(text = "  ${item.spellResistance}")
+                }
+            }
+
         }
-        Text("Description: ${item.spellDescriptionFull}")
+        Spacer(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.primary)
+                .padding(8.dp)
+        )
+        SpellCardDescription(text = item.spellDescriptionFull)
 
     }
 }

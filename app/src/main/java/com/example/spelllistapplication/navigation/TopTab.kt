@@ -28,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.spelllistapplication.components.textcomponents.TopTabText
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
@@ -95,7 +96,7 @@ fun TopTab(
                         selectedTabIndex = index
                     },
                     text = {
-                        Text(text = item.title)
+                        TopTabText(text = item.title)
                     },
                     icon = {
                         Icon(
