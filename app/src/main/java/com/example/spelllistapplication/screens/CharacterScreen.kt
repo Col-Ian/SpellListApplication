@@ -23,15 +23,13 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.charactercards.SelectedCharacter
 import com.example.spelllistapplication.components.charactercards.UnselectedCharacter
-import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.data.characterdata.AddCharacterDialog
 import com.example.spelllistapplication.data.characterdata.CharacterEvent
 import com.example.spelllistapplication.data.characterdata.CharacterState
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.viewmodels.SetCharacterAbilityScoreViewModel
-import com.example.spelllistapplication.viewmodels.SetCharacterClassViewModel
-import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
+import com.example.spelllistapplication.viewmodels.LearnableSwitchViewModel
+import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.viewmodels.SetTempSpellLevelViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,13 +41,7 @@ fun CharacterScreen(
     onCustomListEvent: (CustomListEvent) -> Unit
 ){
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
-
-    val setCharacterClassViewModel: SetCharacterClassViewModel = viewModel()
-
-    val setCharacterLevelViewModel: SetCharacterLevelViewModel = viewModel()
-
-    val setCharacterAbilityScoreViewModel: SetCharacterAbilityScoreViewModel = viewModel()
-
+    val learnableSwitchViewModel: LearnableSwitchViewModel = viewModel()
     val setTempSpellLevelViewModel: SetTempSpellLevelViewModel = viewModel()
 
     Scaffold(
@@ -92,30 +84,35 @@ fun CharacterScreen(
 
                                 setCharacterViewModel.characterIdTemp.intValue = character.id
 
-                                setCharacterClassViewModel.characterClassViewModel.value =
+                                setCharacterViewModel.characterClass.value =
                                     character.characterClass
 
-                                setCharacterLevelViewModel.characterLevelViewModel.intValue =
+                                setCharacterViewModel.characterLevel.intValue =
                                     character.characterLevel
 
-                                setCharacterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue =
+                                setCharacterViewModel.characterAbilityScore.intValue =
                                     character.characterKeyAbilityScore
 
-                                setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue = -1
+                                setTempSpellLevelViewModel.tempSpellLevel.intValue = -1
+
+                                // Set our learnableSwitch to false to prevent it being stuck on a specific character
+                                learnableSwitchViewModel.learnableSwitch.value = false
 
                             } else if (setCharacterViewModel.characterIdTemp.intValue == character.id) {
 
                                 setCharacterViewModel.characterIdTemp.intValue = -1
 
-                                setCharacterClassViewModel.characterClassViewModel.value = ""
+                                setCharacterViewModel.characterClass.value = ""
 
-                                setCharacterLevelViewModel.characterLevelViewModel.intValue = 0
+                                setCharacterViewModel.characterLevel.intValue = 0
 
-                                setCharacterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue =
+                                setCharacterViewModel.characterAbilityScore.intValue =
                                     0
 
-                                setTempSpellLevelViewModel.tempSpellLevelViewModel.intValue = -2
+                                setTempSpellLevelViewModel.tempSpellLevel.intValue = -2
 
+                                // Set our learnableSwitch to false to prevent it being stuck on a specific character
+                                learnableSwitchViewModel.learnableSwitch.value = false
                             }
                         },
                     horizontalArrangement = Arrangement.Center,

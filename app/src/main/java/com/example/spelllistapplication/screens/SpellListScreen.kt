@@ -25,9 +25,8 @@ fun SpellListScreen (
             .background(color = MaterialTheme.colorScheme.background)
     ) {
         SpellList(
-            characterState = characterState,
             customListState = customListState,
-            onEventCharacter = onEventCharacter,
-            onEventCustomList = onEventCustomList)
+            onEventCustomList = onEventCustomList
+        )
     }
 }

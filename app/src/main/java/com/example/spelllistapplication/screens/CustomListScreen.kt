@@ -14,7 +14,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.LevelSpecificSpells
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
 import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.viewmodels.spellsKnownMaximum
 
@@ -25,8 +24,7 @@ fun CustomListScreen(
     onEventCustomList: (CustomListEvent) -> Unit
 ){
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
-    val characterLevelViewModel: SetCharacterLevelViewModel = viewModel()
-    val characterLevel = characterLevelViewModel.characterLevelViewModel.intValue
+    val characterLevel = setCharacterViewModel.characterLevel.intValue
 
     if (setCharacterViewModel.characterIdTemp.intValue == -1) {
         Column(

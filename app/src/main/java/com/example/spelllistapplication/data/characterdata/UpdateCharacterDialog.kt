@@ -24,7 +24,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.spelllistapplication.viewmodels.SetCharacterClassViewModel
 import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 
 
@@ -39,8 +38,8 @@ fun UpdateCharacterDialog(
     val radioOptionsTop = listOf("Mystic","Precog")
     val radioOptionsBottom = listOf("Technomancer", "Witchwarper")
 
-    val setCharacterClass: SetCharacterClassViewModel = viewModel()
-    val characterClass = setCharacterClass.characterClassViewModel.value
+    val setCharacterClass: SetCharacterViewModel = viewModel()
+    val characterClass = setCharacterClass.characterClass.value
 
     // toString to validate inputs in the TextFields
     // Default values to 0 since we are converting to Int in our onEvent

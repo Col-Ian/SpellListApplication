@@ -25,13 +25,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.spelllistapplication.components.spellinteractions.AddSpellButtonValidation
+import com.example.spelllistapplication.components.spellinteractions.addSpellButtonValidation
 import com.example.spelllistapplication.components.spellinteractions.addSpell
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.viewmodels.SetCharacterClassViewModel
-import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
 import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.viewmodels.SetTempSpellLevelViewModel
 import com.example.spelllistapplication.viewmodels.spellsKnownMaximum
@@ -42,13 +40,14 @@ fun SpellCard(
     customListState: CustomListState,
     onEventCustomList: (CustomListEvent) -> Unit,
     item: SpellDataModel,
-    characterSelected: Int
+    characterSelected: Int,
+    showAllSpells: Boolean
 ){
     val expanded = remember { mutableStateOf(false) }
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
     val setTempSpellLevelViewModel: SetTempSpellLevelViewModel = viewModel()
-    val setCharacterLevelViewModel: SetCharacterLevelViewModel = viewModel()
-    val characterClass: SetCharacterClassViewModel = viewModel()
+    val characterClass = setCharacterViewModel.characterClass.value
+    val characterLevel = setCharacterViewModel.characterLevel.intValue
     val context = LocalContext.current
 
     // Validate spell is already in character's list
@@ -61,78 +60,104 @@ fun SpellCard(
         }
     }
 
-    var spellLevel = -1
+    val spellLevel = remember {
+        mutableIntStateOf(-1)
+    }
 
-    for(item in item.spellClassWithLevel){
-        if(item.dropLast(2) == characterClass.characterClassViewModel.value){
-            spellLevel = item.takeLast(1).toInt()
+    for(classRequired in item.spellClassWithLevel){
+        if(classRequired.dropLast(2) == characterClass){
+            spellLevel.intValue = classRequired.takeLast(1).toInt()
         }
     }
 
     val spellSlots = spellsKnownMaximum(
-        characterLevel = setCharacterLevelViewModel.characterLevelViewModel.intValue,
-        spellLevel = spellLevel
+        characterLevel = characterLevel,
+        spellLevel = spellLevel.intValue
     )
 
-    val characterCanLearnSpell = AddSpellButtonValidation(
+    val characterCanLearnSpell = addSpellButtonValidation(
         characterHasSpell = characterHasSpell,
         characterSelected = setCharacterViewModel.characterIdTemp.intValue,
         item = item,
-        characterClass = characterClass.characterClassViewModel.value,
+        characterClass = characterClass,
         spellSlots = spellSlots
     )
 
 
-    Box(
-        // to add padding between cards
-        modifier = Modifier.padding(4.dp)
-    ) {
+
+    val showSpell = remember {
+        mutableStateOf(true)
+    }
+
+    // If the learnableSwitch is true, and the characterCanLearnSpell is false, do not show the spell.
+    if ( !showAllSpells && !characterCanLearnSpell){
+        showSpell.value = false
+    }
+
+
+    // Whether or not to show the spell based on the toggle to only show learnable spells
+
+
+    if(showSpell.value) {
         Box(
-            modifier = Modifier
-                .border(4.dp, MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(8.dp))
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.background, shape = RoundedCornerShape(8.dp))
-
+            // to add padding between cards
+            modifier = Modifier.padding(4.dp)
         ) {
-            Column(
+            Box(
                 modifier = Modifier
-                    .clickable { expanded.value = !expanded.value }
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp, vertical = 4.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                if (expanded.value) {
-                    SpellFullDescription(item)
-                } else {
-                    SpellPreview(
-                        item
+                    .border(
+                        4.dp,
+                        MaterialTheme.colorScheme.primary,
+                        shape = RoundedCornerShape(8.dp)
                     )
-                }
+                    .fillMaxWidth()
+                    .background(
+                        MaterialTheme.colorScheme.background,
+                        shape = RoundedCornerShape(8.dp)
+                    )
 
-                if(characterCanLearnSpell){
-                    IconButton(
-                        onClick = {
-                            addSpell(
-                                item = item,
-                                onEventCustomList = onEventCustomList,
-                                setCharacterViewModel = setCharacterViewModel,
-                                setTempSpellLevelViewModel = setTempSpellLevelViewModel,
-                                setCharacterLevelViewModel = setCharacterLevelViewModel,
-                                characterClass = characterClass,
-                                context
-                            )
-                        },
-                        modifier = Modifier
-                            .background(MaterialTheme.colorScheme.secondary, shape = CircleShape)
-                            .size(24.dp),
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Add,
-                            contentDescription = "Add Spell",
-                            tint = MaterialTheme.colorScheme.background
+            ) {
+                Column(
+                    modifier = Modifier
+                        .clickable { expanded.value = !expanded.value }
+                        .fillMaxWidth()
+                        .padding(horizontal = 8.dp, vertical = 4.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    if (expanded.value) {
+                        SpellFullDescription(item)
+                    } else {
+                        SpellPreview(
+                            item
                         )
                     }
-                    Spacer(modifier = Modifier.padding(1.dp))
+
+                    if (characterCanLearnSpell) {
+                        IconButton(
+                            onClick = {
+                                addSpell(
+                                    item = item,
+                                    onEventCustomList = onEventCustomList,
+                                    setCharacterViewModel = setCharacterViewModel,
+                                    setTempSpellLevelViewModel = setTempSpellLevelViewModel,
+                                    context
+                                )
+                            },
+                            modifier = Modifier
+                                .background(
+                                    MaterialTheme.colorScheme.secondary,
+                                    shape = CircleShape
+                                )
+                                .size(24.dp),
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Add,
+                                contentDescription = "Add Spell",
+                                tint = MaterialTheme.colorScheme.background
+                            )
+                        }
+                        Spacer(modifier = Modifier.padding(1.dp))
+                    }
                 }
             }
         }

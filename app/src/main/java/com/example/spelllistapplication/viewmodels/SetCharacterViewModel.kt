@@ -8,26 +8,15 @@ import androidx.lifecycle.ViewModel
 // To confirm our currently selected character
 class SetCharacterViewModel : ViewModel(){
     val characterIdTemp = mutableIntStateOf(-1)
-}
-
-// Set currently selected character's class so the user can only add spells of that class
-class SetCharacterClassViewModel : ViewModel(){
-    var characterClassViewModel = mutableStateOf("")
-}
-
-// Set level and Ability Score for the functions below
-class SetCharacterLevelViewModel : ViewModel(){
-    val characterLevelViewModel = mutableIntStateOf(0)
-}
-
-class SetCharacterAbilityScoreViewModel : ViewModel(){
-    val characterAbilityScoreViewModel = mutableIntStateOf(0)
+    var characterClass = mutableStateOf("")
+    val characterLevel = mutableIntStateOf(0)
+    val characterAbilityScore = mutableIntStateOf(0)
 }
 
 // Used to validate a character's class for adding a spell.
 // -2 will mean no character selected. It will be -1 by default when character is selected
 class SetTempSpellLevelViewModel: ViewModel(){
-    val tempSpellLevelViewModel = mutableIntStateOf(-2)
+    val tempSpellLevel = mutableIntStateOf(-2)
 }
 
 

@@ -19,8 +19,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.customlistspellcards.CustomSpellCard
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
-import com.example.spelllistapplication.viewmodels.SetCharacterAbilityScoreViewModel
-import com.example.spelllistapplication.viewmodels.SetCharacterLevelViewModel
 import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 import com.example.spelllistapplication.viewmodels.spellsKnownMaximum
 import com.example.spelllistapplication.viewmodels.spellsPerDay
@@ -32,11 +30,8 @@ fun LevelSpecificSpells(
     onEventCustomList: (CustomListEvent) -> Unit
 ){
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
-    val characterLevelViewModel: SetCharacterLevelViewModel = viewModel()
-    val characterLevel = characterLevelViewModel.characterLevelViewModel.intValue
-
-    val characterAbilityScoreViewModel: SetCharacterAbilityScoreViewModel = viewModel()
-    val characterAbilityScore = characterAbilityScoreViewModel.characterAbilityScoreViewModel.intValue
+    val characterLevel = setCharacterViewModel.characterLevel.intValue
+    val characterAbilityScore = setCharacterViewModel.characterAbilityScore.intValue
 
     Box(modifier = Modifier.padding(8.dp)
     ) {

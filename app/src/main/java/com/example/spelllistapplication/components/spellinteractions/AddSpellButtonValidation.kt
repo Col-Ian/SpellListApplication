@@ -3,7 +3,7 @@ package com.example.spelllistapplication.components.spellinteractions
 import androidx.compose.runtime.MutableState
 import com.example.spelllistapplication.data.allspellslist.SpellDataModel
 
-fun AddSpellButtonValidation(
+fun addSpellButtonValidation(
     characterHasSpell: MutableState<Boolean>,
     characterSelected: Int,
     item: SpellDataModel,
