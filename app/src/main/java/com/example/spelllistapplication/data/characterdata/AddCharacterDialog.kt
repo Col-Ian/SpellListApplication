@@ -128,12 +128,7 @@ fun AddCharacterDialog(
                     .fillMaxWidth()
                     .heightIn(48.dp)
                     .background(
-                        brush = Brush.horizontalGradient(
-                            listOf(
-                                MaterialTheme.colorScheme.secondary,
-                                MaterialTheme.colorScheme.primary
-                            )
-                        ),
+                        MaterialTheme.colorScheme.tertiary,
                         shape = RoundedCornerShape(50.dp)
                     ),
                 contentAlignment = Alignment.Center
