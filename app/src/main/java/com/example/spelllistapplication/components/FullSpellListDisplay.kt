@@ -143,7 +143,6 @@ fun SpellList(
                     onOptionSelected = onClassSelected,
                     filters = viewModelFilters::onFilterClassAndLevelChange,
                     allOptions = classOptions
-
                 )
 
                 // Spell level filters

@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -14,7 +13,10 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -27,8 +29,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -42,10 +44,9 @@ fun AddCharacterDialog(
     onEvent: (CharacterEvent) -> Unit,
     modifier: Modifier = Modifier
 ){
-    val radioOptionsTop = listOf("Mystic","Precog")
-    val radioOptionsBottom = listOf("Technomancer", "Witchwarper")
+    val classOptions = listOf("Mystic","Precog","Technomancer", "Witchwarper")
     val (selectedOption, onOptionSelected) = remember {
-        mutableStateOf(radioOptionsTop[0] )
+        mutableStateOf(classOptions[0] )
     }
 
     // Default values to 0 since we are converting to Int in our onEvent
@@ -75,29 +76,16 @@ fun AddCharacterDialog(
                         Text(text = "Character Name")
                     }
                 )
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    radioOptionsTop.forEach{ label->
-                        CustomRadioButton(labelValue = label, selectedOption = selectedOption, onOptionSelected = onOptionSelected)
-                        onEvent(CharacterEvent.SetCharacterClass(selectedOption))
-                    }
-                }
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    radioOptionsBottom.forEach{ label->
-                        CustomRadioButton(labelValue = label, selectedOption = selectedOption, onOptionSelected = onOptionSelected)
-                        onEvent(CharacterEvent.SetCharacterClass(selectedOption))
-                    }
-                }
-                val keyAbilityScore = if (selectedOption == radioOptionsTop[0]){
+                DropDownCharacter(
+                    dropDownType = "Class",
+                    selectedOption = selectedOption,
+                    onOptionSelected = onOptionSelected,
+                    allOptions = classOptions,
+                    onEvent = onEvent
+                )
+                val keyAbilityScore = if (selectedOption == classOptions[0]){
                     "Wis"
-                } else if(selectedOption == radioOptionsTop[1] || selectedOption == radioOptionsBottom[0]) {
+                } else if(selectedOption == classOptions[1] || selectedOption == classOptions[2]) {
                     "Int"
                 } else{
                     "Cha"
@@ -140,7 +128,10 @@ fun AddCharacterDialog(
                     onEvent(CharacterEvent.SaveCharacter)
                     onEvent(CharacterEvent.HideAddCharacterDialog)
                 }) {
-                    Text(text = "Create Character")
+                    Text(
+                        text = "Create Character",
+                        fontWeight = FontWeight.Bold
+                    )
                 }
             }
         }
@@ -181,7 +172,10 @@ fun CustomRadioButton(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomNumberTextField(labelValue: String, numberInput: MutableState<String>){
+fun CustomNumberTextField(
+    labelValue: String,
+    numberInput: MutableState<String>
+){
     val maxChar = 2
     OutlinedTextField(
         modifier = Modifier
@@ -202,4 +196,49 @@ fun CustomNumberTextField(labelValue: String, numberInput: MutableState<String>)
             }
         }
     )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun DropDownCharacter(
+    dropDownType: String,
+    selectedOption: String,
+    onOptionSelected: (String) -> Unit,
+    allOptions: List<String>,
+    onEvent: (CharacterEvent) -> Unit
+){
+    val expandedFilter = remember { mutableStateOf(false) }
+
+    ExposedDropdownMenuBox(
+        expanded = expandedFilter.value,
+        onExpandedChange = {newValue -> expandedFilter.value = newValue}
+    ) {
+        TextField(
+            value = selectedOption,
+            onValueChange = onOptionSelected,
+            readOnly = true,
+            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedFilter.value) },
+            modifier = Modifier
+                .menuAnchor(),
+            label = { Text(
+                fontWeight = FontWeight.Bold,
+                text = dropDownType
+            ) },
+            colors = TextFieldDefaults.textFieldColors(focusedLabelColor = Color.Black)
+        )
+        onEvent(CharacterEvent.SetCharacterClass(selectedOption))
+        ExposedDropdownMenu(
+            expanded = expandedFilter.value,
+            onDismissRequest = { expandedFilter.value = false }) {
+            allOptions.forEach { item->
+                DropdownMenuItem(
+                    text = { Text(text = item) },
+                    onClick = {
+                        onOptionSelected(item)
+                        expandedFilter.value = false
+                    }
+                )
+            }
+        }
+    }
 }
