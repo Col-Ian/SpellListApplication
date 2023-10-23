@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
@@ -31,10 +33,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.spellinteractions.DropDownFilter
 import com.example.spelllistapplication.components.spelllistspellcards.SpellCard
+import com.example.spelllistapplication.components.textcomponents.BasicTextFieldComponent
+import com.example.spelllistapplication.components.textcomponents.spelllist.LearnableSpellsText
+import com.example.spelllistapplication.components.textcomponents.spelllist.LevelFilterPlaceholderText
 import com.example.spelllistapplication.data.characterspelllist.CustomListEvent
 import com.example.spelllistapplication.data.characterspelllist.CustomListState
 import com.example.spelllistapplication.viewmodels.FiltersAndSearchBarViewModel
@@ -129,13 +135,11 @@ fun SpellList(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        TextField(
-            value = searchText,
-            onValueChange = viewModelFilters::onSearchTextChange,
-            modifier = Modifier.fillMaxWidth(),
-            placeholder = { Text(text = "Spell Title/School")}
+        BasicTextFieldComponent(
+            searchText = searchText,
+            viewModelFilters = viewModelFilters,
+            placeholderText = "Spell Title/School"
         )
-
         if (showFilters.value){
             Column(Modifier.fillMaxWidth()) {
                 // Class filters
@@ -149,7 +153,7 @@ fun SpellList(
 
                 // Spell level filters
                 if(selectedClass == "All"){
-                    Text(text = "Please select a class to filter levels")
+                    LevelFilterPlaceholderText(text = "Please select a class to filter levels")
                 } else {
                     DropDownFilter(
                         filterType = "Level",
@@ -191,7 +195,7 @@ fun SpellList(
                 // Add Toggle Button for spells for character only if id != -1
             if (characterSelected != -1){
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(text = "Learnable Spells")
+                    LearnableSpellsText(text = "Learnable Spells")
                     Switch(checked = learnableSwitch.learnableSwitch.value, onCheckedChange = {
                         learnableSwitch.learnableSwitch.value = it
                     },

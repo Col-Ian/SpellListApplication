@@ -92,7 +92,7 @@ fun SpellFullDescription(
                     .fillMaxWidth()
                     .padding(4.dp)
                 )
-        Box(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(
