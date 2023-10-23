@@ -17,7 +17,7 @@ fun SpellCardTitle(
 ){
     Text(
         modifier = Modifier
-            .padding(start = 8.dp),
+            .padding(start = 4.dp),
         style = TextStyle(
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold,

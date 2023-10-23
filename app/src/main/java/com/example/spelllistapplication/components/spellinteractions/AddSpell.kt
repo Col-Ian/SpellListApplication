@@ -16,7 +16,6 @@ fun addSpell(
     setTempSpellLevelViewModel: SetTempSpellLevelViewModel,
     context: Context
 ){
-
     for (spellClass in item.spellClassWithLevel){
         if (spellClass.dropLast(2) == setCharacterViewModel.characterClass.value)
             setTempSpellLevelViewModel.tempSpellLevel.intValue = spellClass.takeLast(1).toInt()

@@ -45,42 +45,36 @@ fun CustomSpellCard(
         ) {
             Box(
                 modifier = Modifier
-                    .border(4.dp, MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(8.dp))
+//                    .border(
+//                        4.dp,
+//                        MaterialTheme.colorScheme.primary
+//                        , shape = RoundedCornerShape(8.dp)
+//                    )
                     .fillMaxWidth()
-                    .background(MaterialTheme.colorScheme.background, shape = RoundedCornerShape(8.dp))
+                    .background(
+                        MaterialTheme.colorScheme.primary,
+                        shape = RoundedCornerShape(8.dp)
+                    )
 
             ) {
                 Column(
                     modifier = Modifier
                         .clickable { expanded.value = !expanded.value }
                         .fillMaxWidth()
-                        .padding(vertical = 4.dp),
+                        .padding(4.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     if (expanded.value) {
-                        CLSpellFullDescription(it)
+                        CLSpellFullDescription(
+                            item = it,
+                            onEventCustomList = onEventCustomList,
+                            context = context
+                        )
                     } else {
                         CLSpellPreview(
-                            it
-                        )
-                    }
-                    IconButton(
-                        onClick = {
-                            removeSpell(customList = it, onEvent = onEventCustomList)
-                            Toast.makeText(context, "Spell removed.", Toast.LENGTH_SHORT).show()
-                        },
-                        modifier = Modifier
-                            .background(
-                                MaterialTheme.colorScheme.primary,
-                                shape = CircleShape
-                            )
-                            .size(24.dp)
-                            .padding(2.dp),
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Delete,
-                            contentDescription = "Add to character list",
-                            tint = MaterialTheme.colorScheme.background
+                            item = it,
+                            onEventCustomList = onEventCustomList,
+                            context = context
                         )
                     }
                 }

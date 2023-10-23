@@ -1,6 +1,5 @@
-package com.example.spelllistapplication.components.textcomponents.spellcard
+package com.example.spelllistapplication.components.textcomponents.customlist
 
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -11,17 +10,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun SpellCardDescription(
+fun SpellLevelFootNotes(
     text: String
 ){
-
     Text(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 8.dp, vertical = 4.dp),
+            .padding(horizontal = 8.dp),
         style = TextStyle(
-            fontSize = 16.sp,
-            fontStyle = FontStyle.Normal
+            fontSize = 14.sp,
+            fontStyle = FontStyle.Normal,
         ),
         text = text
     )

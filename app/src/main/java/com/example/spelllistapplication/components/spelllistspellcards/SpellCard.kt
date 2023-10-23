@@ -105,14 +105,14 @@ fun SpellCard(
         ) {
             Box(
                 modifier = Modifier
-                    .border(
-                        4.dp,
-                        MaterialTheme.colorScheme.primary,
-                        shape = RoundedCornerShape(8.dp)
-                    )
+//                    .border(
+//                        4.dp,
+//                        MaterialTheme.colorScheme.primary,
+//                        shape = RoundedCornerShape(8.dp)
+//                    )
                     .fillMaxWidth()
                     .background(
-                        MaterialTheme.colorScheme.background,
+                        MaterialTheme.colorScheme.primary,
                         shape = RoundedCornerShape(8.dp)
                     )
 
@@ -121,43 +121,50 @@ fun SpellCard(
                     modifier = Modifier
                         .clickable { expanded.value = !expanded.value }
                         .fillMaxWidth()
-                        .padding( vertical = 4.dp)                    ,
+                        .padding( 4.dp)                    ,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     if (expanded.value) {
-                        SpellFullDescription(item)
+                        SpellFullDescription(
+                            item = item,
+                            onEventCustomList = onEventCustomList,
+                            context = context,
+                            characterCanLearnSpell = characterCanLearnSpell
+                        )
                     } else {
                         SpellPreview(
-                            item
+                            item = item,
+                            onEventCustomList = onEventCustomList,
+                            context = context,
+                            characterCanLearnSpell = characterCanLearnSpell
                         )
                     }
 
-                    if (characterCanLearnSpell) {
-                        IconButton(
-                            onClick = {
-                                addSpell(
-                                    item = item,
-                                    onEventCustomList = onEventCustomList,
-                                    setCharacterViewModel = setCharacterViewModel,
-                                    setTempSpellLevelViewModel = setTempSpellLevelViewModel,
-                                    context
-                                )
-                            },
-                            modifier = Modifier
-                                .background(
-                                    MaterialTheme.colorScheme.secondary,
-                                    shape = CircleShape
-                                )
-                                .size(24.dp),
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.Add,
-                                contentDescription = "Add Spell",
-                                tint = MaterialTheme.colorScheme.background
-                            )
-                        }
-                        Spacer(modifier = Modifier.padding(1.dp))
-                    }
+//                    if (characterCanLearnSpell) {
+//                        IconButton(
+//                            onClick = {
+//                                addSpell(
+//                                    item = item,
+//                                    onEventCustomList = onEventCustomList,
+//                                    setCharacterViewModel = setCharacterViewModel,
+//                                    setTempSpellLevelViewModel = setTempSpellLevelViewModel,
+//                                    context
+//                                )
+//                            },
+//                            modifier = Modifier
+//                                .background(
+//                                    MaterialTheme.colorScheme.secondary,
+//                                    shape = CircleShape
+//                                )
+//                                .size(24.dp),
+//                        ) {
+//                            Icon(
+//                                imageVector = Icons.Default.Add,
+//                                contentDescription = "Add Spell",
+//                                tint = MaterialTheme.colorScheme.background
+//                            )
+//                        }
+//                    }
                 }
             }
         }

@@ -16,6 +16,8 @@ val OnSurface = Color.White
 val OnBackground = Color.White
 
 val DarkBlue = Color(46, 61, 102)
+val MediumDarkBlue = Color(20,91,136)
+
 val LightBlue = Color(193,226,244)
 val MediumBlue = Color(60,170,219)
 val BackgroundFadeBlue = Color(200, 227, 238)
