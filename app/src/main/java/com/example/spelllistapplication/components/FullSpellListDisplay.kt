@@ -1,5 +1,6 @@
 package com.example.spelllistapplication.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -209,38 +211,44 @@ fun SpellList(
             }
         }
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Column(
+            modifier = Modifier
+                .background(MaterialTheme.colorScheme.background)
+        ) {
+            Spacer(modifier = Modifier.height(8.dp))
 
-        if(learnableSwitch.learnableSwitch.value) {
-            LazyColumn(
-                modifier = modifier
-            ) {
+            if(learnableSwitch.learnableSwitch.value) {
+                LazyColumn(
+                    modifier = modifier
+                ) {
 
-                items(spellData.sortedBy { it.spellTitle }) { item ->
-                    SpellCard(
-                        customListState = customListState,
-                        onEventCustomList = onEventCustomList,
-                        item,
-                        characterSelected = characterSelected,
-                        showAllSpells = false
-                    )
+                    items(spellData.sortedBy { it.spellTitle }) { item ->
+                        SpellCard(
+                            customListState = customListState,
+                            onEventCustomList = onEventCustomList,
+                            item,
+                            characterSelected = characterSelected,
+                            showAllSpells = false
+                        )
+                    }
                 }
-            }
-        } else{
-            LazyColumn(
-                modifier = modifier
-            ){
+            } else{
+                LazyColumn(
+                    modifier = modifier
+                ){
 
-                items(spellData.sortedBy { it.spellTitle }){ item ->
-                    SpellCard(
-                        customListState = customListState,
-                        onEventCustomList = onEventCustomList,
-                        item,
-                        characterSelected = characterSelected,
-                        showAllSpells = true
-                    )
+                    items(spellData.sortedBy { it.spellTitle }){ item ->
+                        SpellCard(
+                            customListState = customListState,
+                            onEventCustomList = onEventCustomList,
+                            item,
+                            characterSelected = characterSelected,
+                            showAllSpells = true
+                        )
+                    }
                 }
             }
         }
+
     }
 }

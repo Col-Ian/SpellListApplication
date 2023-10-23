@@ -11,7 +11,7 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val DarkPurple = Color(0xFF16101A)
-val Surface = Color(100,100,100)
+val Surface = Color(140,140,140)
 val OnSurface = Color.White
 val OnBackground = Color.White
 
