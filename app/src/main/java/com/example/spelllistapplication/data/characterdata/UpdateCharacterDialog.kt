@@ -107,19 +107,17 @@ fun UpdateCharacterDialog(
                     .fillMaxWidth()
                     .heightIn(48.dp)
                     .background(
-                        brush = Brush.horizontalGradient(
-                            listOf(
-                                MaterialTheme.colorScheme.secondary,
-                                MaterialTheme.colorScheme.primary
-                            )
-                        ),
+                        MaterialTheme.colorScheme.tertiary,
                         shape = RoundedCornerShape(50.dp)
                     ),
                 contentAlignment = Alignment.Center
 
             ){
                 Button(
-                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Transparent,
+                        contentColor = MaterialTheme.colorScheme.onBackground
+                    ),
                     onClick = {
                     setCharacterViewModel.characterIdTemp.intValue = -1
                     onCharacterEvent(CharacterEvent.UpdateCharacter)

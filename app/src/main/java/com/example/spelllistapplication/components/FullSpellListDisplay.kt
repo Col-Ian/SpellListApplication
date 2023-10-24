@@ -113,6 +113,7 @@ fun SpellList(
         "Galaxy Exploration Manual",
         "Interstellar Species",
         "Near Space",
+        "Pact Worlds",
         "Ports of Call"
     )
 

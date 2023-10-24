@@ -58,9 +58,11 @@ fun SpellFullDescription(
                 SpellCardTitle(text = "Casting Time")
                 SpellCardSubtitle(text = " ${item.spellCastingTime}")
             }
-            Row {
-                SpellCardTitle(text = "Range")
-                SpellCardSubtitle(text = " ${item.spellRange}")
+            if (item.spellRange != "") {
+                Row {
+                    SpellCardTitle(text = "Range")
+                    SpellCardSubtitle(text = " ${item.spellRange}")
+                }
             }
             if (item.spellTargets != "") {
                 Row {
@@ -85,18 +87,17 @@ fun SpellFullDescription(
                 SpellCardSubtitle(text = " ${item.spellDuration}")
             }
             if (item.spellSavingThrow != "" && item.spellResistance != "") {
-                Column {
+                Column{
                     Row {
                         SpellCardTitle(text = "Saving Throw")
                         SpellCardSubtitle(text = " ${item.spellSavingThrow}")
                         Text(text = ";")
                     }
-                    Row {
+                    Row{
                         SpellCardTitle(text = "Spell Resistance")
                         SpellCardSubtitle(text = "  ${item.spellResistance}")
                     }
                 }
-
             }
         }
         Spacer(

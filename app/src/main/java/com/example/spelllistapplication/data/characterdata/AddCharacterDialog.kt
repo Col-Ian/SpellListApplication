@@ -129,7 +129,10 @@ fun AddCharacterDialog(
 
             ){
                 Button(
-                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Transparent,
+                        contentColor = MaterialTheme.colorScheme.onBackground
+                    ),
                     onClick = {
                         if(state.characterName.isEmpty()){
                             Toast.makeText(
