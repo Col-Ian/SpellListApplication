@@ -24,6 +24,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.spelllistapplication.components.textcomponents.AlertDialogHeading
+import com.example.spelllistapplication.components.textcomponents.CustomNumberTextField
 import com.example.spelllistapplication.viewmodels.SetCharacterViewModel
 
 
@@ -35,8 +37,7 @@ fun UpdateCharacterDialog(
     character: Character,
     modifier: Modifier = Modifier
 ){
-    val radioOptionsTop = listOf("Mystic","Precog")
-    val radioOptionsBottom = listOf("Technomancer", "Witchwarper")
+    val classOptions = listOf("Mystic","Precog","Technomancer", "Witchwarper")
 
     val setCharacterClass: SetCharacterViewModel = viewModel()
     val characterClass = setCharacterClass.characterClass.value
@@ -58,7 +59,7 @@ fun UpdateCharacterDialog(
             onCharacterEvent(CharacterEvent.ResetCharacterState)
             onCharacterEvent(CharacterEvent.HideUpdateCharacterDialog)
         },
-        title = { Text(text = "Update Character")},
+        title = { AlertDialogHeading(text = "Update Character") },
         text = {
             Column(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -73,9 +74,9 @@ fun UpdateCharacterDialog(
                     }
                 )
                 Text(text = characterClass)
-                val keyAbilityScore = if (characterClass == radioOptionsTop[0]){
+                val keyAbilityScore = if (characterClass == classOptions[0]){
                     "Wis"
-                } else if(characterClass == radioOptionsTop[1] || characterClass == radioOptionsBottom[0]) {
+                } else if(characterClass == classOptions[1] || characterClass == classOptions[2]) {
                     "Int"
                 } else{
                     "Cha"

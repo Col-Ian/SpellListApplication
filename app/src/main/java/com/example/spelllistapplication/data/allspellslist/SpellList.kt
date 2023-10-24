@@ -871,7 +871,7 @@ var SpellData = listOf(
       spellResistance = "yes (harmless)",
       spellDescriptionFull = "You create a strong temporary psychic link between two creatures that allows them to act almost as one. This spell works like lesser battlemind link, but the enhancement bonus to initiative rolls is +4, and the spell ends if the targets are more than 500 feet apart, rather than 200 feet apart. In addition, if the targets threaten the same enemy, they are considered to be flanking that foe regardless of their actual positions. When one of the targets hits a foe with a ranged attack, they can, as a reaction, apply the effects of covering fire or harrying fire against that foe for the other target of this spell. Finally, each target gains a +4 enhancement bonus to attacks of opportunity if they both attack the same creature due to the same triggering action on that creature’s part.",
   ), SpellDataModel(
-      spellClassWithLevel = listOf("Mystic 1",),
+      spellClassWithLevel = listOf("Mystic 1"),
       spellClassesWithLevelPreview = listOf("Myst 1"),
       spellTitle = "Battlemind Link, Lesser",
       spellPreviewDescription = "Creates a psychic link that gives a bonus to initiative.",
@@ -1307,109 +1307,135 @@ var SpellData = listOf(
               "1–2\tAffection: Cats purr, nuzzle, and perch atop one creature in the emanation. The creature can reroll a saving throw they just failed against a fear, mind-affecting, or pain effect and use the second result.\n" +
               "3–4\tMischief: Cats crowd, distract, and cling to one creature in the emanation, successfully providing your choice of covering fire or harrying fire.\n" +
               "5–6\tSpite: Cats claw and bite one creature in the emanation. Make a melee attack against KAC, for which you can use your caster level in place of your base attack bonus and your spellcasting ability modifier in place of your Strength modifier. The attack deals 4d6 slashing damage.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1"),
+      spellTitle = "Carnivorous",
+      spellPreviewDescription = "Your mouth expands to twice its normal size and fills with rows of razor-sharp teeth, giving you a bite attack.",
+      spellSourceBookPreview = "AdvP#2",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #2: Temple of the Twelve pg. 51",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "personal",
+      spellTargets = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "",
+      spellResistance = "",
+      spellDescriptionFull = "Your mouth expands to twice its normal size and fills with rows of razor-sharp teeth, giving you a bite attack. This attack is treated as an attack with a basic melee weapon with the operative special quality for purposes of proficiency and Weapon Specialization and for other abilities that function with basic melee operative weapons. You can make this attack without using any limbs and when pinned.\n" +
+              "\n"+
+              "The attack deals 1d4 piercing damage. At 7th level, the damage increases to 2d4. At 10th level, it increases to 2d8. At 14th level, it increases to 3d8. At 16th level, it increases to 4d8. At 18th level, it increases to 5d8. At 20th level, it increases to 10d8.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Tchn 2","WtchW 2"),
+      spellTitle = "Caustic Conversion",
+      spellPreviewDescription = "Fling magical nanites as a ranged attack that deals 4d4 acid damage to one target, plus 5 additional damage in subsequent rounds.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "342",
+      spellSourceBookFull = "Core Rulebook pg. 342",
+      spellSchool = "evocation (acid)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one creature or object",
+      spellDuration = "1 round + 1 round/3 levels",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "You fling magical nanites that convert water vapor around your target into deadly acid. Make a ranged attack roll against your target’s EAC. If you hit, the target takes 4d4 acid damage and it takes 5 additional acid damage at the end of its turn each round for the spell’s duration.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("WtchW 1"),
+      spellTitle = "Caustic Fissure",
+      spellPreviewDescription = "You tear a thin fissure in reality, releasing a blaze of caustic energy.",
+      spellSourceBookPreview = "AdvP#48",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #48: Masters of Time and Space pg. 51",
+      spellSchool = "evocation (acid)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "(Effect) fissure of variable dimensions (S)",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Reflex partial, see text",
+      spellResistance = "no",
+      spellDescriptionFull = "You tear a thin fissure in reality, releasing a blaze of caustic energy. The fissure must be oriented on a horizontal surface that can fit its length, which depends on the level of the spell; the fissure runs through the center of the affected squares. The height of the blaze of caustic energy released from the fissure and the damage it deals to creatures who pass through it or end their turn in one of the fissure’s squares(no save) also depend on the level of the spell.\n" +
+              "\n"+
+              "If you evoke the fissure so that it appears where creatures are, each creature takes damage as if passing through the blaze and must immediately attempt a Reflex saving throw. On a failure, the creature falls prone.\n" +
+              "\n"+
+              "1st: When you cast caustic fissure as a 1st-level spell, the fissure is 10 feet long. The blaze of caustic energy rises to a height of 10 feet above the fissure and deals 2d4 acid damage.\n" +
+              "\n"+
+              "2nd: When you cast caustic fissure as a 2nd-level spell, the fissure is 20 feet long. The blaze of caustic energy rises to a height of 10 feet above the fissure and deals 4d4 acid damage.\n" +
+              "\n"+
+              "3rd: When you cast caustic fissure as a 3rd-level spell, the fissure is 30 feet long. The blaze of caustic energy rises to a height of 20 feet above the fissure and deals 6d4 acid damage.\n" +
+              "\n"+
+              "4th: When you cast caustic fissure as a 4th-level spell, the fissure is 40 feet long. The blaze of caustic energy rises to a height of 25 feet above the fissure and deals 6d6 acid damage.\n" +
+              "\n"+
+              "5th: When you cast caustic fissure as a 5th-level spell, the fissure is 60 feet long. The blaze of caustic energy rises to a height of 30 feet above the fissure and deals 8d6 acid damage.\n" +
+              "\n"+
+              "6th: When you cast caustic fissure as a 6th-level spell,the fissure is 80 feet long. The blaze of caustic energy rises to a height of 40 feet above the fissure and deals 10d6 acid damage.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Technomancer 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Tchn 2"),
+      spellTitle = "Cavitation Sphere",
+      spellPreviewDescription = "You cause a rapid change of pressure in liquid to form vapor-filled cavities, causing damaging localized shock waves.",
+      spellSourceBookPreview = "AdvP#36",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #36: Professional Courtesy pg. 51",
+      spellSchool = "evocation (sonic)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will negates (harmless) and Reflex half (see text)",
+      spellResistance = "no",
+      spellDescriptionFull = "You cause a rapid change of pressure in liquid to form vapor-filled cavities, causing damaging localized shock waves.\n" +
+              "\n"+
+              "The target is surrounded by a series of quickly forming and dissipating rings that rotate around it. These rings are harmless to the target, but each creature adjacent to the target (in any direction, including diagonally and above or below) must attempt a Reflex saving throw or take 4d10 sonic damage. A successful save halves this damage.\n" +
+              "\n"+
+              "This spell can be cast on a target that isn’t entirely submerged in water, but adjacent creatures that aren’t at least partially submerged are unaffected by the spell.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 6"),
+      spellClassesWithLevelPreview = listOf("Tchn 6"),
+      spellTitle = "Chain Surge",
+      spellPreviewDescription = "Deal 13d12 electricity damage to primary target and up to 10 secondary targets; one of the primary target’s electrical devices stops functioning for 1 round.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "342",
+      spellSourceBookFull = "Core Rulebook pg. 342",
+      spellSchool = "evocation (electricity)",
+      spellCastingTime = "1 standard action",
+      spellRange = "long (400 ft. + 40 ft./level)",
+      spellTargets = "one primary target and up to 10 secondary targets, no two of which can be more than 30 ft. from the primary target",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex half, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "Choose a primary target as well as up to 10 secondary targets within 30 feet of the primary target. The primary target must be carrying or wielding some kind of equipment that uses electricity. This spell causes the primary target’s electrical equipment to surge with deadly electricity, which arcs out to strike the secondary targets, dealing 13d12 electricity damage to all targets chosen.\n" +
+              "\n" +
+              "If the primary target fails its Reflex save, the spell also shorts out one of that target’s electrical items (your choice) for 1 round, meaning the primary target can’t use it for that period. If the primary target negates the effect entirely (such as with evasion), the secondary targets also suffer no effects.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","WtchW 1"),
+      spellTitle = "Change Attitude",
+      spellPreviewDescription = "You alter the target’s emotions and perceptions concerning a particular creature or topic.",
+      spellSourceBookPreview = "AdvP#44",
+      spellSourcePage = "49",
+      spellSourceBookFull = "Adventure Path #44: Allies Against the Eye pg. 49",
+      spellSchool = "enchantment (compulsion, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./level)",
+      spellTargets = "one living creature",
+      spellDuration = "1 hour/level (D)",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You alter the target’s emotions and perceptions concerning a particular creature or topic, which can be as specific as “Vindaskayo Swarmripper, the current High Despot of the Veskarium” or as general as “technology.” The target’s attitude toward the chosen topic improves or worsens (your choice); the number of steps the target’s attitude changes is determined by the spell’s level (below). For example, you could use a 1st-level change attitude to improve the attitude of a target that’s normally indifferent toward AbadarCorp to make it friendly instead.\n" +
+              "\n" +
+              "This spell doesn’t enable the target to be controlled as if it were an automaton, nor does it influence the target’s behavior in any way beyond its attitude. The target can discriminate between general creatures, topics, and individuals based on its experiences; for example, a vesk influenced by this spell to have a better attitude toward humans might begin with a friendly attitude toward all humans they meet, but if an individual human gravely insulted the target’s honor, their attitude can (and likely would) adjust to unfriendly or hostile toward that individual—and if the target was attacked by humans, the vesk would fight back.\n" +
+              "\n" +
+              "1st: The spell adjusts the target’s attitude by one step.\n" +
+              "\n" +
+              "2nd: The spell adjusts the target’s attitude by two steps.\n" +
+              "\n" +
+              "3rd: The spell adjusts the target’s attitude by three steps.\n" +
+              "\n" +
+              "4th: The spell adjusts the target’s attitude by four steps.",
   )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
-//, SpellDataModel(
-//      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
-//      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
-//      spellTitle = "",
-//      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#",
-//      spellSourcePage = "",
-//      spellSourceBookFull = "Adventure Path",
-//      spellSchool = "",
-//      spellCastingTime = "",
-//      spellRange = "",
-//      spellTargets = "",
-//      spellDuration = "",
-//      spellSavingThrow = "none",
-//      spellResistance = "no",
-//      spellDescriptionFull = "",
-//  )
 )
 
 
