@@ -59,6 +59,8 @@ class CustomListViewModel(
                 val spellCastingTime = state.value.spellCastingTime
                 val spellRange = state.value.spellRange
                 val spellTargets = state.value.spellTargets
+                val spellArea = state.value.spellArea
+                val spellEffect = state.value.spellEffect
                 val spellDuration = state.value.spellDuration
                 val spellSavingThrow = state.value.spellSavingThrow
                 val spellResistance = state.value.spellResistance
@@ -76,6 +78,8 @@ class CustomListViewModel(
                     spellCastingTime = spellCastingTime,
                     spellRange = spellRange,
                     spellTargets = spellTargets,
+                    spellArea = spellArea,
+                    spellEffect = spellEffect,
                     spellDuration = spellDuration,
                     spellSavingThrow = spellSavingThrow,
                     spellResistance = spellResistance,
@@ -237,6 +241,21 @@ class CustomListViewModel(
                         spellSavingThrow = event.spellSavingThrow,
                         spellResistance = event.spellResistance,
                         spellDescriptionFull = event.spellDescriptionFull
+                    )
+                }
+            }
+
+            is CustomListEvent.SetSpellArea -> {
+                _state.update {
+                    it.copy(
+                        spellArea = event.spellArea
+                    )
+                }
+            }
+            is CustomListEvent.SetSpellEffect -> {
+                _state.update {
+                    it.copy(
+                        spellEffect = event.spellEffect
                     )
                 }
             }

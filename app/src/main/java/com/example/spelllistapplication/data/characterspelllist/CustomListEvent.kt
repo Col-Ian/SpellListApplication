@@ -17,6 +17,8 @@ sealed interface CustomListEvent {
     data class SetSpellCastingTime(val spellCastingTime:String):CustomListEvent
     data class SetSpellRange(val spellRange:String):CustomListEvent
     data class SetSpellTargets(val spellTargets:String):CustomListEvent
+    data class SetSpellArea(val spellArea:String):CustomListEvent
+    data class SetSpellEffect(val spellEffect:String):CustomListEvent
     data class SetSpellDuration(val spellDuration:String):CustomListEvent
     data class SetSpellSavingThrow(val spellSavingThrow:String):CustomListEvent
     data class SetSpellResistance(val spellResistance:String):CustomListEvent
@@ -34,6 +36,8 @@ sealed interface CustomListEvent {
         val spellCastingTime:String,
         val spellRange:String,
         val spellTargets:String,
+        val spellArea: String,
+        val spellEffect: String,
         val spellDuration:String,
         val spellSavingThrow:String,
         val spellResistance:String,

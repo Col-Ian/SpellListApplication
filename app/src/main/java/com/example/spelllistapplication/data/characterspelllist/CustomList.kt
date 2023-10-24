@@ -16,6 +16,8 @@ data class CustomList(
     val spellCastingTime: String,
     val spellRange: String,
     val spellTargets: String,
+    val spellArea: String,
+    val spellEffect: String,
     val spellDuration: String,
     val spellSavingThrow: String,
     val spellResistance: String,

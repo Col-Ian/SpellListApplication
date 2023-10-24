@@ -62,6 +62,18 @@ fun CLSpellFullDescription(
                     SpellCardSubtitle(text = " ${item.spellTargets}")
                 }
             }
+            if (item.spellArea != "") {
+                Row {
+                    SpellCardTitle(text = "Area")
+                    SpellCardSubtitle(text = " ${item.spellArea}")
+                }
+            }
+            if (item.spellEffect != "") {
+                Row {
+                    SpellCardTitle(text = "Effect")
+                    SpellCardSubtitle(text = " ${item.spellEffect}")
+                }
+            }
             Row {
                 SpellCardTitle(text = "Duration")
                 SpellCardSubtitle(text = " ${item.spellDuration}")
