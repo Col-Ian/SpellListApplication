@@ -19,7 +19,7 @@ fun SpellCardTitle(
         modifier = Modifier
             .padding(start = 4.dp),
         style = TextStyle(
-            fontSize = 16.sp,
+            fontSize = 14.sp,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Normal
         ),

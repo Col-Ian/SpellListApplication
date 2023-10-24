@@ -17,7 +17,7 @@ fun SpellCardSubtitle(
     Text(
         modifier = Modifier,
         style = TextStyle(
-            fontSize = 16.sp,
+            fontSize = 14.sp,
             fontWeight = FontWeight.Normal,
             fontStyle = FontStyle.Normal
         ),

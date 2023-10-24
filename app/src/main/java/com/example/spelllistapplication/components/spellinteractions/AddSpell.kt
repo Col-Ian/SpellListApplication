@@ -41,6 +41,8 @@ fun addSpell(
             spellCastingTime = item.spellCastingTime,
             spellRange = item.spellRange,
             spellTargets = item.spellTargets,
+            spellArea = item.spellArea,
+            spellEffect = item.spellEffect,
             spellDuration = item.spellDuration,
             spellSavingThrow = item.spellSavingThrow,
             spellResistance = item.spellResistance,
