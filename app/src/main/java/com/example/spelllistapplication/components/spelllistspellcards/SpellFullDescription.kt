@@ -44,7 +44,7 @@ fun SpellFullDescription(
             SpellCardHeading(text = item.spellTitle)
             Row {
                 SpellCardTitle(text = "Source")
-                SpellCardSubtitle(text = " ${item.spellSourceBookFull}")
+                SpellCardSubtitle(text = " ${item.spellSourceBookFull} pg. ${item.spellSourcePage}")
             }
             Row {
                 SpellCardTitle(text = "Classes")
@@ -64,12 +64,6 @@ fun SpellFullDescription(
                     SpellCardSubtitle(text = " ${item.spellRange}")
                 }
             }
-            if (item.spellTargets != "") {
-                Row {
-                    SpellCardTitle(text = "Targets")
-                    SpellCardSubtitle(text = " ${item.spellTargets}")
-                }
-            }
             if (item.spellArea != "") {
                 Row {
                     SpellCardTitle(text = "Area")
@@ -80,6 +74,12 @@ fun SpellFullDescription(
                 Row {
                     SpellCardTitle(text = "Effect")
                     SpellCardSubtitle(text = " ${item.spellEffect}")
+                }
+            }
+            if (item.spellTargets != "") {
+            Row {
+                SpellCardTitle(text = "Targets")
+                SpellCardSubtitle(text = " ${item.spellTargets}")
                 }
             }
             Row {

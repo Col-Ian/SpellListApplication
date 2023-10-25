@@ -47,7 +47,7 @@ fun SpellPreview(
         ) {
             SpellCardFootNotes(text = item.spellClassesWithLevelPreview.joinToString { it })
 
-            SpellCardFootNotes(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
+            SpellCardFootNotes(text = "${item.spellSourceBookPreview} pg. ${item.spellSourcePage}")
         }
         Box(
             modifier = Modifier

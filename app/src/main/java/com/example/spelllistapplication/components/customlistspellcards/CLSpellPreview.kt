@@ -46,7 +46,7 @@ fun CLSpellPreview(
         ) {
             SpellCardFootNotes(text = "Level ${item.spellLevel}")
 
-            SpellCardFootNotes(text = "${item.spellSourceBookPreview} ${item.spellSourcePage}")
+            SpellCardFootNotes(text = "${item.spellSourceBookPreview} pg. ${item.spellSourcePage}")
 
         }
         Box(
