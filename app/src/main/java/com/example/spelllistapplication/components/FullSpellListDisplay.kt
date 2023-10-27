@@ -114,7 +114,8 @@ fun SpellList(
         "Interstellar Species",
         "Near Space",
         "Pact Worlds",
-        "Ports of Call"
+        "Ports of Call",
+        "Redshift Rally"
     )
 
     // Default to all books selected

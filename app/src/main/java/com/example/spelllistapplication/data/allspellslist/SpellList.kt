@@ -6,7 +6,7 @@ package com.example.spelllistapplication.data.allspellslist
 //      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
 //      spellTitle = "",
 //      spellPreviewDescription = "",
-//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#","GaExM","Ports","PactW",
+//      spellSourceBookPreview = "CRB","Ch Op","Glt Mgc","AdvP#","NearS","DrftCs","Armory","Int Sp","Alien#","GaExM","Ports","PactW","RdsR",
 //      spellSourcePage = "",
 //      spellSourceBookFull = "Adventure Path",
 //      spellSchool = "",
@@ -4011,5 +4011,1214 @@ var SpellData = listOf(
               "2nd: When you cast extra sense as a 2nd-level spell, the target can emit a piercing sound and, by listening to the echoes, gain blindsight (sound) with a range of 20 feet and blindsense (sound) with a range of 40 feet for 1 round. The sound emitted is audible to others in the 40-foot area, and the target emits the sound as if it were part of combat banter (Core Rulebook 249). The target can decide not to emit the sound but doesn’t gain the benefits this spell grants until they do so. This spell lasts 10 minutes/level.\n" +
               "\n" +
               "3rd: When you cast extra sense as a 3rd-level spell, it functions as the 1st-level version, except the range of the blindsense extends to 60 feet, the target gains blindsight (of the same type as the blindsense) with a range of 30 feet, and the spell lasts 10 minutes/level.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 0"),
+      spellClassesWithLevelPreview = listOf("Tchn 0"),
+      spellTitle = "Fabricate Scrap",
+      spellPreviewDescription = "You turn 1 bulk of inert matter, such as debris, dust, rocks, or other unattended 0-level items, into 1 bulk of junked electronic equipment.",
+      spellSourceBookPreview = "PactW",
+      spellSourcePage = "205",
+      spellSourceBookFull = "Pact Worlds",
+      spellSchool = "universal; see text",
+      spellCastingTime = "1 standard action",
+      spellRange = "close",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "creates or converts 1 bulk of inert electronic equipment",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will negates (object)",
+      spellResistance = "yes (object); see text",
+      spellDescriptionFull = "You turn 1 bulk of inert matter, such as debris, dust, rocks, or other unattended 0-level items, into 1 bulk of junked electronic equipment suitable for targeting with spells such as battle junkbot, handy junkbot, healing junkbot, junk armor, junk restraints, or junksword. The junked electronics have no resale value and can’t be repaired into any functioning item. Any direct examination by a character trained in Engineering or Physical Science reveals the useless nature of the junk.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","WtchW 0"),
+      spellTitle = "Fatigue",
+      spellPreviewDescription = "Touched creature is fatigued.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "354",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "necromancy",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Fortitude negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You make a melee attack against a single target’s EAC, adding your key ability score modifier to the attack roll instead of your Strength modifier if it is higher. The target must succeed at a Fortitude save or be fatigued for the spell’s duration. This spell has no effect on a creature that is already fatigued. Casting this spell doesn’t provoke attacks of opportunity.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","WtchW 1"),
+      spellTitle = "Fear",
+      spellPreviewDescription = "All targets within a cone are panicked for 1 minute.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "354",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "enchantment (emotion, fear, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "see text",
+      spellTargets = "see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "see text",
+      spellSavingThrow = "Will partial",
+      spellResistance = "yes",
+      spellDescriptionFull = "With a single mental nudge, you can unlock one or more targets’ deepest nightmares. A target that succeeds at its Will saving throw against this spell is shaken for 1 round.\n" +
+              "\n" +
+              "1st: When you cast fear as a 1st-level spell, it affects one living creature of CR 4 or lower at close range (25 feet + 5 feet/2 levels). The target must succeed at a Will saving throw or be frightened for 1d4 rounds.\n" +
+              "\n" +
+              "2nd: When you cast fear as a 2nd-level spell, it affects one living creature of CR 4 or lower per 3 caster levels at medium range (100 feet + 10 feet/level), no two of which can be more than 30 feet apart. Each target must succeed at a Will saving throw or be frightened for 1 minute.\n" +
+              "\n" +
+              "3rd: When you cast fear as 3rd-level spell, it affects all living creatures of CR 8 or lower in 30-foot cone-shaped burst. Each target must succeed at a Will save or become panicked for 1 minute. If cornered, a panicked creature begins cowering.\n" +
+              "\n" +
+              "4th: When you cast fear as 4th-level spell, it affects all living creatures in 30-foot cone-shaped burst regardless of CR. Each target must succeed at a Will save or become panicked for 1 minute. If cornered, a panicked creature begins cowering.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Precog 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5","Prcg 5"),
+      spellTitle = "Feeblemind",
+      spellPreviewDescription = "Target’s Intelligence and Charisma scores drop to 1.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "354",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "enchantment (compulsion, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You fire a scintillating ray at your target, making a ranged attack against your target’s EAC, but you can add your key ability score bonus to this attack instead of your Dexterity modifier if it is higher. If you hit and your target fails its Will saving throw, the target creature’s Intelligence and Charisma scores each drop to 1 (a modifier of –5). The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. It still knows who its friends are and can follow them and even protect them. The target remains in this state until a miracle, psychic surgery, wish, or similar spell is used to cancel the effect. It can’t be removed by effects like break enchantment.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("WtchW 3"),
+      spellTitle = "Fey Pranksters",
+      spellPreviewDescription = "You summon a 10-foot-by-10-foot swarm of mischievous fey creatures armed with various tiny weapons who fly around chaotically.",
+      spellSourceBookPreview = "AdvP#30",
+      spellSourcePage = "53",
+      spellSourceBookFull = "Adventure Path #30: Puppets Without Strings",
+      spellSchool = "conjuration (summoning)",
+      spellCastingTime = "1 round",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "1 predator swarm (tiny rainbow-colored fey)",
+      spellDuration = "1 minute",
+      spellSavingThrow = "partial (see text)",
+      spellResistance = "no",
+      spellDescriptionFull = "This spell was created and used to win a Nerundel Halls prank challenge a few years ago. You summon a 10-foot-by-10-foot swarm of mischievous fey creatures armed with various tiny weapons who fly around chaotically. The swarm understands and obeys your commands, and has the statistics of a predator swarm with the exceptions noted below.\n" +
+              "\n" +
+              "The swarm has the fey type (instead of animal) and an Intelligence modifier of +0. Each round, the swarm deals 1d6 nonlethal slashing damage to creatures in its squares. If the swarm damages a target, it grants the benefit of harrying fire to the next creature that attacks that target. A swarm of fey pranksters does not have the usual distraction ability of a predator swarm; instead, all creatures sharing spaces with a swarm of fey pranksters must attempt a saving throw against a fey prank. The exact nature of the prank, and the required saving throw, is determined randomly:\n" +
+              "\n" +
+              " d6 : Prank           : Saving Throw : Effect\n" +
+              "1–2 : Earworm         : Will         : Target is deafened for 1 minute.\n" +
+              "3–4 : Pie in the Face : Reflex       : Target is blinded for 1 minute, but can remove this condition with a full action.\n" +
+              "5–6 : Tickle Attack   : Fortitude    : Target drops held item, chosen randomly.\n" +
+              "\n" +
+              "Creatures who save against a fey prank are immune to fey pranks for 1 day. If the swarm is killed, all fey prank effects end.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 6"),
+      spellClassesWithLevelPreview = listOf("Myst 6"),
+      spellTitle = "Fist of Damoritosh",
+      spellPreviewDescription = "Deal 12d8 damage with the force descriptor to creatures in a line and knock them prone.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "74",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation (force)",
+      spellCastingTime = "1 standard action",
+      spellRange = "120 ft.",
+      spellTargets = "",
+      spellArea = "line-shaped burst",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex half, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You form a fist of divine energy and thrust it outward, damaging and potentially knocking down your enemies. You deal 12d8 damage with the force descriptor to each creature in the area. A creature that fails its Reflex save is additionally knocked prone.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 3"),
+      spellClassesWithLevelPreview = listOf("Tchn 3"),
+      spellTitle = "Flash Boil",
+      spellPreviewDescription = "You cause water in the spell’s area to instantly boil, dealing 7d8 fire damage to creatures that fail a Reflex save.",
+      spellSourceBookPreview = "AdvP#36",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #36: Professional Courtesy",
+      spellSchool = "evocation (fire)",
+      spellCastingTime = "1 standard action",
+      spellRange = "30 ft.",
+      spellTargets = "",
+      spellArea = "cone-shaped burst",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex partial",
+      spellResistance = "yes",
+      spellDescriptionFull = "You cause water in the spell’s area to instantly boil, dealing 7d8 fire damage to creatures that fail a Reflex save. Creatures that save take half damage. This spell has no effect in vacuum, deals half damage in normal and thin atmosphere, and deals full damage in thick atmosphere and underwater.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Myst 6","WtchW 6"),
+      spellTitle = "Flesh to Stone",
+      spellPreviewDescription = "Turn a creature into a statue.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "355",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Fortitude negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You fire a dull gray ray at your target, making a ranged attack against your target’s EAC, but you can add your key ability score bonus to this attack instead of your Dexterity modifier if it is higher. If you hit and the target fails its Fortitude save, the target, along with all its carried gear, turns into a mindless, inert statue. If the statue resulting from this spell is broken or damaged, the target (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it gives off no sign of life even upon close inspection. Only creatures made of flesh are affected by this spell.\n" +
+              "\n" +
+              "If this spell is cast upon a stone creature that was once flesh, it reverses the petrification.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Tchn 1","WtchW 1"),
+      spellTitle = "Flight",
+      spellPreviewDescription = "Allow yourself or others to fly.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "355",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action; see text",
+      spellRange = "see text",
+      spellTargets = "see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "see text",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "You tinker with the particles of magic surrounding one or more targets to either allow them to slow a fall, gently rise or descend, or fly short or vast distances.\n" +
+              "\n" +
+              "1st: When you cast flight as a 1st-level spell, you can target one Medium or smaller falling object or creature per level at close range (25 feet + 5 feet/2 levels). The targets must all be within 20 feet of each other. A Large creature or object counts as two Medium creatures or objects, a Huge creature or object counts as four Medium creatures or objects, and so on. The affected targets instantly fall slower, at a rate of just 60 feet per round (equivalent to the end of a fall from a few feet). The targets take no damage upon landing while the spell is in effect. This spell doesn’t affect charging or flying creatures.\n" +
+              "\n" +
+              "For each target, this casting of the spell lasts until that target lands or 1 round per caster level (whichever happens first).\n" +
+              "\n" +
+              "The 1st-level version of this spell can be cast as a reaction, but when you do so, you can’t take a standard action on your next round.\n" +
+              "\n" +
+              "2nd: When you cast flight as a 2nd-level spell, you can target yourself or one willing or unconscious creature or unattended object (total weight up to 100 pounds or 10 bulk per level) at close range. The spell allows you to move the target up or down as you wish. Each round as a move action, you can mentally direct the target up or down as much as 20 feet. You can’t move the target horizontally. A levitating creature that attacks with a melee or ranged weapon finds itself increasingly unstable; the first attack takes a –1 penalty to attack rolls, the second a –2 penalty, and so on, to a maximum of –5. A full round spent stabilizing allows the creature to begin again at –1.\n" +
+              "\n" +
+              "This casting of the spell lasts 1 minute per caster level and is dismissible.\n" +
+              "\n" +
+              "3rd: When you cast flight as a 3rd-level spell, you can target one willing or unconscious touched creature and give it the power of flight. The target can fly at a speed of 60 feet with average maneuverability. Flying while under this spell’s effects takes no more concentration than walking, so the target can attack or cast spells normally. The target can charge but not run, and it can’t carry aloft more weight than its normal bulk limit. The target gains a bonus to Acrobatics checks to fly equal to half your caster level.\n" +
+              "\n" +
+              "If this spell expires or is dispelled while the target is aloft, the target floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 damage per 10 feet fallen.\n" +
+              "\n" +
+              "The spell lasts for 1 minute per caster level.\n" +
+              "\n" +
+              "4th: When you cast flight as a 4th-level spell, you can target one willing or unconscious touched creature and affect it as per the 3rd-level version of the spell, except the target’s fly speed is increased by 10 feet and the spell lasts for 10 minutes per caster level.\n" +
+              "\n" +
+              "5th: When you cast flight as a 5th-level spell, you can target yourself and be affected as per the 4th-level version of the spell, except the spell lasts for 1 hour per caster level. When you use this flight speed for long-distance movement, you can hustle without taking nonlethal damage (a forced march still requires Constitution checks). You can cover 140 miles in an 8-hour period of flight (or 80 miles at a speed of 50 feet).\n" +
+              "\n" +
+              "6th: When you cast flight as a 6th-level spell, you can target multiple willing or unconscious creatures at close range (25 feet + 5 feet/2 levels) and affect them as per the 3rd-level version of the spell. You can target one creature per caster level, all of which must be within 30 feet of each other. This casting of the spell lasts 10 minutes per caster level.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","Tchn 1","WtchW 1"),
+      spellTitle = "Fluid Morphism",
+      spellPreviewDescription = "Provide an enhancement bonus to a creature's ability and skill checks.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "74",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one willing or unconscious creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level (D)",
+      spellSavingThrow = "Fortitude negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "Lashuntas experimented with this magic based on their species' dimorphism. With this spell, you reignite the epigenetic processes that shaped the target and alter them, applying different environmental pressures to temporarily awaken dormant potential in the genetic code. Choose one ability score. You grant the target a +2 enhancement bonus to ability checks with that ability score and skill checks based on that score. While the spell lasts, you can use a standard action to change the affected ability score, provided the target is within range.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Technomancer 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Tchn 3","WtchW 3"),
+      spellTitle = "Fluidity of Form",
+      spellPreviewDescription = "Draw upon the Maelstrom to grant ever- shifting bonuses to a creature.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "74",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels",
+      spellTargets = "one willing or unconscious creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Fortitude negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "Drawing upon the ever-shifting chaos of the Maelstrom, you free the target from the shackles of their form. Each round at the start of their turn, the target must select one of the following benefits they gain for that round. They can't select the same benefit on two consecutive rounds.\n" +
+              "\n" +
+              "Additional Arms: The target grows two additional arms, enabling them to wield and hold an additional two hands' worth of equipment. While these additional arms increase the number of items they can carry, it doesn't increase the number of attacks they can make during combat.\n" +
+              "\n" +
+              "Additional Legs: The target grows two additional legs, granting them a +10-foot status bonus to their speed.\n" +
+              "\n" +
+              "Amorphous: The target loses their form, becoming amorphous. They're immune to the entangled and grappled conditions, and they don't take double damage from critical hits.\n" +
+              "\n" +
+              "Damage Reduction: The target's skin hardens, becomes rubbery, or grows scales, granting them DR 5/— that protects against bludgeoning, piercing, and slashing damage. This damage reduction doesn't stack with any damage reduction the target already has.\n" +
+              "\n" +
+              "Energy Resistance: The target adapts to a hazardous environment, gaining resistance 5 to one of the following damage types of their choice: acid, cold, electricity, fire, sonic. This energy resistance doesn't stack with any damage resistance the target already has.\n" +
+              "\n" +
+              "Shrink: The target shrinks by one size category (to a minimum of Tiny).\n" +
+              "\n" +
+              "Stretch: The target's arms elongate, increasing their reach by 5 feet.\n" +
+              "\n" +
+              "Multiple castings of fluidity of form don't stack. Fluidity of form counters and negates physical stability.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Technomancer 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+      spellTitle = "Fluidity of Form, Mass",
+      spellPreviewDescription = "Draw upon the Maelstrom to grant ever-shifting bonuses to multiple creatures.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "74",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "up to one willing or unconscious creature/level, no two of which can be more than 30 ft. apart",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Fortitude negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "This spell functions like fluidity of form, except as noted above.\n" +
+              "\n" +
+              "(Fluidity of Form: Drawing upon the ever-shifting chaos of the Maelstrom, you free the target from the shackles of their form. Each round at the start of their turn, the target must select one of the following benefits they gain for that round. They can't select the same benefit on two consecutive rounds.\n" +
+              "\n" +
+              "Additional Arms: The target grows two additional arms, enabling them to wield and hold an additional two hands' worth of equipment. While these additional arms increase the number of items they can carry, it doesn't increase the number of attacks they can make during combat.\n" +
+              "\n" +
+              "Additional Legs: The target grows two additional legs, granting them a +10-foot status bonus to their speed.\n" +
+              "\n" +
+              "Amorphous: The target loses their form, becoming amorphous. They're immune to the entangled and grappled conditions, and they don't take double damage from critical hits.\n" +
+              "\n" +
+              "Damage Reduction: The target's skin hardens, becomes rubbery, or grows scales, granting them DR 5/— that protects against bludgeoning, piercing, and slashing damage. This damage reduction doesn't stack with any damage reduction the target already has.\n" +
+              "\n" +
+              "Energy Resistance: The target adapts to a hazardous environment, gaining resistance 5 to one of the following damage types of their choice: acid, cold, electricity, fire, sonic. This energy resistance doesn't stack with any damage resistance the target already has.\n" +
+              "\n" +
+              "Shrink: The target shrinks by one size category (to a minimum of Tiny).\n" +
+              "\n" +
+              "Stretch: The target's arms elongate, increasing their reach by 5 feet.\n" +
+              "\n" +
+              "Multiple castings of fluidity of form don't stack. Fluidity of form counters and negates physical stability.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Tchn 2","WtchW 2"),
+      spellTitle = "Flux Density",
+      spellPreviewDescription = "When you cast flux density, choose rise or sink.",
+      spellSourceBookPreview = "AdvP#36",
+      spellSourcePage = "52",
+      spellSourceBookFull = " #36: Professional Courtesy",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "up to one creature/level, no two of which can be more than 30 ft. apart, and each of which must be partially or fully submerged in water",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "concentration + 1 round",
+      spellSavingThrow = "Fortitude partial",
+      spellResistance = "yes",
+      spellDescriptionFull = "When you cast flux density, choose rise or sink. If you choose rise, each target ascends 10 feet per round, or if you choose sink, each target sinks 10 feet per round; this movement doesn’t provoke attacks of opportunity. In addition, each creature must attempt a Fortitude save each round it’s moved by this spell; a failure causes the creature to gain the flat-footed condition and to take a –2 penalty to attack rolls until the beginning of its next turn.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Technomancer 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Tchn 2","WtchW 2"),
+      spellTitle = "Fog Cloud",
+      spellPreviewDescription = "Create a fog that obscures vision.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "356",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "20-ft.-radius spread",
+      spellEffect = "",
+      spellDuration = "10 minutes/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "A bank of fog billows out from the point you designate. The fog obscures all sight, including darkvision, beyond 5 feet. Adjacent creatures are granted concealment against one another (attacks have a 20% miss chance). Otherwise, this fog provides total concealment (50% miss chance and attackers can’t use sight to locate targets).\n" +
+              "\n" +
+              "A moderate wind (11+ mph) disperses the fog in 4 rounds; a strong wind (21+ mph) disperses the fog in 1 round.\n" +
+              "\n" +
+              "This spell doesn’t function underwater or in a vacuum.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Precog 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Prcg 2","WtchW 2"),
+      spellTitle = "Force Blast",
+      spellPreviewDescription = "Cone deals 2d6 force damage and bull rushes creatures.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "356",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "evocation (force)",
+      spellCastingTime = "1 standard action",
+      spellRange = "30 ft.",
+      spellTargets = "",
+      spellArea = "cone-shaped burst",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You gather mystical energy and blast it outward in a mighty wave originating from your fingertips, damaging and potentially knocking back your enemies. This spell deals 2d6 damage to each creature in the area unless it succeeds at a Reflex saving throw for half damage.\n" +
+              "\n" +
+              "Additionally, the force from this spell effectively attempts to bull rush all creatures in the area. Attempt a single bull rush combat maneuver, using your caster level + your key ability score modifier as your attack bonus. Compare the result to each target’s KAC + 8. If you’re successful, that creature is knocked back 5 feet, plus 5 additional feet for every 5 by which your attack exceeds the creature’s KAC + 8. If there is an obstacle in the way, the creature stops at the obstacle instead.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 6","Technomancer 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Prcg 6","Tchn 6","WtchW 6"),
+      spellTitle = "Forcecage",
+      spellPreviewDescription = "Create an invisible cage of force energy.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "74",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation (force)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "barred cage (20-ft. cube) or cell (10-ft. cube)",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Reflex partial, see text",
+      spellResistance = "no",
+      spellDescriptionFull = "You create an immobile, invisible but hollow cube of force composed of bars or solid walls (your choice). Creatures within the area are caught and contained. Creatures partially within the area when the cage appears can attempt a Reflex saving throw to avoid being shunted into the cage in the nearest open space. Otherwise, the creature is shunted out of the cage into the nearest open space. You can allow creatures to be shunted out even when they fail the save. If the cage is too small to accommodate creatures inside, the spell fails. The force walls or bars extend into the Ethereal Plane, blocking ethereal travel. The cage has walls of force on every side. A barred version has bands, each a half-inch wide, with half-inch gaps between them— creatures within the cage have improved cover against attacks coming from outside the cage. The cell version has no gaps. This spell otherwise functions per the parameters of the wall of force spell.\n" +
+        "\n" +
+        "(Wall of Force: Wall of force creates an invisible wall of pure force. You can form the wall into a flat, vertical plane whose area is up to one 10-foot square per level. The wall must be continuous and unbroken when formed. If its surface is broken by any object or creature, the spell fails.\n" +
+              "\n" +
+              "This counts as a force field for effects that can’t penetrate a force field. The wall can’t move and is not easily destroyed. A wall of force is immune to dispel magic. A greater dispel magic specifically targeting the wall of force can dispel it, but treat the wall of force’s caster level as being 5 higher than the actual caster level. A wall of force can be damaged by spells and attacks as normal, but a wall of force has hardness 30 and 300 Hit Points. Disintegrate instantly destroys a wall of force.\n" +
+              "\n" +
+              "Breath weapons and spells can’t pass through a wall of force in either direction, though dimension door, teleport, and similar effects can bypass the barrier. The wall blocks ethereal creatures as well as material ones (though ethereal creatures can usually circumvent the wall by going around it, through material floors and ceilings). Gaze attacks operate normally through a wall of force.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3"),
+      spellTitle = "Forceful Fling",
+      spellPreviewDescription = "You fling a willing ally across the battlefield, moving them 30 feet in a straight line from its original position to an unoccupied square in range.",
+      spellSourceBookPreview = "RdsR",
+      spellSourcePage = "59",
+      spellSourceBookFull = "Redshift Rally",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one willing creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You fling a willing ally across the battlefield, moving them 30 feet in a straight line from its original position to an unoccupied square in range. The target provokes attacks of opportunity for this movement, as normal, but is unaffected by difficult terrain since it remains airborne for the movement. The target has a –2 penalty to its AC during this movement and until the start of its next turn. If the target ends this movement adjacent to an enemy, the target can attack that enemy with a melee attack as a reaction. The target takes a –2 penalty to this attack roll.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic "),
+      spellClassesWithLevelPreview = listOf("Myst "),
+      spellTitle = "Furious Shriek",
+      spellPreviewDescription = "Deal sonic damage to creatures within 30 feet (more if you have fewer than half your HP remaining).",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "75",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation (sonic)",
+      spellCastingTime = "1 standard action",
+      spellRange = "30 ft.",
+      spellTargets = "",
+      spellArea = "30-ft.-radius spread centered on you",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Fortitude half, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "Orcs and half-orcs learned long ago to channel rage, despair, or a sense of injustice or oppression into a soul-shaking shriek. The shriek deals sonic damage to creatures and objects based on the spell slot used to cast the spell. If you cast this spell when you have fewer than half your Hit Points remaining, use d8s rather than d6s as damage dice.\n" +
+              "\n" +
+              "1st: When you cast furious shriek as a 1st-level spell, it deals 2d6 sonic damage.\n" +
+              "\n" +
+              "2nd: When you cast furious shriek as a 2nd-level spell, it deals 4d6 sonic damage.\n" +
+              "\n" +
+              "3rd: When you cast furious shriek as a 3rd-level spell, it deals 7d6 sonic damage.\n" +
+              "\n" +
+              "4th: When you cast furious shriek as a 4th-level spell, it deals 10d6 sonic damage.\n" +
+              "\n" +
+              "5th: When you cast furious shriek as a 5th-level spell, it deals 13d6 sonic damage. Creatures that fail their saving throw are shaken for 1 round.\n" +
+              "\n" +
+              "6th: When you cast furious shriek as a 6th-level spell, it deals 16d6 sonic damage. Creatures that fail their saving throw are staggered for 1 round and shaken for 1d4 rounds.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Precog 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5","Prcg 5","WtchW 5"),
+      spellTitle = "Gaze Into Darkness",
+      spellPreviewDescription = "You pull open the seams of the universe, forcing the target to view what truly sits in the dark between the stars.",
+      spellSourceBookPreview = "AdvP#48",
+      spellSourcePage = "52",
+      spellSourceBookFull = "Adventure Path #48: Masters of Time and Space pg. 52",
+      spellSchool = "enchantment (fear, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (25 ft. + 5 ft./2 levels)",
+      spellTargets = "1 creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous and 1 round/level",
+      spellSavingThrow = "Will partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You pull open the seams of the universe, forcing the target to view what truly sits in the dark between the stars. The target takes 5d10 damage and must attempt a Will saving throw. On a failure, the target is cowering for the duration. Each round on its turn, a cowering creature can take a full action to attempt a new saving throw to end the cowering effect.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+      spellTitle = "Ghost Sound",
+      spellPreviewDescription = "Create minor illusory sounds.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "356",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "illusion",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "illusory sounds",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Will disbelief",
+      spellResistance = "no",
+      spellDescriptionFull = "You create a volume of sound that rises, falls, recedes, approaches, or remains fixed. You choose what type of sound this spell creates when casting it and cannot thereafter change the sound’s basic character.\n" +
+              "\n" +
+              "The volume of sound created can produce as much noise as 20 normal humans. Thus, you can create shouting, singing, talking, marching, running, or walking sounds, as well as sounds of battle or small explosions. You can make noises that sound like machines, the general chatter of distant conversation, or the roar of an alien predator, but you can’t make specific sounds such as intelligible speech or the exact hum of a particular starship’s engines.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Technomancer 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Tchn 3","WtchW 3"),
+      spellTitle = "Glimpse Of Truth",
+      spellPreviewDescription = "This spell functions as true seeing, except as noted.",
+      spellSourceBookPreview = "AdvP#25",
+      spellSourcePage = "45",
+      spellSourceBookFull = "Adventure Path #25: The Chimera Mystery",
+      spellSchool = "divination",
+      spellCastingTime = "1 standard action",
+      spellRange = "personal",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "This spell functions as true seeing, except as noted above.\n" +
+        "\n" +
+        "(True Seeing: You confer upon the target the ability to see all things within 120 feet as they actually are. The target sees through normal and magical darkness, notices secret doors hidden by magic, sees the exact locations of creatures or objects that are invisible or displaced, sees through illusions, and sees the true form of changed or transmuted things. Further, the target can focus its vision to see into the Ethereal Plane (but not into extradimensional spaces).\n" +
+              "\n" +
+              "True seeing, however, does not penetrate solid objects. It in no way confers X-ray vision or its equivalent. It does not negate concealment, including that caused by fog and the like. True seeing does not help the viewer see through mundane disguises, spot creatures who are simply hiding, or notice secret doors hidden by mundane means.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 6","Precog 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Myst 6","Prcg 6","WtchW 6"),
+      spellTitle = "Glimpse The End",
+      spellPreviewDescription = "You give the target a vision of the end of the Material Plane as it’s consumed by entropy.",
+      spellSourceBookPreview = "AdvP#45",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #45: The Culling Shadow",
+      spellSchool = "illusion (emotion, fear, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./level)",
+      spellTargets = "1 living creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will disbelief (see text)",
+      spellResistance = "yes",
+      spellDescriptionFull = "You give the target a vision of the end of the Material Plane as it’s consumed by entropy. The target witnesses all the stars in the universe dim simultaneously and planets throughout the galaxy crumble to nothingness. The sight deals 15d10 damage to the creature and gives it the panicked condition for 1 round. The target attempts a Will saving throw; on a success, they take half damage and are shaken for 1 round instead.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Technomancer 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","Tchn 1"),
+      spellTitle = "Gloom Mote",
+      spellPreviewDescription = "Create a mote of light from the Shadow Plane, which draws other nearby lights down into shadow.",
+      spellSourceBookPreview = "AdvP#12",
+      spellSourcePage = "53",
+      spellSourceBookFull = "Adventure Path #12: Heart of Night",
+      spellSchool = "conjuration (creation, shadow)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. +10 ft./level)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "a mote of darkness",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You draw forth the energy of the Shadow Plane and form it into a floating mote of gloom. The mote creates dim light in a 5-foot radius. It also lowers the light level within 20 feet of it by one step, down to dim. As a move action, you can move the mote up to 60 feet in any direction. The mote winks out if the distance between you and it exceeds the spell’s range. You can have only one gloom mote spell active at a time. If you cast this spell while another gloom mote of yours is still in effect, the previous casting is dispelled.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+      spellTitle = "Glowing Wall",
+      spellPreviewDescription = "Create a plane of colored light.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "75",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "light with area of up to eight 10-ft. squares",
+      spellDuration = "concentration + 10 minutes/level (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "A barrier of light, colored as you choose, springs into existence. You can form the wall into a vertical or horizontal plane, but each 10-foot square must join another. The light level within 5 feet of the wall increases to normal light. Within an additional 5 feet, the light increases one step, up to normal light. When you concentrate on the spell, you can change the light's color. You can have only one glowing wall spell active at a time. If you cast this spell while another casting is still in effect, the previous casting is dispelled. A glowing wall somehow made permanent doesn't count against this limit.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","WtchW 4"),
+      spellTitle = "Grasping Brambles",
+      spellPreviewDescription = "You entrap a creature in a cage of thorny brambles that erupts from the ground around them.",
+      spellSourceBookPreview = "AdvP#42",
+      spellSourcePage = "42",
+      spellSourceBookFull = "Adventure Path #42: Whispers of the Eclipse pg. 42",
+      spellSchool = "conjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "concentration, up to 1 round/level",
+      spellSavingThrow = "Reflex partial",
+      spellResistance = "no",
+      spellDescriptionFull = "You entrap a creature in a cage of thorny brambles that erupts from the ground around them. The target must attempt a Reflex save. On a successful save, the target takes 2d6 piercing damage as it escapes the brambles and the spell ends. On a failed save, the target is grappled and takes 6d6 piercing damage each round it remains so. The target can use the escape task of the Acrobatics skill to escape the grapple as normal, or it can attempt the grapple combat maneuver even if you aren’t within reach; if the target succeeds at the grapple combat maneuver, it escapes the grapple effect but don’t grapple you in return. If the target escapes the grapple, the spell ends.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","WtchW 0"),
+      spellTitle = "Grave Words",
+      spellPreviewDescription = "Force a corpse to babble.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "357",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "necromancy (language-dependent)",
+      spellCastingTime = "1 minute",
+      spellRange = "touch",
+      spellTargets = "one dead creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You can force a touched corpse talk to you, but you can’t ask it specific questions or communicate with it at all. The corpse utters random sentences for 1 round, with a 10% chance this information is of some use to you. Useful information might include warnings about dangers in a wrecked starship, the password to unlock a computer, or the name of a supernatural creature seeking you or your allies. The GM makes the d% roll in secret and decides what information, useful or not, the corpse spews out in its babbling.\n" +
+              "\n" +
+              "Once a corpse has been subjected to grave words by any caster, any new attempt to cast grave words on that corpse fails. A corpse must have a mouth or means to speak in order for this spell to function, and the spell doesn’t affect a corpse that has been turned into an undead creature.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 6"),
+      spellClassesWithLevelPreview = listOf("Myst 6"),
+      spellTitle = "Gravitational Singularity",
+      spellPreviewDescription = "Particle with infinite density pulls creatures and objects into it, dealing 12d6 damage each round to those inside.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "357",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 round",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "5-ft.-cube gravitational singularity; see text",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You call into being a tiny particle of mass with infinite density. You must conjure the singularity in a square that is unoccupied by any creatures or objects. When you finish casting this spell, the singularity immediately draws all Medium and smaller creatures and unattended objects of no more than light bulk within 30 feet toward it. Each round on your turn, the singularity makes a single special combat maneuver against creatures within 30 feet with an attack bonus equal to 4 + your caster level + your key ability modifier. Compare the result to each creature’s KAC + 8. If the singularity is successful, that creature is moved 5 feet toward the singularity plus 5 additional feet for every 5 by which the result exceeds a target’s KAC + 8. Unattended objects are automatically moved 10 feet toward the singularity each round. If a creature or object is moved into the square that contains the singularity, it is sucked inside it and takes 12d6 damage at the end of its turn each round it remains within that space.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Technomancer 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Tchn 3","WtchW 3"),
+      spellTitle = "Gravity Tether",
+      spellPreviewDescription = "Deal 5d8 electricity damage to one or two creatures, then manipulate affected enemies' positions.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "75",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation (electricity)",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one or two creatures",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Reflex partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "By manipulating electromagnetic forces acting on your target, you change its movements. Attempt a melee attack against EAC. If you attempt a full attack, you can target two creatures. On a hit, your target takes 5d8 electricity damage and must attempt a Reflex save. On a failure, the target treats any square it moves farther from you as difficult terrain for the duration. A successful save ends the spell on the target.\n" +
+              "\n" +
+              "As a standard action, you can attempt an attack against an affected target within 60 feet, adding your key ability modifier to the attack roll. You can attack two affected targets if you take a full action to do so. If you hit the target's KAC + 8, you pull it 5 feet closer to you plus 5 feet for every 5 by which the result exceeds a target's KAC + 8. If you attack and hit two targets, you can instead move them closer to each other. Moving the target into a barrier, creature, dangerous space, or obstacle causes the target to stop before entering that space.\n" +
+              "\n" +
+              "Casting this spell doesn't provoke attacks of opportunity.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Technomancer 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Tchn 4","WtchW 4"),
+      spellTitle = "Gravity Well",
+      spellPreviewDescription = "Create a point of high gravity that knocks creatures in the area prone and pulls them closer to the center.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "135",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "conjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "20-ft. radius",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Reflex negates, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You alter the gravity in an area, making a central point of high gravity that pulls creatures toward it. Each creature in the area when the spell takes effect is knocked prone unless it succeeds at a Reflex saving throw. Any creature that starts its turn in the area must succeed at a Reflex saving throw or be drawn 15 feet closer to the center of the area. This movement provokes attacks of opportunity. Creatures adjacent to the spell’s origin point take a –2 penalty to the save to avoid being pulled.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Tchn 1","WtchW 1"),
+      spellTitle = "Grease",
+      spellPreviewDescription = "Make a 10-ft. square or one object slippery.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "357",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one object",
+      spellArea = "one 10-ft. square or -",
+      spellEffect = "",
+      spellDuration = "1 minute/level (D)",
+      spellSavingThrow = "Reflex partial, see text",
+      spellResistance = "no",
+      spellDescriptionFull = "You cover a solid surface with a layer of slippery grease. Any creature in the area when the spell is cast must succeed at a Reflex save or fall prone. A creature can walk within or through the area of grease at half normal speed with a successful DC 10 Acrobatics check. Failure means the creature can’t move that round and must then succeed at a Reflex save or fall prone, while failure by 5 or more means it falls prone (see the Acrobatics skill on page 135 for details). A creature that doesn’t move on its turn doesn’t need to attempt this check and isn’t considered flat-footed. The spell can also be used to create a greasy coating on an item. Unattended material objects are always affected by this spell. If you attempt to affect an object in a creature’s possession, the creature can attempt a Reflex save to negate the effect. If the creature fails the initial saving throw, it immediately drops the item and must attempt a new save each round it attempts to pick up, hold, or use the item. A creature wearing greased armor or clothing gains a +5 circumstance bonus to Acrobatics checks to escape a grapple and a +2 circumstance bonus to its AC against grapple combat maneuvers.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Precog 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Prcg 3","WtchW 3"),
+      spellTitle = "Grim Insight",
+      spellPreviewDescription = "Deal 6d10 damage to a creature and cause it to become shaken.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "75",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "divination (mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/caster level",
+      spellSavingThrow = "Will partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You channel visions of a grim future into your target's mind. Attempt a melee attack against the target's EAC, adding the higher of your key ability modifier or your Strength modifier to the attack roll. On a hit, the target takes 6d10 damage and must attempt a Will saving throw. A target that fails is shaken for the duration. One who succeeds is shaken for only 1 round, and then the spell ends.\n" +
+              "\n" +
+              "Casting this spell doesn't provoke attacks of opportunity.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 3","Technomancer 3"),
+      spellClassesWithLevelPreview = listOf("Prcg 3","Tchn 3"),
+      spellTitle = "Groundling",
+      spellPreviewDescription = "Give a target a burrow speed and DR 5/bludgeoning.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "135",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "",
+      spellTargets = "one willing creature touched",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level (D",
+      spellSavingThrow = "none",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "The target’s body forms an exoskeleton, and its appendages such as hands and feet become broad and pointed like spades. Armor that covers any of these appendages functions normally and molds to fit the appendages’ new shape. The target gains DR 5/ bludgeoning and a burrow speed equal to its land speed. This spell grants no ability to breathe while buried, so a breathing creature without environmental protections might be at risk of suffocation.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","WtchW 1"),
+      spellTitle = "Gyre",
+      spellPreviewDescription = "You cause the water in gyre’s area of effect to form a twisting whirlpool that drags creatures in and down.",
+      spellSourceBookPreview = "AdvP#36",
+      spellSourcePage = "52",
+      spellSourceBookFull = "Adventure Path #36: Professional Courtesy",
+      spellSchool = "evocation (water)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "cylinder (10-ft. radius, 40-ft. high)",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Reflex partial (see text)",
+      spellResistance = "no",
+      spellDescriptionFull = "You cause the water in gyre’s area of effect to form a twisting whirlpool that drags creatures in and down. Each creature that enters or starts its turn in the spell’s area must attempt a Reflex save. A creature that fails its save is pulled a total of 15 feet: first, it’s pulled toward the gyre’s center; then once its space is adjacent to the gyre’s center, it’s pulled downward. A creature that succeeds at its save is pulled only 5 feet. Movement caused by gyre doesn’t provoke attacks of opportunity, and any portion of this spell’s area that isn’t in water has no effect.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 2"),
+      spellClassesWithLevelPreview = listOf("Tchn 2"),
+      spellTitle = "Hack Wetware",
+      spellPreviewDescription = "If the target fails its saving throw, you form a link between their mind and a computer you touch at the time of casting, allowing you to hack their brain as if it were a computer to examine or manipulate memories and implant suggestions.",
+      spellSourceBookPreview = "AdvP#25",
+      spellSourcePage = "52",
+      spellSourceBookFull = "Adventure Path #25: The Chimera Mystery",
+      spellSchool = "divination",
+      spellCastingTime = "1 round",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one living creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "If the target fails its saving throw, you form a link between their mind and a computer you touch at the time of casting, allowing you to hack their brain as if it were a computer to examine or manipulate memories and implant suggestions. Each round this spell is active and you are within range of the target, you can take a standard action to attempt a Computers check to hack their brain and gain certain information, depending on the level of the spell. For the purposes of this spell, a living mind has a tier equal to one-half the target’s level or CR (minimum 1) and has an alarm countermeasure that immediately alerts the target creature if you fail a Computers check, allowing them an immediate additional Will saving throw to end the spell.\n" +
+              "\n" +
+              "2nd: When you cast hack wetware as a 2nd-level spell, you can hack the target’s mind to gain general access to their thoughts, fears, and desires. If you are successful, you gain access to one of the following: the target’s current surface thoughts, the target’s most pressing current fear, or the target’s most pressing current desire. On following rounds, you can attempt additional Computers checks to learn other pieces of information.\n" +
+              "\n" +
+              "3rd: When you cast hack wetware as a 3rd-level spell, it functions like the 2nd-level casting of the spell, but you can also hack the target’s mind to gain deeper access to their secrets and memories. Such information is partitioned behind a mental firewall, which increases the DC to access it by 2 or the target’s Wisdom modifier, whichever is greater. If you are successful, you gain access to a single piece of secret information the target knows (such as a passcode or the location of a hidden panel) or a specific memory (which can be no longer than 1 minute); a memory shows exactly what the target experienced from their perspective, so it might lack context. You can save the information or memory to your computer to retrieve later.\n" +
+              "\n" +
+              "4th: When you cast hack wetware as a 4th-level spell, it functions like the 3rd-level casting of the spell, but you can also hack the target’s mind to send it false sensory data. If you are successful, you can determine the sights, sounds, and smells the brain receives, creating an illusion only the target can perceive, similar to a 4th-level holographic projection spell. The target can attempt a new saving throw when it interacts with these impressions to recognize them as false, but this doesn’t immediately end the effect. The impressions last for as long as the spell does, but you must attempt additional Computers checks to alter them in subsequent rounds.\n" +
+              "\n" +
+              "5th: When you cast hack wetware as a 5th-level spell, it functions like the 4th-level casting of the spell, but you can also hack the target’s mind to implant a subconscious command that can be activated at a later time. If you are successful, you can state a course of activity similar to that of a suggestion spell and a trigger, such as a static image or a code phrase. This ends the hack wetware spell, but the subconscious command remains in the target’s brain for a number of days equal to your technomancer level. The next time the target perceives the trigger, it performs the suggested course of action as best it can if it fails another Will saving throw. For every 5 your Computers check exceeded the DC, the target takes a cumulative –2 penalty to this saving throw. The command can be triggered only once.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5","WtchW 5"),
+      spellTitle = "Hailstorm",
+      spellPreviewDescription = "Creatures in area take 6d8 cold damage and 7d8 bludgeoning damage, and gives –4 penalty to Perception checks, and is considered difficult terrain.",
+      spellSourceBookPreview = "Alien#4",
+      spellSourcePage = "119",
+      spellSourceBookFull = "Alien Archive 4",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "long (400 ft. + 40 ft./level)",
+      spellTargets = "",
+      spellArea = "cylinder (20-ft. radius, 40 ft. high)",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "yes",
+      spellDescriptionFull = "A barrage of fist-sized hailstones pelts the area. Creatures that enter or start their turn in the area during the first round of the spell take 6d8 cold damage and 7d8 bludgeoning damage. For the remaining duration of the spell, heavy snow and sleet rain down in the area. Until the spell is dismissed or until the end of the duration, this area provides concealment, creatures inside it take a –4 penalty to Perception checks, and the entire area is considered difficult terrain.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 3"),
+      spellClassesWithLevelPreview = listOf("Tchn 3"),
+      spellTitle = "Handy Junkbot",
+      spellPreviewDescription = "Create a temporary robot made of junk to perform Computers, Engineering, Piloting, and Sleight of Hand tasks.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "357",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 round",
+      spellRange = "touch",
+      spellTargets = "1 bulk of inert electronic equipment; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You turn a pile of technological junk into a robot that can accomplish helpful tasks. You must target inert, nonworking electronic equipment of at least 1 bulk. Valid targets include a large broken computer system, nonworking or unconnected computer or robot parts, a destroyed robot or another such trashed mechanical system, or any related electronic components or combination of the above as long as the junk is found in a large enough quantity.\n" +
+              "\n" +
+              "While casting this spell, you use your magic and technological know-how to rearrange the junked parts and infuse them with energy and helpful programming. A handy junkbot is Small, its KAC and EAC are each equal to 10 + your caster level, and it has a number of Hit Points equal to one-quarter of your own (but no Stamina Points). It has a land speed of 30 feet and a fly speed of 15 feet with average maneuverability. It can accomplish all tasks described in the Computers, Engineering, Piloting, and Sleight of Hand skills, is considered trained in those skills, and has a total skill bonus in each equal to 3 + your caster level. The junkbot is treated as if it is using a hacker’s kit when using the Computers skill and an engineering kit when using the Engineering skill. A handy junkbot can never attack. The junkbot uses your saving throw bonuses if it is the target of a spell or another targeted effect. For purposes of spells and effects that target the junkbot, it is treated as a construct with the technological and magical subtypes.\n" +
+              "\n" +
+              "You can give new basic commands to your handy junkbot telepathically on your turn as a move action, and the junkbot can take actions as if it were a normal creature. You are aware when the junkbot has succeeded at or failed a skill check, as well as when it has been attacked or destroyed, but you can perceive nothing else through this basic telepathic link.\n" +
+              "\n" +
+              "When the handy junkbot is destroyed or this spell ends, the electronic equipment you used to create it falls apart into refuse, its circuitry fried beyond anything recognizable. You can’t use this refuse as a target to create another junkbot.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Technomancer 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Tchn 4"),
+      spellTitle = "Harness Lightning",
+      spellPreviewDescription = "Gain cover against attacks that deal electricity damage, and potentially retaliate with electricity damage.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "75",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation (electricity)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "cylinder (20-ft. radius, 40 ft. high)",
+      spellEffect = "",
+      spellDuration = "1 round plus 1 round/level",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "no",
+      spellDescriptionFull = "Born of necessity to contend with violent storms on the world of Shimrinsara in the Vast, harness lightning enables you to collect energy from major electrical discharges that occur within the area of the spell. The spell's area grants cover against ranged attacks and area effects that would deal only electricity damage. The bonus to saving throws due to this cover applies to any save against a critical hit effect from a weapon that deals only electricity damage. The first time the spell's area grants cover against an attack or effect this way, collected electrical attacks bend toward you and form a surging sphere of pure energy that lasts until the end of the spell. You can take a standard action to discharge this sphere at a target within 100 feet, dealing 8d8 electricity damage.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Precog 3","Technomancer 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Prcg 3","Tchn 3","WtchW 3"),
+      spellTitle = "Haste",
+      spellPreviewDescription = "One creature per level moves and acts faster.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "358",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "up to one creature/level, no two of which can be more than 30 ft. apart",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Fortitude negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "The targeted creatures move and act more quickly than normal. This extra speed has several effects.\n" +
+              "\n" +
+              "When making a full attack, a hasted creature can also take a separate move action in order to move. The movement can occur before, after, or between the attacks from the full attack. All movement must occur at the same time.\n" +
+              "\n" +
+              "All of the hasted creature’s modes of movement (including base, burrow, climb, fly, and swim speeds) increase by 30 feet, to a maximum of twice the target’s normal speed using that form of movement. This increase counts as an enhancement bonus, and it affects the creature’s jumping distance as normal for increased speed. Multiple haste effects don’t stack. Haste counters and negates slow.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("WtchW 4"),
+      spellTitle = "Hateful Visage",
+      spellPreviewDescription = "The target’s illusory face grants them a bonus to Intimidate checks and the ability to frighten foes.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "135",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "illusion",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one willing creature; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "none (harmless); see text",
+      spellResistance = "no",
+      spellDescriptionFull = "You pull alternate forms from horrifying realities and drape them upon the target, causing the target to exhibit almost any type of body horror imaginable. Your allies can tell this effect results from your layering of alternate realities onto this one and are unaffected. Against others, the target gains a +10 insight bonus to Intimidate checks. If the target successfully uses Intimidate to demoralize a foe, the foe is frightened instead of shaken. This bonus and change in condition are fear and mind-affecting effects.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2"),
+      spellTitle = "Haunted Armor",
+      spellPreviewDescription = "Armor interferes with the wearer’s movement.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "136",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "necromancy",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one worn suit of armor; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You divert a malevolent spirit from the River of Souls to haunt your opponent’s armor. This spell must target a suit of light, heavy, or powered armor. The armor becomes cumbersome, reducing the wearer’s speed by 10 feet and AC by 1. It also rattles, hisses, and screeches, imposing a –4 penalty on Stealth checks.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2"),
+      spellTitle = "Haunted Combatant",
+      spellPreviewDescription = "Haunt an enemy’s weapons, interfering with attacks made with those weapons.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "136",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "necromancy",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You divert a malevolent spirit from the River of Souls to temporarily haunt and interfere with an opponent’s weapons. The spirit writhes and rattles around in the target’s manufactured weapons, imposing a –1 penalty on the target’s attack rolls with weapons other than natural weapons. The weapons on a target’s body continue to be haunted while the spell lasts, even if the original target dies. Anyone who picks up the haunted weapons during this time must attempt to save against this spell at a –1 penalty or be affected by it.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("WtchW 0"),
+      spellTitle = "Hazard",
+      spellPreviewDescription = "Deal 1d3 acid, cold, electricity, fire, or sonic damage in a 5-foot-radius burst.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "136",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "5-foot-radius burst",
+      spellEffect = "",
+      spellDuration = "1 round",
+      spellSavingThrow = "Reflex negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "When you cast this spell, choose acid, cold, electricity, fire, or sonic. The spell gains that descriptor. You summon a minor hazard from an alternate reality, creating a splash of acid rain, a blast of freezing air, a static electric discharge, a burst of fire, or a roar of thunder. Each creature in the area must succeed at a Reflex save or take 1d3 damage of the chosen type.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 3"),
+      spellClassesWithLevelPreview = listOf("Tchn 3"),
+      spellTitle = "Healing Junkbot",
+      spellPreviewDescription = "Robot made of junk can perform Medicine tasks and drag unconscious creature to safety.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "358",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 round",
+      spellRange = "touch",
+      spellTargets = "1 bulk of inert electronic equipment; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You turn a pile of technological junk into a robot that can perform basic healing tasks.\n" +
+              "\n" +
+              "You must target inert, nonworking electronic equipment of at least 1 bulk. Valid targets include a large broken computer system, nonworking or unconnected computer or robot parts, a destroyed robot or another such trashed mechanical system, or any related electronic components or combination of the above as long as the junk is found in a large enough quantity. While casting this spell, you use your magic and technological know-how to rearrange the junked parts and infuse them with energy and medical skills.\n" +
+              "\n" +
+              "A healing junkbot is Small, its KAC and EAC are each equal to 10 + your caster level, and it has a number of Hit Points equal to one-quarter of your own (but no Stamina Points). It has a land speed of 30 feet and a fly speed of 15 feet with average maneuverability. It is considered trained in the Medicine skill and can perform first aid, treat deadly wounds, and treat drugs or poison as if it had a medkit (though it can’t provide long-term care or treat disease). The junkbot has a total skill bonus for Medicine checks equal to 3 + your caster level.\n" +
+              "\n" +
+              "A healing junkbot can drag or fly one unconscious creature at a time to any spot you designate. It can drag or fly a Small, Medium, or Large creature at half speed. It can drag or fly smaller creatures at normal speed, but it can’t move creatures bigger than Large. A healing junkbot can never attack. The junkbot uses your saving throw bonuses if it is the target of a spell or another targeted effect. For purposes of spells and effects that target it, the junkbot is treated as a construct with the technological and magical subtypes.\n" +
+              "\n" +
+              "You can give new basic commands to your healing junkbot telepathically on your turn as a move action, and the junkbot can take actions as if it were a normal creature. You are aware when the bot has succeeded at or failed a skill check, as well as when it has been attacked or destroyed, but you can perceive nothing else through this basic telepathic link.\n" +
+              "\n" +
+              "When the healing junkbot is destroyed or this spell ends, the electronic equipment you used to create it falls apart into refuse, its components and circuitry fried beyond anything recognizable. You can’t use this refuse as a target to create another junkbot.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 5","Technomancer 5"),
+      spellClassesWithLevelPreview = listOf("Prcg 5","Tchn 5"),
+      spellTitle = "Heat Leech",
+      spellPreviewDescription = "Deal 13d8 cold damage to creatures in a cone.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "359",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "evocation (cold)",
+      spellCastingTime = "1 standard action",
+      spellRange = "60 ft.",
+      spellTargets = "",
+      spellArea = "cone-shaped burst",
+      spellEffect = "",
+      spellDuration = "instantaneous; see text",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "yes",
+      spellDescriptionFull = "You drain the heat from all creatures and objects in the area, dealing 13d8 cold damage. You can store the gathered heat energy in a used battery. If you do so and use that battery when casting explosive blast within 1 minute, that spell deals 2d6 additional fire damage, destroying the used battery. Otherwise, the energy dissipates normally.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Tchn 1","WtchW 1"),
+      spellTitle = "Helping Hands",
+      spellPreviewDescription = "Grant extra hands that assist with some skill checks and item manipulation.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "76",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one willing creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "none",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "First developed by resourceful skittermander technomancers, you or a targeted creature sprout two vestigial hands that can hold and manipulate objects. While this spell is active, the target gains a +2 circumstance bonus to Engineering and Sleight of Hand checks. Each round, this spell grants the target one additional move action that can be used to manipulate objects, such as to activate an item, draw a weapon, or reload a weapon. This spell doesn't allow the target to attempt additional attacks.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 3"),
+      spellClassesWithLevelPreview = listOf("Tchn 3"),
+      spellTitle = "Helping Hands, Mass",
+      spellPreviewDescription = "Grant extra hands to multiple creatures that assist with some skill checks and item manipulation.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "76",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "up to one willing creature/level, no two of which can be more than 30 ft. apart",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "none",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "This spell functions as helping hands, except as noted above.\n" +
+              "\n" +
+              "(Helping Hands: First developed by resourceful skittermander technomancers, you or a targeted creature sprout two vestigial hands that can hold and manipulate objects. While this spell is active, the target gains a +2 circumstance bonus to Engineering and Sleight of Hand checks. Each round, this spell grants the target one additional move action that can be used to manipulate objects, such as to activate an item, draw a weapon, or reload a weapon. This spell doesn't allow the target to attempt additional attacks.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Technomancer 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","Tchn 1"),
+      spellTitle = "Hide Weapon",
+      spellPreviewDescription = "You can make a small arm or one-handed weapon disappear into your body.",
+      spellSourceBookPreview = "AdvP#35",
+      spellSourcePage = "54",
+      spellSourceBookFull = "Adventure Path #35: Merchants of the Void",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "personal",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 hour/level (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "When you cast this spell, a small arm or one-handed melee weapon with the operative special property in your hand melds with your flesh, accompanied by a disgusting sucking sound. The weapon can be no greater than light bulk, and it disappears completely inside your arm or arm like appendage. Thereafter for the duration of the spell, you can extend and retract the weapon as a move action.\n" +
+              "While extended, the weapon remains partially melded with your hand and arm. While the weapon is retracted, its shape adjusts to fit inside your arm, and you retain the use of your hand. Spotting the weapon on casual inspection is impossible, but anyone frisking you can attempt a Perception check to notice the weapon hidden inside your arm. The DC of this Perception check is equal to 15 + 1/2 your caster level + your key ability score modifier.\n" +
+              "\n" +
+              "If you cast this spell again while a casting is in effect, you can hide another weapon inside another arm, to a maximum of one weapon per arm you have. You can extend and retract all weapons hidden this way as part of the same action. If you’re disarmed of a melded weapon, this spell immediately ends for that weapon.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Precog 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Prcg 4","WtchW 4"),
+      spellTitle = "Hold Monster",
+      spellPreviewDescription = "Paralyze one creature.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "359",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "enchantment (compulsion, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one living creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Will negates, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "This spell functions as hold person, except it can target any living creature.\n" +
+        "\n" +
+        "(Hold Person: The target becomes paralyzed and freezes in place. It is aware and breathes normally but can’t take any physical actions, even speech. A held creature can’t cast spells. Each round on its turn, the target can spend a full action to attempt a new saving throw to end the effect. This does not provoke attacks of opportunity. A winged creature that is paralyzed can’t flap its wings and falls. A swimmer can’t swim and may drown.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+      spellTitle = "Hold Person",
+      spellPreviewDescription = "Paralyze one humanoid.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "359",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "enchantment (compulsion, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one humanoid creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Will negates, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "The target becomes paralyzed and freezes in place. It is aware and breathes normally but can’t take any physical actions, even speech. A held creature can’t cast spells. Each round on its turn, the target can spend a full action to attempt a new saving throw to end the effect. This does not provoke attacks of opportunity. A winged creature that is paralyzed can’t flap its wings and falls. A swimmer can’t swim and may drown.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 1","Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Prcg 1","Tchn 1","WtchW 1"),
+      spellTitle = "Hold Portal",
+      spellPreviewDescription = "Hold a door shut.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "359",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "abjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one portal up to 20 sq. ft./level",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "This spell magically holds shut a door, gate, shutter, or window of any standard material (metal, plastic, stone, wood, and so on), or it reinforces an electronic lock. The magic affects the portal just as if it were securely closed and normally locked. A knock spell or a successful dispel magic spell can negate a hold portal spell.\n" +
+              "\n" +
+              "Add 5 to the normal DC for forcing open a portal or hacking an electronic lock affected by this spell.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Precog 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Prcg 3"),
+      spellTitle = "Hologram Memory",
+      spellPreviewDescription = "Extract a creature’s memory and replay it as a hologram.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "359",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "divination",
+      spellCastingTime = "1 full action",
+      spellRange = "touch",
+      spellTargets = "one living or deceased sentient creature; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will negates, see text",
+      spellResistance = "no",
+      spellDescriptionFull = "You reach into the target’s mind, extract a specific memory, and project that memory into a small hologram that plays in front of you and is visible to all creatures who can see it. The hologram memory can be no longer than 1 minute; if the extracted memory is longer than this, the hologram simply ends. The hologram includes audio as well as visual components, but it does not contain haptic, olfactory, or other components. The hologram typically plays a memory that takes place in a single scene, though it can cut to multiple scenes, if they are accurate to the memory and its length allows. The hologram plays the memory exactly as the target experienced it and from the target’s perspective, so it often lacks context. The target creature must remain quiet and still while the hologram plays or the spell and hologram end.\n" +
+              "\n" +
+              "This spell can target any living, unconscious, or deceased sentient creature with an Intelligence score of 3 or higher (or a modifier of –4 or higher). If the target is deceased, it cannot have been dead for longer than 1 week, or this spell fails; once a corpse has been subjected to hologram memory by any caster, any subsequent attempts to cast hologram memory on that corpse fail.\n" +
+              "\n" +
+              "If the target is unwilling to share this memory (or if it would be unable to share the memory, in the case of an unconscious or deceased target), it can attempt a Will saving throw with a +4 bonus to negate this spell and its effects.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 1"),
+      spellClassesWithLevelPreview = listOf("Tchn 1"),
+      spellTitle = "Holographic Image",
+      spellPreviewDescription = "Illusory double of your likeness can talk and cast spells.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "360",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "illusion",
+      spellCastingTime = "1 standard action",
+      spellRange = "see text",
+      spellTargets = "",
+      spellArea = "see text",
+      spellEffect = "",
+      spellDuration = "see text",
+      spellSavingThrow = "Will disbelief",
+      spellResistance = "no",
+      spellDescriptionFull = "You weave nearby photons into illusory holograms that can take almost any form you can imagine. These holograms are usually effective against cameras, robots, and living creatures.\n" +
+              "\n" +
+              "1st: When you cast holographic image as a 1st-level spell, it produces a purely visual hologram at long range (400 feet + 40 feet/level). The image has no sound, smell, texture, or temperature. The image can’t extend beyond four 10-foot cubes plus one 10-foot cube per caster level. The image lasts for as long as you concentrate. You can move the image within the limits of the size of the effect.\n" +
+              "\n" +
+              "2nd: When you cast holographic image as a 2nd-level spell, it produces a hologram as per the 1st-level version of the spell, except the hologram can include minor sounds, but not understandable speech. The image lasts for as long as you concentrate plus 2 additional rounds.\n" +
+              "\n" +
+              "3rd: When you cast holographic image as a 3rd-level spell, it produces a hologram as per the 1st-level version of the spell, except the hologram can include sound, smell, and thermal illusions (but not speech). The image disappears when it is struck by an opponent, unless you cause the hologram to react appropriately. The image lasts for as long as you concentrate plus 3 additional rounds.\n" +
+              "\n" +
+              "4th: When you cast holographic image as a 4th-level spell, it produces a hologram as per the 3rd-level version of the spell, except the hologram follows a script determined by you. It follows that script for 1 minute per level without you having to concentrate on it. The hologram can include intelligible speech, if you wish.\n" +
+              "\n" +
+              "5th: When you cast holographic image as a 5th-level spell, it produces a hologram as per the 4th-level version of the spell, except the size of the hologram can’t extend beyond a 20-foot cube plus one 10-foot cube per caster level.\n" +
+              "\n" +
+              "You can choose to make the hologram permanent at the time of casting. By concentrating, you can move the image within the limits of the range, but it is static while you are not concentrating.\n" +
+              "\n" +
+              "Alternatively, you can have the hologram activate when a specific condition (which you set at the time of casting) occurs. The event that triggers the hologram can be as general or as specific and detailed as desired, but it must be based on an audible, olfactory, tactile, or visual trigger. The trigger can’t be based on some quality not normally obvious to the senses, such as alignment. The spell lasts until it is triggered, and then the hologram lasts for 1 round per caster level.\n" +
+              "\n" +
+              "6th: When you cast holographic image as a 6th-level spell, it creates a quasi-real, illusory version of yourself at medium range (100 feet + 10 feet/level). This hologram looks, sounds, and smells like you, but it is intangible. The hologram mimics your actions (including speech) unless you use a move action to direct it to act differently. You can see through its eyes and hear through its ears as if you were standing where it is, and during your turn you can switch from using its senses to using your own, or back again, as a move action. While you are using its senses, your body is considered blinded and deafened.\n" +
+              "\n" +
+              "If you desire, any spell you cast with a range of touch or greater can originate from the hologram instead of from you. The hologram can’t cast spells on itself except for illusion spells. Spells cast in this manner affect other targets normally, despite originating from the hologram.\n" +
+              "\n" +
+              "An object isn’t deceived by illusions (treat as if it had succeeded at its Will saving throw). The hologram remains for 1 round per level, and you must maintain line of effect to the hologram at all times. If your line of effect is obstructed, the spell ends. If you use dimension door, plane shift, teleport, or a similar spell that breaks your line of effect, even momentarily, the spell ends. This casting of the spell is a shadow effect.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 0"),
+      spellClassesWithLevelPreview = listOf("Tchn 0"),
+      spellTitle = "Holographic Interface",
+      spellPreviewDescription = "Generate a holographic interface that lets you interact with a computer.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "76",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one computer you're observing",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 hour (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You conjure a holographic interface you can use to communicate with the target computer. The interface allows you to operate an unfamiliar computer or one that lacks an interface as though you did have an interface, but it doesn't change your level of access.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 5"),
+      spellClassesWithLevelPreview = listOf("Tchn 5"),
+      spellTitle = "Holographic Terrain",
+      spellPreviewDescription = "Create a large hologram that depicts terrain and structures.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "360",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "illusion",
+      spellCastingTime = "1 standard action",
+      spellRange = "long (400 ft. + 40 ft./level)",
+      spellTargets = "",
+      spellArea = "one 20-ft. cube/level (S)",
+      spellEffect = "",
+      spellDuration = "2 hours/level (D)",
+      spellSavingThrow = "Will disbelief",
+      spellResistance = "no",
+      spellDescriptionFull = "You make terrain look, sound, and smell like some other sort of terrain. Equipment, structures, and vehicles within the area can be hidden or changed in appearance. The illusion includes audible, olfactory, tactile, and visual elements and is effective against cameras, living creatures, robots, and scrying spells. This spell can’t disguise or add creatures nor can it make them invisible (though creatures within the area might hide themselves within the illusion just as they can hide themselves within a real location).",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 2"),
+      spellClassesWithLevelPreview = listOf("Tchn 2"),
+      spellTitle = "Hoverdisk",
+      spellPreviewDescription = "Conjure a hovering disk to ride or transport cargo.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "136",
+      spellSourceBookFull = "Character Operations Manual6",
+      spellSchool = "evocation (force)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels); see text",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "3-ft. diameter disk of force",
+      spellDuration = "1 hour/level (D)",
+      spellSavingThrow = "none (harmless)",
+      spellResistance = "no",
+      spellDescriptionFull = "You create a thin, circular plane of force 3 feet in diameter and able to hover up to 3 feet above the ground. When you cast this spell, you can give the disk general instructions, such as “Take me across this field of lava,” or “Take the rescued shirren back to town.” You can tell the disk to go to any location you are familiar with, and it follows these instructions without error, even traveling beyond the spell’s range. If you give the disk no instructions, it follows 5 feet behind you. The disk can carry up to 20 bulk for each caster level you have, has a fly speed of 60 feet (no higher than 3 feet), and can move beyond the spell’s range. It moves at your command or the command of a creature you designate, as a move action, and it raises and lowers itself on similar command, so getting on or off the disk can be done as part of the move action to move into the disk’s space. As a standard action, you can give the disk new general instructions.\n" +
+              "\n" +
+              "If the spell ends before the disk completes its task, the disk completes as much as it can before disappearing. When the disk disappears, whatever it was carrying falls to the surface beneath it.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 5"),
+      spellClassesWithLevelPreview = listOf("Tchn 5"),
+      spellTitle = "Hoverdisk, Mass",
+      spellPreviewDescription = "Create several hovering disks of force for creatures to ride or to transport cargo.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "137",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "evocation (force)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level); see text",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "up to 1 disk of force/caster level, each of which is 3 feet in diameter",
+      spellDuration = "1 hour/level (D)",
+      spellSavingThrow = "none (harmless)",
+      spellResistance = "no",
+      spellDescriptionFull = "This spell functions as hoverdisk, except as noted above. As part of casting this spell, you can give a single set of instructions to all disks, or you can give separate instructions to each disk. You must spend a standard action to give new or additional instructions to any one disk, although you can give a group of disks the same instructions as part of the same action.\n" +
+              "(Hoverdisk: You create a thin, circular plane of force 3 feet in diameter and able to hover up to 3 feet above the ground. When you cast this spell, you can give the disk general instructions, such as “Take me across this field of lava,” or “Take the rescued shirren back to town.” You can tell the disk to go to any location you are familiar with, and it follows these instructions without error, even traveling beyond the spell’s range. If you give the disk no instructions, it follows 5 feet behind you. The disk can carry up to 20 bulk for each caster level you have, has a fly speed of 60 feet (no higher than 3 feet), and can move beyond the spell’s range. It moves at your command or the command of a creature you designate, as a move action, and it raises and lowers itself on similar command, so getting on or off the disk can be done as part of the move action to move into the disk’s space. As a standard action, you can give the disk new general instructions.\n" +
+              "\n" +
+              "If the spell ends before the disk completes its task, the disk completes as much as it can before disappearing. When the disk disappears, whatever it was carrying falls to the surface beneath it.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2"),
+      spellTitle = "Hurl Forcedisk",
+      spellPreviewDescription = "Disc deals 3d6 force damage to one target then ricochets to other targets, dealing 2d6 force damage.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "360",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "evocation (force)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. +10 ft./level)",
+      spellTargets = "up to five creatures; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "You create a spinning disk made of pure, shimmering force and hurl it at one opponent within range, potentially striking other nearby enemies as the disk ricochets. Choose the initial target, and make a ranged attack against its EAC. If the attack hits, the disk deals 3d6 damage. The disk then ricochets to hit up to four more creatures of your choice, each no more than 15 feet from the last target. Make a ranged attack against each successive target’s EAC in turn; the disk deals 2d6 damage to each secondary target struck (this damage is rolled separately for each target). The disk continues to ricochet in this way until it has attempted to strike five creatures, or until there are no more valid targets, or until you voluntarily end the spell. A creature can take damage only once from a single casting of this spell.\n" +
+              "\n" +
+              "The forcedisk is subject to spell resistance, so you must attempt a caster level check (1d20 + your caster level) against each target with spell resistance before determining whether the target might take damage. If you fail this check, the spell ends.\n" +
+              "\n" +
+              "The exact shape of the forcedisk is superficially changeable; as part of casting this spell, a spellcaster can decide to make it shaped differently from a traditional disk. For example, using this spell to create a starknife made of force is popular among Desna’s followers. The spell still deals the amount of damage described above regardless of the disk’s shape.",
   )
 )
