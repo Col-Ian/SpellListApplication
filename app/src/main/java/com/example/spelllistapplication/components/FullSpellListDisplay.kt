@@ -112,10 +112,12 @@ fun SpellList(
         "Galactic Magic",
         "Galaxy Exploration Manual",
         "Interstellar Species",
+        "Junker's Delight",
         "Near Space",
         "Pact Worlds",
         "Ports of Call",
-        "Redshift Rally"
+        "Redshift Rally",
+        "Tech Revolution"
     )
 
     // Default to all books selected

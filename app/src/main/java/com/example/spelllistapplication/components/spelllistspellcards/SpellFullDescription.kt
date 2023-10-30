@@ -46,9 +46,17 @@ fun SpellFullDescription(
                 SpellCardTitle(text = "Source")
                 SpellCardSubtitle(text = " ${item.spellSourceBookFull} pg. ${item.spellSourcePage}")
             }
-            Row {
-                SpellCardTitle(text = "Classes")
-                SpellCardSubtitle(text = " ${item.spellClassWithLevel.joinToString { it }}")
+            // Un-learnable spells will have a spell level of 9
+            if(item.spellClassWithLevel[0].takeLast(1).toInt() == 9){
+                Row {
+                    SpellCardTitle(text = "Classes")
+                    SpellCardSubtitle(text = " ${item.spellClassWithLevel[0].dropLast(1)}-")
+                }
+            } else{
+                Row {
+                    SpellCardTitle(text = "Classes")
+                    SpellCardSubtitle(text = " ${item.spellClassWithLevel.joinToString { it }}")
+                }
             }
             Row {
                 SpellCardTitle(text = "School")

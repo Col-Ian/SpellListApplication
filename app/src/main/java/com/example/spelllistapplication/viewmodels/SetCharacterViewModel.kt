@@ -55,6 +55,8 @@ fun spellsKnownMaximum(spellLevel: Int, characterLevel: Int): Int{
                 fourthLevelSpellsKnown(characterLevel)
             } else if (spellLevel == 5){
                 fifthLevelSpellsKnown(characterLevel)
+            } else if(spellLevel == 9){
+                0 // Un-learnable spells will have a spell level of 9
             } else {
                 sixthLevelSpellsKnown(characterLevel)
             })
