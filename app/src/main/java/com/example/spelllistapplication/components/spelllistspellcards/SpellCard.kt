@@ -45,7 +45,6 @@ fun SpellCard(
 ){
     val expanded = remember { mutableStateOf(false) }
     val setCharacterViewModel: SetCharacterViewModel = viewModel()
-    val setTempSpellLevelViewModel: SetTempSpellLevelViewModel = viewModel()
     val characterClass = setCharacterViewModel.characterClass.value
     val characterLevel = setCharacterViewModel.characterLevel.intValue
     val context = LocalContext.current
@@ -105,11 +104,6 @@ fun SpellCard(
         ) {
             Box(
                 modifier = Modifier
-//                    .border(
-//                        4.dp,
-//                        MaterialTheme.colorScheme.primary,
-//                        shape = RoundedCornerShape(8.dp)
-//                    )
                     .fillMaxWidth()
                     .background(
                         MaterialTheme.colorScheme.primary,
@@ -139,32 +133,6 @@ fun SpellCard(
                             characterCanLearnSpell = characterCanLearnSpell
                         )
                     }
-
-//                    if (characterCanLearnSpell) {
-//                        IconButton(
-//                            onClick = {
-//                                addSpell(
-//                                    item = item,
-//                                    onEventCustomList = onEventCustomList,
-//                                    setCharacterViewModel = setCharacterViewModel,
-//                                    setTempSpellLevelViewModel = setTempSpellLevelViewModel,
-//                                    context
-//                                )
-//                            },
-//                            modifier = Modifier
-//                                .background(
-//                                    MaterialTheme.colorScheme.secondary,
-//                                    shape = CircleShape
-//                                )
-//                                .size(24.dp),
-//                        ) {
-//                            Icon(
-//                                imageVector = Icons.Default.Add,
-//                                contentDescription = "Add Spell",
-//                                tint = MaterialTheme.colorScheme.background
-//                            )
-//                        }
-//                    }
                 }
             }
         }

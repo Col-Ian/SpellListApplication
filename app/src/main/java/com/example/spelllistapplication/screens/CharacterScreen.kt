@@ -1,6 +1,7 @@
 package com.example.spelllistapplication.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -18,7 +19,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.spelllistapplication.components.charactercards.SelectedCharacter
@@ -71,11 +75,22 @@ fun CharacterScreen(
         ){
 
             items(characterState.characters){ character ->
+                val borderColor = if (setCharacterViewModel.characterIdTemp.intValue == character.id){
+                    MaterialTheme.colorScheme.primary
+                } else{
+                    Color.Transparent
+                }
+
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(
                             MaterialTheme.colorScheme.tertiary,
+                            shape = RoundedCornerShape(8.dp)
+                        )
+                        .border(
+                            2.dp,
+                            color = borderColor,
                             shape = RoundedCornerShape(8.dp)
                         )
                         .clickable {
