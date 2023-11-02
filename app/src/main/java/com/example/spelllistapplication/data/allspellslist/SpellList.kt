@@ -10751,5 +10751,1568 @@ var SpellData = listOf(
       spellSavingThrow = "Will negates",
       spellResistance = "yes",
       spellDescriptionFull = "You stun all creatures in range for 1 round.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","Tchn 1","WtchW 1"),
+      spellTitle = "Tectonic Shift",
+      spellPreviewDescription = "You create the sensation of a massive earthquake for a short period of time, causing affected creatures to become unsteady on their feet.",
+      spellSourceBookPreview = "GaExM",
+      spellSourcePage = "75",
+      spellSourceBookFull = "Galaxy Exploration Manual",
+      spellSchool = "enchantment (mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "see text",
+      spellTargets = "see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "see text",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You create the sensation of a massive earthquake for a short period of time, causing affected creatures to become unsteady on their feet.\n" +
+              "\n" +
+              "1st: When you cast tectonic shift as a 1st-level spell, you can target a creature within close range (25 feet + 5 feet/2 levels). The target must succeed at a Will saving throw or be shaken for 1 round.\n" +
+              "\n" +
+              "2nd: When you cast tectonic shift as a 2nd-level spell, you can target a creature within medium range (100 feet + 10 feet/level). The target must succeed at a Will saving throw or be shaken for 1d4 rounds. A creature that fails the save by 5 or more is knocked prone.\n" +
+              "\n" +
+              "3rd: When you cast tectonic shift as 3rd-level spell, you can target up to 5 creatures within medium range (100 feet + 10 feet/level). Each target must succeed at a Will saving throw or be shaken for 1d4 rounds. Creatures that fail the save by 5 or more are stunned for 1 round and knocked prone.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 5"),
+      spellClassesWithLevelPreview = listOf("Tchn 5"),
+      spellTitle = "Telekinesis",
+      spellPreviewDescription = "Move an object, attack creatures, or hurl objects or creatures with your mind.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "380",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "long (400 ft. + 40 ft./level)",
+      spellTargets = "see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "concentration (up to 1 round/level) or instantaneous; see text",
+      spellSavingThrow = "none, Will negates (object), see text",
+      spellResistance = "yes (object), see text",
+      spellDescriptionFull = "You move objects or creatures by concentrating on them. Depending on your desired effect (choose one from below), the spell can perform a variety of combat maneuvers, provide a gentle, sustained force, or exert a single short, violent thrust.\n" +
+              "\n" +
+              "Combat Maneuver: Once per round, you can use telekinesis to perform a ranged attack that acts as a bull rush, disarm, grapple (including pin), or trip combat maneuver. Resolve these attempts as normal, but use your caster level plus your key ability score modifier as your attack bonus. No saving throw is allowed against these attempts, but spell resistance applies normally. This version of the spell can last 1 round per caster level, but it ends if you cease concentrating.\n" +
+              "\n" +
+              "Sustained Force: A sustained force moves an object of no more than 25 pounds or 2 bulk per caster level up to 20 feet per round in any direction (including up or down). A creature can negate the effect on an object it holds with a successful Will save or with spell resistance. This version of the spell lasts 1 round per caster level, but it ends if you cease concentrating. The spell ends if the object is forced beyond the spell’s range.\n" +
+              "\n" +
+              "You can telekinetically manipulate an object as if with one hand. For example, a lever can be pulled, a key turned, a button pushed, an object rotated, and so on if the force required is within the weight limitation. You might even be able to untie simple knots, though a delicate activity such as this requires a successful DC 15 Intelligence check.\n" +
+              "\n" +
+              "Violent Thrust: The spell energy can be spent in a single round. You can hurl up to 15 objects or creatures that are within range (no two of which can be more than 10 feet apart) toward any target within 150 feet of all the objects. You can hurl up to a total weight of 400 pounds or 40 bulk. You must make attack rolls (one per creature or object thrown) to hit the target with the items, using your base attack bonus plus your key ability score modifier as your attack bonus. All objects cause damage ranging from 1 damage per 25 pounds or 2 bulk (for less dangerous objects) to 1d10 damage per 25 pounds or 2 bulk (for extremely dangerous objects, such as weapons or bladed or spiked objects). Objects and creatures that miss the target land in a square adjacent to the target. Creatures that fall within the weight capacity of the spell can be hurled, but they can attempt Will saving throws (or rely on spell resistance) to negate the effect, as can those whose held possessions are targeted by the spell. If a thrown creature is hurled against a solid surface, it takes 1d6 damage as if it had fallen 10 feet.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+      spellTitle = "Telekinetic Projectile",
+      spellPreviewDescription = "Telekinetically hurl an object, dealing 1d6 damage to the target and object.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "380",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one object and one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You fling an unattended object weighing up to 5 pounds (less than 1 bulk) at the target, making a ranged attack against its KAC. If you hit, you deal 1d6 bludgeoning damage to both the target and the object. The type of object thrown doesn’t change the damage type or any other properties of the attack.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4"),
+      spellTitle = "Telepathic Bond",
+      spellPreviewDescription = "Link allows allies to communicate.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "381",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "divination",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "you plus up to one willing creature per 3 levels, no two of which can be more than 30 ft. apart",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "10 minutes/level (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You forge a telepathic bond between yourself and a number of willing creatures, each of which must have an Intelligence score of 3 or higher (or a modifier of –4 or higher). Each creature included in the link is linked to all the others. The creatures can communicate telepathically through the bond regardless of language. No special power or influence is established as a result of the bond. Once the bond is formed, it works over any distance (although not from one plane to another).\n" +
+              "\n" +
+              "If desired, you can leave yourself out of the telepathic bond forged. This decision must be made at the time of casting.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 6"),
+      spellClassesWithLevelPreview = listOf("Myst 6"),
+      spellTitle = "Telepathic Jaunt",
+      spellPreviewDescription = "Use your telepathic bond with a creature to teleport to its location.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "381",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (teleportation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "you and touched objects and other touched willing or unconscious creatures",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none, Will negates (object)",
+      spellResistance = "no, yes (object)",
+      spellDescriptionFull = "Telepathic jaunt thrums along the mental connection you have with a creature with which you currently have an active telepathic bond via your mystic telepathic bond class feature (but not via the telepathic bond spell), and it instantly teleports you to that creature. This spell teleports you to a random, unoccupied square adjacent to the creature with which you have the telepathic bond. If no such square is available, you teleport to the closest eligible square; if the nearest eligible square is more than 50 feet away from the creature, this spell fails.\n" +
+              "\n" +
+              "You can be transported any distance within a plane, even across the galaxy, but you can’t travel between planes, and you can’t transport yourself to a creature if one of you is traveling via Drift travel and the other isn’t. In addition to yourself, you can transport any objects you carry as long as their weight doesn’t exceed your maximum load. You can also bring up to six additional willing or unconscious Medium or smaller creatures (each carrying gear or objects up to its maximum load) or their equivalent. A Large creature counts as two Medium creatures, and a Huge creature counts as two Large creatures. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you. Exceeding this limit causes the spell to fail. There must be sufficient space near the creature with which you have the telepathic bond for all the creatures you are teleporting, or this spell fails.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5"),
+      spellTitle = "Telepathy",
+      spellPreviewDescription = "Communicate mentally with any creatures within 100 feet.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "381",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "divination (mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "personal",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "10 minute/level",
+      spellSavingThrow = "",
+      spellResistance = "",
+      spellDescriptionFull = "You can mentally communicate with any other creature within 100 feet that has a language. It is possible to address multiple creatures at once telepathically, although maintaining a telepathic conversation with more than one creature at a time is just as difficult as speaking and listening to multiple people simultaneously. You can’t use telepathy to locate creatures to communicate with them, but once you’ve established telepathic communication, you don’t require line of effect to maintain it.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 5","Technomancer 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Prcg 5","Tchn 5","WtchW 5"),
+      spellTitle = "Teleport",
+      spellPreviewDescription = "Instantly teleport as far as 2,000 miles.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "381",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (teleportation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "2,000 miles",
+      spellTargets = "you and touched objects and other touched willing or unconscious creatures",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none, Will negates (object)",
+      spellResistance = "no, yes (object)",
+      spellDescriptionFull = "This spell instantly transports you to a designated destination within 2,000 miles. Interplanar and interplanetary travel is not possible, and neither is travel between two moving starships during combat, though you might be able to teleport to a planet’s surface from an orbiting starship. You can bring along objects as long as their weight doesn’t exceed your maximum bulk limit. You can also bring up to five additional willing or unconscious Medium or smaller creatures (carrying gear or objects up to its maximum load) or their equivalent. A Large creature counts as two Medium creatures, and a Huge creature counts as four Medium creatures. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you. As the caster, you need not attempt a saving throw, nor is spell resistance applicable to you. Only objects held or in use by another creature receive saving throws and benefit from spell resistance.\n" +
+              "\n" +
+              "You must have some clear idea of the location and layout of the destination. The clearer your mental image, the more likely the teleportation works. Areas of strong physical or magical energy can make teleportation more hazardous or even impossible. To see how well the teleportation works, roll d% and consult Table 10–1. Refer to the following information for definitions of the terms on the table.\n" +
+              "\n" +
+              "Familiarity: “Very familiar” describes a place you have been very often and where you feel at home. “Studied carefully” describes a place you know well, either because you can currently physically see it or because you’ve been there often. “Seen casually” describes a place you have been to more than once but with which you are not very familiar. “Viewed once” describes a place you have seen once in person or have extensively studied through scrying magic, remote cameras, or recorded images (for a remote-viewed location, you still need to have a clear idea of the location; you can’t teleport to an unknown location that you’ve seen in a holovid).\n" +
+              "\n" +
+              "“False destination” describes a place that doesn’t truly exist, or if you are teleporting to an otherwise familiar location, it is a place that no longer exists as such or has been so completely altered as to no longer be familiar to you. When traveling to a false destination, roll 1d20+80 to obtain results on the table, rather than rolling d%, since there is no real destination for you to hope to arrive at or even be off target from.\n" +
+              "\n" +
+              "On Target: You appear where you want to be.\n" +
+              "\n" +
+              "Off Target: You appear safely a random distance away from the destination in a random direction. The distance off target is d% of the distance that was to be traveled. The direction off target is determined randomly.\n" +
+              "\n" +
+              "Similar Area: You wind up in an area that’s visually or thematically similar to the target area. Generally, you appear in the closest similar place within range. If no such area exists within the spell’s range, the spell simply fails instead.\n" +
+              "\n" +
+              "Mishap: You and anyone else teleporting with you have gotten “scrambled.” You each take 2d10 damage, and you reroll on the chart to see where you wind up. For these rerolls, roll 1d20+80. Each time “mishap” comes up, the creatures take more damage and must reroll.\n" +
+              "\n" +
+              "Familiarity / On Target / Off Target / Similar Area / Mishap\n" +
+              "Very familiar / 1–97 / 98–99 / 100 / —\n" +
+              "Studied carefully / 1–94 / 95–97 / 98–99 / 100\n" +
+              "Seen casually / 1–88 / 89–94 / 95–98 / 99–100\n" +
+              "Viewed once / 1–76 / 77–88 / 89–96 / 97–100\n" +
+              "False destination / — / — / 81–92 / 93–100",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 3"),
+      spellClassesWithLevelPreview = listOf("Prcg 3"),
+      spellTitle = "Temporal Bullets",
+      spellPreviewDescription = "When an ally's weapon attack misses, you cause it to hit instead, dealing up to 40 damage.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "84",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation",
+      spellCastingTime = "1 reaction",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature your ally missed with a weapon attack",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "no",
+      spellDescriptionFull = "You rewind time to a moment of missed opportunity and unleash the damage from a failed attack onto the original target of the attack. As a reaction after an ally's attack with a weapon misses an enemy, you redirect the missed attack's damage onto that enemy. Temporal bullets deals damage of the same amount and type the ally's attack would have dealt, up to a maximum of 40 damage.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Precog 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5","Prcg 5","WtchW 5"),
+      spellTitle = "Temporal Flash",
+      spellPreviewDescription = "Spend a Resolve Point to avoid an attack and teleport to an empty space you could reach with a single move action.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "84",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration (teleportation)",
+      spellCastingTime = "1 reaction",
+      spellRange = "personal",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "",
+      spellResistance = "",
+      spellDescriptionFull = "You shift positions in your current timeline to avoid damage dealt by an attack. As a reaction when you're hit by an attack, spell, or other ability that would deal damage to you, you can spend 1 Resolve Point to instantly teleport to an empty space you could reach with a single move action, avoiding the damage you would have taken. This movement doesn't provoke attacks of opportunity.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Precog 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Prcg 2"),
+      spellTitle = "Temporal Shudder",
+      spellPreviewDescription = "You cause a ripple in time that affects all creatures in the area.",
+      spellSourceBookPreview = "AdvP#48",
+      spellSourcePage = "52",
+      spellSourceBookFull = "Adventure Path #48: Masters of Time and Space",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "",
+      spellTargets = "",
+      spellArea = "30-ft.-radius emanation centered on you",
+      spellEffect = "",
+      spellDuration = "1 round",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "You cause a ripple in time that affects all creatures in the area. At the start of each creature’s turn, there’s a 50% chance the creature is affected by a haste spell until the end of its turn; otherwise, it’s affected by a slow spell until the end of its turn.\n" +
+              "\n" +
+              "(Haste: When making a full attack, a hasted creature can also take a separate move action in order to move. The movement can occur before, after, or between the attacks from the full attack. All movement must occur at the same time.\n" +
+              "\n" +
+              "All of the hasted creature’s modes of movement (including base, burrow, climb, fly, and swim speeds) increase by 30 feet, to a maximum of twice the target’s normal speed using that form of movement. This increase counts as an enhancement bonus, and it affects the creature’s jumping distance as normal for increased speed. Multiple haste effects don’t stack. Haste counters and negates slow.)\n" +
+              "\n" +
+              "(Slow: Creatures affected by this spell are staggered (see Core Rulebook page 277). A slowed creature moves at half its normal speed (round down to the next 5-foot increment). Multiple slow effects don’t stack. Slow counters and negates haste.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Tchn 3","WtchW 3"),
+      spellTitle = "Tenacious Plow",
+      spellPreviewDescription = "You conjure a magical 10-foot-square vehicle in an unoccupied space within range.",
+      spellSourceBookPreview = "RdsR",
+      spellSourcePage = "60",
+      spellSourceBookFull = "Redshift Rally",
+      spellSchool = "conjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "10-ft. square mobile plow",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Reflex negates",
+      spellResistance = "no",
+      spellDescriptionFull = "You conjure a magical 10-foot-square vehicle in an unoccupied space within range. For the spell’s duration, you can take a move action to slam the vehicle into a creature within 30 feet of the vehicle’s current location, moving it to an empty space adjacent to the target and dealing 6d10 bludgeoning damage (Reflex negates).\n" +
+              "\n" +
+              "If you don’t move the vehicle, it remains where it is and doesn’t deal any damage to any creatures, even if a creature is adjacent to the vehicle. The vehicle can’t hold any occupants or be damaged.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 6","Technomancer 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Prcg 6","Tchn 6","WtchW 6"),
+      spellTitle = "Terraform",
+      spellPreviewDescription = "Alter terrain and climate.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "382",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 hour",
+      spellRange = "100 ft.",
+      spellTargets = "",
+      spellArea = "100-ft.-radius emanation centered on you",
+      spellEffect = "",
+      spellDuration = "1 day/level; see text",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You alter the area’s terrain and climate to a new terrain and climate type appropriate to the planet or plane. For example, you might transform a desert into plains. To cast this spell, you must spend 10 Resolve Points along with technological gear worth 30,000 credits (which is magically augmented to do much of the terraforming, then consumed by the spell). A xenodruid mystic instead uses crystals and incenses worth 30,000 credits. This magically alters the area’s climate and normal plants to those appropriate to the new terrain, but it doesn’t affect creatures or the configuration of the ground. Transforming rocky hills into forested areas converts grasses into shrubs and small trees, but it doesn’t flatten the hills or change the animals to suit the new environment.\n" +
+              "\n" +
+              "You can alter the climate by one step (cold, temperate, or warm). The maximum extent of the terrain change is up to the GM, but in general it changes to a similar terrain type or by one step within that terrain type (such as from a typical forest to a forest with massive trees or light undergrowth, from a shallow bog to a deep bog, and so on).\n" +
+              "\n" +
+              "Multiple castings of the spell in the same area can create an area with radically different terrain and climate than the surrounding land. The GM can decide that certain terrain shifts are unsustainable and shorten the duration or that some are suitable for the area and extend the duration. This spell could have many secondary effects based on the nature of the change, the type of bordering terrain, and so on; these should be determined by the GM on a case-by-case basis. For example, transforming a desert requires drawing water up from underground to sustain the plants, which could deplete the water table in nearby areas.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","WtchW 3"),
+      spellTitle = "Thought Ripple",
+      spellPreviewDescription = "You overload a target’s mind with so much psychic stimuli that it ripples to another target, triggering the initial spell as well as overloading the new target with residual psychic overload.",
+      spellSourceBookPreview = "Ports",
+      spellSourcePage = "123",
+      spellSourceBookFull = "Ports of Call",
+      spellSchool = "divination (mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "1 primary target and 1 secondary target/spell level, no two of which can be more than 30 ft. from the primary target",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "Instantaneous",
+      spellSavingThrow = "Will half",
+      spellResistance = "yes",
+      spellDescriptionFull = "You overload a target’s mind with so much psychic stimuli that it ripples to another target, triggering the initial spell as well as overloading the new target with residual psychic overload. This spell deals 2d8 damage to the target, plus 2d8 damage for each prior target that already took damage from this casting of the spell. You choose the order in which targets are affected. Each secondary target of this spell takes a –1 penalty to their Will Save for each opposing alignment of the primary target (so if the primary target was lawful evil, a secondary chaotic evil target takes a –1 penalty, and a secondary chaotic good target takes a –2 penalty). If this spell damages four targets, it incites a thought storm that causes each target to become confused (as per the confusion spell) for 1 round on a failed save.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 3"),
+      spellClassesWithLevelPreview = listOf("Prcg 3"),
+      spellTitle = "Time Crawl",
+      spellPreviewDescription = "Create an area of warped time that acts as difficult terrain and staggers creatures.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "84",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "20-ft.-radius spread",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Fortitude partial",
+      spellResistance = "no",
+      spellDescriptionFull = "You distort time in the area, forcing it to pass slowly. This area is difficult terrain. Creatures in the area when the spell is cast, or who enter the area, are staggered for as long as they remain in the area. A creature that succeeds at a Fortitude saving throw negates the staggered condition and instead has all their speeds reduced by 10 feet for as long as they remain in the area. Creatures use the result of their initial saving throw against this spell, no matter how many times they leave and reenter the area.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 4"),
+      spellClassesWithLevelPreview = listOf("Prcg 4"),
+      spellTitle = "Time Loop, Mass",
+      spellPreviewDescription = "Confuse and entangle multiple creatures.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "84",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "up to one creature/level, no two of which can be more than 30 ft. apart",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "This spell functions as time loop, except as noted above.\n" +
+              "\n" +
+              "(Time Loop: You immerse a creature in a time loop of your creation. The target sees and reacts to events that no longer coincide with the current timeline, becoming confused for 1 round and entangled for the duration. If the target succeeds at a Will saving throw to ignore the time loop, they're instead off-target for the duration.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 2"),
+      spellClassesWithLevelPreview = listOf("Prcg 2"),
+      spellTitle = "Time Loop",
+      spellPreviewDescription = "Confuse and entangle a creature.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "84",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Will partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You immerse a creature in a time loop of your creation. The target sees and reacts to events that no longer coincide with the current timeline, becoming confused for 1 round and entangled for the duration. If the target succeeds at a Will saving throw to ignore the time loop, they're instead off-target for the duration.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Precog 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Prcg 3","WtchW 3"),
+      spellTitle = "Time's Edge",
+      spellPreviewDescription = "Deal 10d6 slashing damage to creatures and objects in an area.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "84",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "120 ft.",
+      spellTargets = "",
+      spellArea = "line-shaped burst",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "yes",
+      spellDescriptionFull = "You refract latent energy from the Dimension of Time into your current plane in the form of a massive blade. This deals 10d6 slashing damage to all creatures and objects in the area.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+      spellTitle = "Token Spell",
+      spellPreviewDescription = "Perform simple magical effects.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "382",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "10 ft.",
+      spellTargets = "see text",
+      spellArea = "see text",
+      spellEffect = "see text",
+      spellDuration = "1 hour",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "Token spells are often some of the first minor changes that spellcasters produce when they begin experimenting with magic. Once cast, token spell enables you to perform simple magical effects for 1 hour. The effects are minor and have severe limitations. You can slowly lift one item of light bulk. You can alter items in a 1-foot cube each round, coloring, cleaning, soiling, cooling, warming, or flavoring them. You can create small objects, but they look artificial and are extremely fragile (they can’t be used as tools or weapons). You can illuminate an object to shed dim light in a 30-foot radius.\n" +
+              "\n" +
+              "Token spell lacks the power to duplicate any other spell effects. Any actual change to an object (beyond moving, cleaning, or soiling it) persists for only 1 hour.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Precog 3","Technomancer 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Prcg 3","Tchn 3","WtchW 3"),
+      spellTitle = "Tongues",
+      spellPreviewDescription = "Target can speak and understand any language.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "382",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "divination",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "10 minutes/level",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "no",
+      spellDescriptionFull = "This spell grants the creature touched the ability to speak and understand the spoken or signed language of any intelligent creature, whether it is a racial tongue or a regional dialect. The target can speak only one language at a time, although it may be able to understand several languages. Tongues does not enable the target to speak with creatures who don’t speak. The target can make itself understood as far as its voice carries.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Precog 4","Technomancer 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Prcg 0","Tchn 4"),
+      spellTitle = "Tracking Mark",
+      spellPreviewDescription = "Place a mark on a creature or object that allows you to track it.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "84",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "divination",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature or one object",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 hour/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You place a unique magical mark, which is about 1 square inch in size, on a creature or object. The mark is invisible, but detect magic and similar effects can reveal its presence. Unattended objects are always affected by this spell. If you attempt to affect a creature or an object in a creature's possession, the creature can attempt a Reflex save to negate the effect.\n" +
+              "\n" +
+              "Once the tracking mark is in place, you can follow the tracking mark by succeeding at a DC 20 Mysticism check. You're able to detect the tracking mark up to 1,000 feet away, and you must be on the same plane as the tracking mark to follow it.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 0","Technomancer 0"),
+      spellClassesWithLevelPreview = listOf("Prcg 0","Tchn 0"),
+      spellTitle = "Transfer Charge",
+      spellPreviewDescription = "Move charges from one power source to another source of the same type.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "383",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "two objects of the same type; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Fortitude negates (object)",
+      spellResistance = "yes (object)",
+      spellDescriptionFull = "You can transfer any number of charges from one battery to another battery or from one power cell to another power cell. You can only transfer charges using two objects of the exact same type (two batteries of the same size, two identical power cells, or the like); you transfer charges from the source object to the receiving object.\n" +
+              "\n" +
+              "You must declare how many charges you are transferring before casting this spell. If you transfer more charges from the source than the receiving item can hold, the receiving item must succeed at a Fortitude saving throw or take 1d6 electricity damage. This spell provides no knowledge of how many charges a receiving item can safely hold, but you can choose to transfer fewer charges than the maximum allowed to reduce the risk.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 5"),
+      spellClassesWithLevelPreview = listOf("Tchn 5"),
+      spellTitle = "Transfer Consciousness",
+      spellPreviewDescription = "Transfer your mind into a computer or willing technological construct, and control its functions.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "142",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "divination",
+      spellCastingTime = "1 round",
+      spellRange = "touch",
+      spellTargets = "one computer or willing technological construct; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "10 minutes/level (D)",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You transfer your mind into a computer or technological construct. If you transfer your mind into a computer, its tier can be no higher than half your caster level. If you transfer into a construct, it must be willing or, if nonsapient, not hostile to you. The construct’s CR or level can be no higher than your caster level.\n" +
+              "\n" +
+              "While your mind is in a computer system, you have direct control over its commands. You can perform Computers checks related to that system in half the usual time.\n" +
+              "\n" +
+              "If you transfer your mind into a technological construct, you have access to its functions, allowing you to control the creature directly. You can’t cast the construct’s spells or use its spell-like or supernatural abilities. You can cast your own spells.\n" +
+              "\n" +
+              "While this spell lasts, your body falls prone and helpless, as if you were unconscious. When the spell ends, your mind transfers back to your body instantly, provided your body and the target are on the same plane. Otherwise, you die.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Tchn 1","WtchW 1"),
+      spellTitle = "You instantly transfer an object held in your hand to the hand of a willing creature within range.",
+      spellPreviewDescription = "You instantly transfer an object held in your hand to the hand of a willing creature within range.",
+      spellSourceBookPreview = "AdvP#42",
+      spellSourcePage = "43",
+      spellSourceBookFull = "Adventure Path #42: Whispers of the Eclipse",
+      spellSchool = "conjuration (teleportation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one object held of up to 1 bulk",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Fortitude negates (harmless, object)",
+      spellResistance = "yes (harmless, object)",
+      spellDescriptionFull = "You instantly transfer an object held in your hand to the hand of a willing creature within range. The object can be no heavier than 1 bulk. The creature you teleport the object to must have at least one empty hand to hold the object.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 4"),
+      spellClassesWithLevelPreview = listOf("Tchn 4"),
+      spellTitle = "Transport Passengers",
+      spellPreviewDescription = "Create extradimensional seating space inside a vehicle or Tiny starship.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "142",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 minute",
+      spellRange = "touch",
+      spellTargets = "one vehicle or Tiny starship; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 hour/level",
+      spellSavingThrow = "none (object)",
+      spellResistance = "no (object)",
+      spellDescriptionFull = "You create an extradimensional space in the passenger area of a vehicle or Tiny starship, allowing it to carry one additional Medium creature per caster level. This spell must be cast on a vehicle able to carry more than one passenger, or the spell fails. The extradimensional space appears in the vehicle’s seating area or the starship’s bridge or passenger section, and it looks like a thin, glowing gap in reality. Creatures that step through this gap are shunted into the extradimensional space, which appears to be and functions as another compartment in the vehicle. A creature can exit the extradimensional space as part of a move action to move through the gap in reality, though a creature cannot exit the extradimensional space unless room to accommodate it exists in the normal seating area.\n" +
+              "\n" +
+              "Creatures that are encumbered or overburdened cannot enter the extradimensional space. If a creature is larger than Medium, each size category counts as one additional creature for determining the capacity of the extradimensional space.\n" +
+              "\n" +
+              "Creatures within the extradimensional space can’t interact with anything outside the vehicle, nor can creatures outside the vehicle perceive or interact with occupants and contents of the space. If the vehicle is destroyed or the extradimensional space is dispelled, the extradimensional space collapses. Anything within the extradimensional space when the vehicle or starship is destroyed, the space is dispelled, or this spell ends are shunted to the nearest open spaces outside the target.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Tchn 2","WtchW 2"),
+      spellTitle = "Trifold Explosion",
+      spellPreviewDescription = "By drawing on the latent energy that surrounds everything, you trigger a series of magical explosions.",
+      spellSourceBookPreview = "AdvP#49",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #49: A Light in the Dark",
+      spellSchool = "evocation (fire)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "three bursts, no two of which can have their centers more than 30 feet apart",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "yes",
+      spellDescriptionFull = "By drawing on the latent energy that surrounds everything, you trigger a series of magical explosions, dealing fire damage to creatures in areas that you designate when casting the spell. The amount of damage and the size of the explosions depend on the spell's level. Overlapping areas of Trifold Explosion do not do additional damage and creatures in overlapping areas of the spell's effect are only affected by the spell once.\n" +
+              "\n" +
+              "2nd: When you cast trifold explosion as a 2nd-level spell, it deals 3d6 fire damage in three 5-ft.-radius bursts.\n" +
+              "\n" +
+              "3rd: When you cast trifold explosion as a 3rd-level spell, it deals 5d6 fire damage in three 5-ft.-radius bursts.\n" +
+              "\n" +
+              "4th: When you cast trifold explosion as a 4th-level spell, it deals 7d6 fire damage in three 10-ft.-radius bursts.\n" +
+              "\n" +
+              "5th: When you cast trifold explosion as a 5th-level spell, it deals 8d6 fire damage in three 10-ft.-radius bursts.\n" +
+              "\n" +
+              "6th: When you cast trifold explosion as a 6th-level spell, it deals 10d6 fire damage in three 10-ft.-radius bursts.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Technomancer 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","Tchn 3"),
+      spellTitle = "Tripartite Beam, Greater",
+      spellPreviewDescription = "You fire three spiraling beams of glowing energy at a target that intertwine midflight into a single tripartite ray.",
+      spellSourceBookPreview = "AdvP#49",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #49: A Light in the Dark",
+      spellSchool = "evocation (acid, electricity, fire)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "This spell functions like tripartite beam, except as noted above. In addition, it deals 3d6 acid damage, 3d6 electricity damage, and 3d6 fire damage, rather than the damage listed in tripartite beam. On a critical hit, the target is blinded for 3 rounds, rather than dazzled.\n" +
+              "\n" +
+              "(Tripartite Beam: You fire three spiraling beams of glowing energy at a target that intertwine midflight into a single tripartite ray. Make a ranged attack roll against your target's EAC. If you hit, the target takes 1d6 acid damage, 1d6 electricity damage, and 1d6 f re damage. On a critical hit, they're additionally dazzled for 3 rounds.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Technomancer 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","Tchn 1"),
+      spellTitle = "Tripartite Beam",
+      spellPreviewDescription = "You fire three spiraling beams of glowing energy at a target that intertwine midflight into a single tripartite ray.",
+      spellSourceBookPreview = "AdvP#49",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #49: A Light in the Dark",
+      spellSchool = "evocation (acid, electricity, fire)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./level)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "You fire three spiraling beams of glowing energy at a target that intertwine midflight into a single tripartite ray. Make a ranged attack roll against your target's EAC. If you hit, the target takes 1d6 acid damage, 1d6 electricity damage, and 1d6 f re damage. On a critical hit, they're additionally dazzled for 3 rounds.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 6","Precog 6","Technomancer 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Myst 6","Prcg 6","Tchn 6","WtchW 6"),
+      spellTitle = "True Seeing",
+      spellPreviewDescription = "Target can see things as they really are.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "383",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "divination",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "You confer upon the target the ability to see all things within 120 feet as they actually are. The target sees through normal and magical darkness, notices secret doors hidden by magic, sees the exact locations of creatures or objects that are invisible or displaced, sees through illusions, and sees the true form of changed or transmuted things. Further, the target can focus its vision to see into the Ethereal Plane (but not into extradimensional spaces).\n" +
+              "\n" +
+              "True seeing, however, does not penetrate solid objects. It in no way confers X-ray vision or its equivalent. It does not negate concealment, including that caused by fog and the like. True seeing does not help the viewer see through mundane disguises, spot creatures who are simply hiding, or notice secret doors hidden by mundane means.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("WtchW 4"),
+      spellTitle = "Uncanny Eruption",
+      spellPreviewDescription = "You form the crater of an active volcano at a target location, immediately exposing all creatures in the area to lava.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "75",
+      spellSourceBookFull = "Galaxy Exploration Manual",
+      spellSchool = "evocation (fire)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "20-ft.-radius crater filled with 2-footdeep magma",
+      spellDuration = "concentration + 1 round/level (D)",
+      spellSavingThrow = "Fortitude half",
+      spellResistance = "no",
+      spellDescriptionFull = "You form the crater of an active volcano at a target location, immediately exposing all creatures in the area to lava (Core Rulebook 403), dealing 2d6 fire damage immediately, and continuing to expose creatures who begin their turn in the area, who take the appropriate fire damage at the beginning of their turn. Damage from the lava continues for 1d3 rounds after a creature leaves the area, but this additional damage is only 1d6 fire damage per round.\n" +
+              "\n" +
+              "In addition, every 1d4 rounds, creatures in or within 30 feet of the crater must succeed at a Reflex save or take an additional 5d6 fire damage as the crater periodically erupts.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Prcg 2","WtchW 2"),
+      spellTitle = "Uncanny Luck",
+      spellPreviewDescription = "Reroll a saving throw or an enemy's attack roll.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "85",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "divination",
+      spellCastingTime = "1 reaction",
+      spellRange = "personal",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will negates, see text",
+      spellResistance = "yes, see text",
+      spellDescriptionFull = "Mimicking the luck of halflings, you presciently react or tug on the strands of fate, casting this spell just after a d20 roll you attempt for a saving throw or an enemy attempts for an attack against you. The triggering roll must be rerolled, unless it's an attack roll made by an enemy who saves or whose spell resistance you fail to overcome.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Prcg 5","WtchW 5"),
+      spellTitle = "Undo Mistake",
+      spellPreviewDescription = "Establish a mental link with an ally and spend a Resolve Point to allow them to reroll a failed skill check with a +2 circumstance bonus.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "85",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "divination",
+      spellCastingTime = "1 minute",
+      spellRange = "touch",
+      spellTargets = "one willing ally",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 hour/level",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "Frequently used by formian taskmasters to assist with training workers in new fields or avoiding costly mistakes, this spell has become popular among educators, managers, parents, and mentors of all kinds. You establish a minor but long-range mental link with the target and are alerted whenever the target fails a skill check. Once during the spell's duration, you can nudge the universe into undoing the target's mistakes and allowing the target a second chance. As a reaction when the target fails a skill check, you can spend 1 Resolve Point to allow the target to reroll the failed skill check with a +2 circumstance bonus. After the target rerolls a skill check, this spell ends. If you and the target are ever more than 10 miles apart, this spell ends.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Precog 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Prcg 2","WtchW 2"),
+      spellTitle = "Unmask",
+      spellPreviewDescription = "Remove a creature's magical or nonmagical disguise.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "85",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "enchantment",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "Embri cast this spell to shame other embri who break decorum, and precogs manifest this spell by revealing a creature's true future appearance. If the target fails the saving throw, nonmagical disguises or face coverings fall away harmlessly, revealing the creature's face or otherwise showing its real identity. A shapechanger must revert to its true form. A creature can't successfully disguise itself, change its shape, or use a magic item to alter its appearance again for 10 minutes. During this time, the creature can't be the target of another's attempt at a nonmagical disguise, but it can be the target of another's disguising magic.\n" +
+              "\n" +
+              "If, when you cast this spell, the effect disguising a creature is magical (other than a shapechanger's capabilities), you must attempt a caster level check (1d20 + your caster level). The DC equals 11 + the level, item level, or CR of the effect's creator. If you succeed, the magic is dispelled and can't be renewed for 10 minutes. This spell has no effect on artifacts or deities.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Precog 5","Technomancer 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5","Prcg 5","Tchn 5","WtchW 5"),
+      spellTitle = "Unravel Magic",
+      spellPreviewDescription = "Permanently remove a magic item's magical properties.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "85",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one unattended hybrid or magic item",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Fortitude negates (object)",
+      spellResistance = "no",
+      spellDescriptionFull = "You unravel the magic imbuing a magic item, permanently removing its magical properties. To do so, you must attempt a caster level check (1d20 + your caster level). The DC equals 11 + the item's level, or 5 + a consumable item's level. If you succeed, the item becomes nonmagical, but its physical properties remain unchanged. This spell has no effect on artifacts.\n" +
+              "\n" +
+              "If you unravel a non-consumable magic item of an item level of 4 or higher, you can harvest a portion of the unraveling energy. Divide the item's level by 4, and you can gain one spell slot of that level or lower. That spell slot vanishes if you fail to use it within 24 hours or after you rest to regain the use of daily-use abilities, whichever comes first.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 1"),
+      spellClassesWithLevelPreview = listOf("Tchn 1"),
+      spellTitle = "Unseen Servant",
+      spellPreviewDescription = "Invisible force obeys your commands.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "383",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "one invisible, mindless, shapeless servant",
+      spellDuration = "1 hour/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "The spell conjures an invisible, mindless, shapeless force that performs simple tasks at your command (a move action). It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so as long as you remain within range. It has an effective Strength score of 2 (so it can lift up to 20 pounds or 2 bulk or drag up to 100 pounds or 10 bulk). It can trigger traps and such, but it can’t exert enough force to activate certain pressure plates and other devices. It can’t perform any task that requires a skill check with a DC higher than 10 or that requires a check using a skill that can’t be used untrained. This servant can’t fly, climb, or swim (though it can walk on water). Its land speed is 15 feet.\n" +
+              "\n" +
+              "The servant can’t attack in any way; it is never allowed to make attack rolls. It can’t be killed, but it dissipates if it takes 6 or more damage from area attacks; it gets no saving throws against attacks.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("WtchW 6"),
+      spellTitle = "Unspeakable Presences",
+      spellPreviewDescription = "Enemies in the area take 4d6 damage per round, cannot move, and might be devoured whole.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "142",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "long (400 ft. + 40 ft./level)",
+      spellTargets = "",
+      spellArea = "60-ft. radius",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "none; see text",
+      spellResistance = "no",
+      spellDescriptionFull = "You swap the space beneath your enemies with the gnashing maws, tentacles, and claws of hideous beasts from another reality. A foe in the area takes 4d6 damage per round and cannot move until it succeeds at a Reflex saving throw, which it can attempt at the end of each of its turns. At that point, the opponent can be affected again only if it leaves the spell’s area and then returns.\n" +
+              "\n" +
+              "A creature that takes damage from this spell 3 rounds in a row must succeed at a Fortitude save or be consumed by the unspeakable presences. That creature dies, and when the spell ends, its body and gear disappear into the realities from whence the presences came. This is a death effect. Only miracle, warp reality, and wish can bring back a creature slain this way.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Tchn 5","WtchW 5"),
+      spellTitle = "Unwilling Guardian",
+      spellPreviewDescription = "Charm a target into protecting you during combat.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "383",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "enchantment (compulsion, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./level)",
+      spellTargets = "one creature with CR lower than your level; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "Your overwhelming presence bores into the target’s mind, cowing its will. This turns it into an automaton-like guardian that protects you at all costs. As soon as it is able, the target mindlessly moves along the most direct route toward you and stops when it is within 10 feet of you (provoking attacks of opportunity for movement as normal). If you are being attacked in melee by a creature within 10 feet, the target instead takes the quickest route to intercept that creature from a square within 10 feet of you and attack it on your behalf.\n" +
+              "\n" +
+              "While this spell is in effect, the target attacks any creature that attacks you in melee, though it can’t move more than 10 feet from you to do so. If multiple creatures are attacking you in melee, you can choose which creature the target attacks on your behalf as part of combat banter. If you are the target of ranged attacks and your guardian is not attacking a melee assailant on your behalf, it moves to provide cover against the ranged attacks. Due to the strong momentary connection between you and your unwilling guardian, if you are the single target of a hostile creature’s spell or effect, the creature must succeed at a caster level check (DC = 6 + your caster level) or the spell or effect instead targets your guardian. This spell has no effect on area of effect or multi-target spells or other effects that include you as a target.\n" +
+              "\n" +
+              "When this spell ends, the target regains control of its faculties entirely and it knows and remembers that you used magic to control it. Once a creature has been the target of unwilling guardian, it can’t be targeted with this spell again for 24 hours if cast by the same spellcaster.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Technomancer 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Tchn 4","WtchW 4"),
+      spellTitle = "Upgrade Summon, Greater",
+      spellPreviewDescription = "This spell functions as upgrade summon, except that you can apply two of the listed benefits above to the target summoned creature.",
+      spellSourceBookPreview = "AdvP#51",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #51: Into the Dataverse",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one summoned creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "This spell functions as upgrade summon, except that you can apply two of the listed benefits above to the target summoned creature.\n" +
+              "\n" +
+              "(Upgrade Summon: This spell temporarily empowers the abilities of a summoned creature. When you cast this spell, choose one of the following benefits. This upgrade lasts for the spell’s duration or until the summoned creature is dismissed or returns to its native plane. A summoned creature can only benefit from one of these upgrades at a time; casting this spell a second time on a summoned creature immediately ends the first casting’s benefits.\n" +
+              "\n" +
+              "-The summoned creature’s maximum Hit Points increases by 10%.\n" +
+              "\n" +
+              "-The Armor Class of the summoned creature increases by 2.\n" +
+              "\n" +
+              "-The summoned creature gains a +1 bonus to all attack rolls.\n" +
+              "\n" +
+              "-One of the summoned creature’s attacks deals an additional die of damage of the same size.\n" +
+              "\n" +
+              "-When the summoned creature makes a full attack, it can also take a separate move action to move. The movement can occur before, after, or between the attacks from the full attack. All movement must occur at the same time. (This benefit doesn’t stack with the benefits of haste.)",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Technomancer 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Tchn 2","WtchW 2"),
+      spellTitle = "Upgrade Summon",
+      spellPreviewDescription = "This spell temporarily empowers the abilities of a summoned creature.",
+      spellSourceBookPreview = "AdvP#51",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #51: Into the Dataverse",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one summoned creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "This spell temporarily empowers the abilities of a summoned creature. When you cast this spell, choose one of the following benefits. This upgrade lasts for the spell’s duration or until the summoned creature is dismissed or returns to its native plane. A summoned creature can only benefit from one of these upgrades at a time; casting this spell a second time on a summoned creature immediately ends the first casting’s benefits.\n" +
+              "\n" +
+              "-The summoned creature’s maximum Hit Points increases by 10%.\n" +
+              "\n" +
+              "-The Armor Class of the summoned creature increases by 2.\n" +
+              "\n" +
+              "-The summoned creature gains a +1 bonus to all attack rolls.\n" +
+              "\n" +
+              "-One of the summoned creature’s attacks deals an additional die of damage of the same size.\n" +
+              "\n" +
+              "-When the summoned creature makes a full attack, it can also take a separate move action to move. The movement can occur before, after, or between the attacks from the full attack. All movement must occur at the same time. (This benefit doesn’t stack with the benefits of haste.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Prcg 6","WtchW 6"),
+      spellTitle = "Usher Apocalypse",
+      spellPreviewDescription = "Deal fire damage, create difficult terrain, and potentially anchor foes to the ground in the area.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "142",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "illusion (shadow)",
+      spellCastingTime = "1 standard action",
+      spellRange = "long (400 ft. + 40 ft./level)",
+      spellTargets = "",
+      spellArea = "60-ft. radius",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Will disbelief and Reflex partial; see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You create a quasi-real apocalypse to tear through the area, causing several effects. When the spell first takes effect, illusory hellfire crashes to the ground, dealing 6d6 fire damage to your enemies in the area. Creatures can attempt a Will saving throw to disbelieve the fiery vision and take only half damage.\n" +
+              "\n" +
+              "Then, for the duration, two more effects continue. An illusion makes the ground appear to be unstable crust over lava, which your foes treat as difficult terrain. Grasping hands appear to reach out from the ground to grab at enemies. Each time an enemy starts its turn in the area, it must succeed at a Reflex saving throw or be unable to leave its space for the turn.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Precog 4","Technomancer 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Prcg 4","Tchn 4","WtchW 4"),
+      spellTitle = "Usurp Spell",
+      spellPreviewDescription = "Take control of another spell being cast nearby.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "85",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "abjuration",
+      spellCastingTime = "1 reaction",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "one spell",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You override the will of another spellcaster, taking control of their spell. As a reaction when you observe a spell being cast within range, you can cast this spell. If you do, you can attempt a dispel check (1d20 + your caster level). The DC equals 11 + the other spellcaster's caster level + 2 per level of the spell above 4th. If you succeed, you determine the spell's parameters as if you had cast it. This spell has no effect on artifacts or deities.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 0","Precog 0","Technomancer 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Myst 0","Prcg 0","Tchn 0","WtchW 0"),
+      spellTitle = "Vanishing Trick",
+      spellPreviewDescription = "Turn an object invisible.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "85",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "illusion",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one unattended object of no more than 1 bulk",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "Will negates (harmless, object)",
+      spellResistance = "yes (harmless, object)",
+      spellDescriptionFull = "The object you touch becomes invisible.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Tchn 0","WtchW 0"),
+      spellTitle = "Varied Veneer",
+      spellPreviewDescription = "Make an object appear broken or nonfunctional, or make a broken object appear to be functional.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "85",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "illusion",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one unattended object of no more than 2 bulk",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 hour",
+      spellSavingThrow = "Will disbelief",
+      spellResistance = "no",
+      spellDescriptionFull = "You make the object you touch appear to be broken or otherwise worthless, or you make a broken object appear to be functional. A creature that handles the object can attempt a Will saving throw to recognize the illusion. The object functions as its actual condition indicates—this spell ends if someone attempts to use the object for its intended function.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Tchn 6","WtchW 6"),
+      spellTitle = "Veil",
+      spellPreviewDescription = "Change appearance of a group of creatures.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "384",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "illusion",
+      spellCastingTime = "1 standard action",
+      spellRange = "long (400 ft. + 40 ft./level)",
+      spellTargets = "up to one or more creatures, no two of which can be more than 30 ft. apart",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "concentration + 1 hour/level (D)",
+      spellSavingThrow = "Will negates or disbelief, see text",
+      spellResistance = "yes, see text",
+      spellDescriptionFull = "You instantly change the appearance of the targets and then maintain that appearance for the spell’s duration. You can make the targets appear to be anything you wish. The targets look, feel, and smell just like what the spell makes them resemble. Affected creatures return to their normal appearances if slain. You must succeed at a Disguise check to duplicate the appearance of a specific individual. This spell gives you a +10 bonus to such a check (since it counts as altering your form).\n" +
+              "\n" +
+              "An unwilling target can negate the spell’s effect on it by succeeding at a Will saving throw or by relying on spell resistance. Those who interact with the targets can attempt Will saving throws to disbelieve the illusion, but spell resistance doesn’t help pierce the illusion.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","WtchW 2"),
+      spellTitle = "Venomous Weapon",
+      spellPreviewDescription = "You touch a weapon that deals bludgeoning, piercing, or slashing damage and imbue it with poison.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "23",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "conjuration (poison)",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "weapon touched",
+      spellArea = "",
+      spellEffect = "imbues weapon with poison",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "none (see text)",
+      spellResistance = "no",
+      spellDescriptionFull = "You touch a weapon that deals bludgeoning, piercing, or slashing damage and imbue it with poison. The next five attacks made using the weapon are poisoned. Each creature damaged by these attacks must succeed at a Fortitude save or be sickened for 2d4 rounds.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","WtchW 2"),
+      spellTitle = "Verdant Blast",
+      spellPreviewDescription = "Emit a blast of plants dealing 3d6 piercing damage to all creatures and objects in the area.",
+      spellSourceBookPreview = "AdvP#42",
+      spellSourcePage = "43",
+      spellSourceBookFull = "Adventure Path #42: Whispers of the Eclipse",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "120 ft.",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "yes",
+      spellDescriptionFull = "Tapping into the life-giving energy of your home world, you emit a blast of rapidly growing roots, branches, vines, and thorns that puncture creatures in a line, dealing 3d6 piercing damage to all creatures and objects in the area.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Tchn 1","WtchW 1"),
+      spellTitle = "Verdant Code",
+      spellPreviewDescription = "You turn data into plant matter that either instantly explodes outward or lurks within a device.",
+      spellSourceBookPreview = "NearS",
+      spellSourcePage = "129",
+      spellSourceBookFull = "Near Space",
+      spellSchool = "conjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one computer system or module",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 hour/level or until triggered, then 1 minute/level, see text",
+      spellSavingThrow = "Will negates (object), Reflex partial, see text",
+      spellResistance = "yes (object), see text",
+      spellDescriptionFull = "You turn data into plant matter that either instantly explodes outward or lurks within a device.\n" +
+              "\n" +
+              "Instant Growth: You immediately incite growth from the targeted device. A creature can negate the effect on an object it holds with a successful Will save or with spell resistance. For both this and the dormant growth effect (see below), the plant matter explodes from the targeted device, filling all squares within a 20-foot-radius spread. Each creature in the area must attempt a Reflex save. On a failure, it takes 5d6 slashing damage and is entangled; on a successful save, it takes half damage, isn’t entangled, and is shunted to the nearest empty space available. A creature can escape the entangled effect with a successful Acrobatics or Athletics check as a standard action, using the spell save DC as the skill check DC. A square of plant matter has hardness 8 and 15 Hit Points. The growth also covers the device, preventing non-remote access until the plant matter is destroyed or disintegrates at the end of the spell’s duration.\n" +
+              "\n" +
+              "Dormant Growth: You implant verdant code into an computer system or module you have root access to. The next time the device is accessed, plant matter explodes from the device (see above). A device can hold only one instance of verdant code at a time, and new instances erase the previous instance. If this spell’s duration ends before the implanted code is accessed, the code vanishes. This code can be made permanent, as implant data.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 2"),
+      spellClassesWithLevelPreview = listOf("Tchn 2"),
+      spellTitle = "Vigilant Junkbot",
+      spellPreviewDescription = "Create a temporary robot made of junk that can protect you from ranged or melee attacks.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "143",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 round",
+      spellRange = "touch",
+      spellTargets = "1 bulk of inert electronic equipment; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You turn the target into a robot that can guard you. This spell works like handy junkbot insofar as targeting parameters and your inability to target the same equipment after the spell ends. The junkbot you create is Tiny and appears in your space.\n" +
+              "\n" +
+              "A vigilant junkbot can take no actions. Instead, you instruct the junkbot to perform its melee protocol or ranged protocol. You can change the protocol telepathically as a move action. In its melee protocol, the junkbot attaches to you, granting you a +1 bonus to KAC for every 4 technomancer levels you have. In its ranged protocol, the vigilant junkbot hovers at strategic angles to cover you, granting you concealment against ranged attacks. Additionally, when you take damage from an attack that matches the protocol (melee or ranged), the junkbot takes the first 3 damage. Any additional damage passes to you.\n" +
+              "\n" +
+              "Enemies can target the junkbot instead of you. Its KAC and EAC are each 10 + your caster level, and it has Hit Points equal to one-quarter of your own (but no Stamina Points). The junkbot uses your saving throw bonuses, and it is a construct with the magical and technological subtypes.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3"),
+      spellTitle = "Viral Destruction",
+      spellPreviewDescription = "You can cast this spell only immediately after a creature in range dies.",
+      spellSourceBookPreview = "AdvP#2",
+      spellSourcePage = "51",
+      spellSourceBookFull = "Adventure Path #2: Temple of the Twelve pg. 51",
+      spellSchool = "necromancy",
+      spellCastingTime = "1 reaction",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one newly dead creature; see text",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "Instantaneous; see text",
+      spellSavingThrow = "Will negates, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You can cast this spell only immediately after a creature in range dies. On its next turn in the initiative order, the corpse stands up (if applicable; this does not require a move action), can take a single move action to move up to its speed, and makes a single attack using the weapons and bonuses it had when alive (though it can’t use class features, spell-like abilities, or spells). You can choose the target of the affected creature’s attack or allow the target corpse to select a target entirely at random. If the target of this spell was friendly or helpful toward you in life, the spell works automatically; otherwise, the corpse can attempt a Will saving throw to negate this spell, as if the creature were still alive. After making its attack, the creature that you have targeted with viral destruction falls and is dead as normal. However, if this attack kills the affected creature’s target or if it knocks it unconscious, that target must succeed at a Will saving throw (using the spell’s DC) or be subject to viral destruction and make a single attack on its next turn before returning to its normal dead or unconscious state. If the secondary target of viral destruction is merely unconscious and becomes conscious again before its next action, that creature is freed from the viral destruction effect and the spell ends. Each attack caused by this spell can transfer the viral destruction effect to its target if that target is knocked unconscious or killed by the attack, until the spell has affected a number of creatures equal to your mystic level.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 6","Precog 6"),
+      spellClassesWithLevelPreview = listOf("Myst 6","Prcg 6"),
+      spellTitle = "Vision",
+      spellPreviewDescription = "Answer a question about a person, place, or object.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "384",
+      spellSourceBookFull = "Starfinder Core Rulebook",
+      spellSchool = "divination",
+      spellCastingTime = "1 standard action",
+      spellRange = "personal",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "see text",
+      spellSavingThrow = "",
+      spellResistance = "",
+      spellDescriptionFull = "You pose a question about some person, place, or object while casting this spell. If the person or object is at hand or if you are in the place in question and you succeed at a caster level check (1d20 + your caster level, DC 20), you receive a vision about that person, place, or object. The information gained includes everything available about the target that could be discovered by spending weeks in dedicated research with excellent-quality but standard reference works.\n" +
+              "\n" +
+              "If the person or object is not at hand or you are not in the place and you know only detailed information about the person, place, or object, the DC of the caster level check is 25 and the information gained is incomplete (though it often provides enough information to help you find the person, place, or thing, thus allowing a better vision result next time). If you know only rumors, the DC is 30 and the information gained is vague (though it often directs you to more detailed information, thus allowing a better vision result next time). In most circumstances, you can’t glean information about what occurred during the Gap with this spell.\n" +
+              "\n" +
+              "Casting this spell requires access to a computer or similar device, which displays the information gained. Additionally, casting this spell places considerable strain on you, requiring you to spend 1 Resolve Point.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","WtchW 4"),
+      spellTitle = "Void Grasp",
+      spellPreviewDescription = "Attempt a melee attack to deal 8d8 damage and sicken a creature.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "86",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "necromancy",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "Fortitude partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "Reaching to worlds beyond, you siphon your foe's life force as a shared offering to some extraplanar entity. Attempt a melee attack against the target's EAC, adding the higher of your key ability modifier or your Strength modifier to the attack roll. On a hit, the target takes 8d8 damage and must attempt a Fortitude saving throw. A target that fails is sickened for the duration. One who succeeds is sickened for only 1 round, and then the spell ends. In either case, you gain temporary Hit Points equal to half the damage you dealt.\n" +
+              "\n" +
+              "Casting this spell doesn't provoke attacks of opportunity.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Technomancer 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Tchn 2","WtchW 2"),
+      spellTitle = "Void Vessel",
+      spellPreviewDescription = "You grant one or more targets the ability to survive in vacuum.",
+      spellSourceBookPreview = "DrftCs",
+      spellSourcePage = "123",
+      spellSourceBookFull = "Drift Crisis",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "1 creature/level",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "You grant one or more targets the ability to survive in vacuum. Affected targets gain the void adaptation universal creature rule and sprout wings of pure energy that grant a supernatural fly speed of 60 feet (average maneuverability) that functions only in vacuum.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","WtchW 3"),
+      spellTitle = "Void Whispers",
+      spellPreviewDescription = "The target’s mind is flooded with elder mysteries from the dark between the stars, galaxies, and dimensions.",
+      spellSourceBookPreview = "GaExM",
+      spellSourcePage = "115",
+      spellSourceBookFull = "Galaxy Exploration Manual",
+      spellSchool = "enchantment (compulsion, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one living creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 round/3 levels",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "The target's mind is flooded with elder mysteries from the dark between the stars, galaxies, and dimensions. The target must attempt a Will save; on a failure, it begins whispering incoherently and moves half its speed in a random direction. On its turn, it does nothing except whisper incoherently and move half its speed in a random direction. When it moves, the target takes the safest route and doesn't enter hazardous terrain. If the target is attacked, the spell ends immediately.\n" +
+              "\n" +
+              "Creatures that begin their turn within 20 feet of the target and can hear it whispering must succeed at a Will saving throw or become confused for 1 round. A creature that succeeds at this save is immune to the whispers until the spell ends.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","WtchW 1"),
+      spellTitle = "Volcanic Wrath",
+      spellPreviewDescription = "You summon an erupting volcano that unleashes molten rock over an area, dealing fire and bludgeoning damage.",
+      spellSourceBookPreview = "Int Sp",
+      spellSourcePage = "115",
+      spellSourceBookFull = "Interstellar Species",
+      spellSchool = "conjuration",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "varies by level",
+      spellEffect = "",
+      spellDuration = "instantaneous, plus 1 round/level",
+      spellSavingThrow = "Reflex half",
+      spellResistance = "yes",
+      spellDescriptionFull = "You summon an erupting volcano that unleashes molten rock over an area, dealing fire and bludgeoning damage. The eruption leaves molten rocks, thick ash, and smoke, making the entire area of effect difficult terrain for the duration of the spell.\n" +
+              "\n" +
+              "1st: When you cast volcanic wrath as a 1st-level spell, it deals 2d6 damage in a 10-ft-radius, 20 ft. high burst.\n" +
+              "\n" +
+              "2nd: When you cast volcanic wrath as a 2nd-level spell, it deals 4d6 damage in a 10-ft-radius, 20 ft. high cylinder.\n" +
+              "\n" +
+              "3rd: When you cast volcanic wrath as a 3rd-level spell, it deals 7d6 damage in a 20-ft-radius, 40 ft. high cylinder.\n" +
+              "\n" +
+              "4th: When you cast volcanic wrath as a 4th-level spell, it deals 10d6 damage in a 20-ft-radius, 40 ft. high cylinder.\n" +
+              "\n" +
+              "5th: When you cast volcanic wrath as a 5th-level spell, it deals 15d6 damage in a 30-ft-radius, 60 ft. high cylinder.\n" +
+              "\n" +
+              "6th: When you cast volcanic wrath as a 6th-level spell, it deals 17d6 damage in a 30-ft-radius, 60 ft. high cylinder.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Tchn 3","WtchW 3"),
+      spellTitle = "Wall of Air",
+      spellPreviewDescription = "You cause a massive sheet of flowing air to appear.",
+      spellSourceBookPreview = "AdvP#36",
+      spellSourcePage = "53",
+      spellSourceBookFull = "Adventure Path #36: Professional Courtesy",
+      spellSchool = "evocation (air)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "wall up to 20 ft. long/level or a ring with a radius of up to 5 ft./2 levels; either form 40 ft. tall",
+      spellDuration = "concentration + 1 round/level (D)",
+      spellSavingThrow = "Reflex (see text)",
+      spellResistance = "no",
+      spellDescriptionFull = "You cause a massive sheet of flowing air to appear. When you cast wall of air, choose whether the air flows upward or downward. This spell has different effects depending on the environment in which it is cast (below). You can place a wall of air so that it’s in multiple environments at once; in this case, it affects each environment separately. This spell can’t be cast in a vacuum.\n" +
+              "\n" +
+              "In Atmosphere: The wall’s area is treated as a windstorm, which requires flying creatures to attempt Acrobatics checks to fly through it and imparts a –4 penalty on ranged attacks that deal kinetic damage. Attacks with archaic ranged weapons made through or within the wall of air automatically miss. Small or smaller creatures starting their turn in the wall’s area must succeed at a Reflex save or be knocked prone.\n" +
+              "\n" +
+              "In Water: The wall of air creates a massive sheet of bubbles that provides concealment. A creature that moves through the wall of air must succeed at an Athletics check to swim in stormy conditions with the DC increased by your caster level; on a failure, it’s moved 10 feet in the direction you chose for the wall’s air to flow. In addition, any creature within a wall of air while underwater can breathe air as if in a normal atmosphere. This wall doesn’t adversely affect water-breathing creatures.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","WtchW 3"),
+      spellTitle = "Wall of Earth",
+      spellPreviewDescription = "Create an earthen barrier.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "86",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "earthen wall with area up to one 5-ft. square/level, see text",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "An earthen barrier springs into existence, anchored to surrounding solid surfaces or, at least, supported by a firm foundation. The stress of casting this spell requires you to spend 1 Resolve Point. The wall fails to manifest in any area already occupied by a creature or object, or where it's likely to fall or collapse. However, the wall can fit into any space of surrounding nonliving material if its area is sufficient to do so.\n" +
+              "\n" +
+              "A typical wall of earth is 1 foot thick, but you can double the thickness by halving the area, or vice versa. You can crudely shape the wall in almost any way you desire, provided the shape you choose has enough support. Each 5-foot section of the wall has hardness 0 and 5 Hit Points per inch of thickness. A section of wall is breached if reduced to 0 Hit Points. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 20.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Tchn 4","WtchW 4"),
+      spellTitle = "Wall of Fire",
+      spellPreviewDescription = "Blazing curtain deals 2d6 fire damage out to 10 feet and 1d6 fire damage out to 20 feet; passing through the wall deals 5d6 fire damage.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "384",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "evocation (fire)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "wall up to 20 ft. long/level or a ring with a radius up to 5 ft./2 levels; either form 20 ft. high",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "concentration + 1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "An immobile blazing curtain of opaque, shimmering, violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing 2d6 fire damage to creatures within 10 feet and 1d6 fire damage to those beyond 10 feet but within 20 feet. The wall deals this damage when it appears and on your turn each subsequent round. In addition, the wall deals 5d6 fire damage to any creature passing through it. The wall deals double damage to undead creatures.\n" +
+              "\n" +
+              "If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 or more cold damage in 1 round, that length goes away.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Technomancer 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","Tchn 1","WtchW 1"),
+      spellTitle = "Wall of Fog",
+      spellPreviewDescription = "Create a bank of obscuring fog.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "86",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "fog up to 20 ft. long/level or a ring with a radius up to 5 ft./2 levels; either form up to 20 ft. high",
+      spellDuration = "concentration + 1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "A billowing wall of dense mist forms in a vertical plane, provided the wall is neither underwater nor in a vacuum. In those cases, the spell fails. Creatures and objects on one side of the wall have concealment (20% miss chance) from creatures on the opposite side of the wall. A moderate wind (11+ mph) disperses this fog in 2 rounds; a strong wind (21+ mph) disperses the fog in 1 round, although the wall returns if you're still concentrating on it and the wind ends.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Precog 5","Technomancer 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Prcg 5","Tchn 5","WtchW 5"),
+      spellTitle = "Wall of Force",
+      spellPreviewDescription = "Invisible wall is difficult to destroy.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "384",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "evocation (force)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "wall with area up to one 10-ft. square/level",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "Wall of force creates an invisible wall of pure force. You can form the wall into a flat, vertical plane whose area is up to one 10-foot square per level. The wall must be continuous and unbroken when formed. If its surface is broken by any object or creature, the spell fails.\n" +
+              "\n" +
+              "This counts as a force field for effects that can’t penetrate a force field. The wall can’t move and is not easily destroyed. A wall of force is immune to dispel magic. A greater dispel magic specifically targeting the wall of force can dispel it, but treat the wall of force’s caster level as being 5 higher than the actual caster level. A wall of force can be damaged by spells and attacks as normal, but a wall of force has hardness 30 and 300 Hit Points. Disintegrate instantly destroys a wall of force.\n" +
+              "\n" +
+              "Breath weapons and spells can’t pass through a wall of force in either direction, though dimension door, teleport, and similar effects can bypass the barrier. The wall blocks ethereal creatures as well as material ones (though ethereal creatures can usually circumvent the wall by going around it, through material floors and ceilings). Gaze attacks operate normally through a wall of force.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","WtchW 3"),
+      spellTitle = "Wall of Ice",
+      spellPreviewDescription = "Create a barrier made of ice.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "86",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration (creation, cold)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "anchored plane of ice, up to one 10-ft. square/level, or hemisphere of ice with a radius of up to 3 ft. + 1 ft./level; the ice is 1-inch thick/level",
+      spellDuration = "1 minute/level, see text",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "An icy barrier, your choice of a plane or hemisphere, springs into existence. A plane can be oriented in any fashion, provided it's anchored. If vertical, the wall needs only a solid foundation; a horizontal or slanting wall must be anchored on two opposite sides. A hemisphere must have a solid foundation. Either form can fit into any space of surrounding nonliving material if it has sufficient area to do so. An ice wall fails to manifest in any area already occupied by a creature or object or where it will likely fall or collapse. The hemisphere version fails to manifest if it can't entirely contain a creature or object occupying the same space. Each 10-foot section of ice has 0 hardness and 3 hit points per inch of thickness. Fire deals full damage to a wall of ice. A section of wall is breached if reduced to 0 Hit Points. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 20.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2","Technomancer 2","Witchwarper 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2","Tchn 2","WtchW 2"),
+      spellTitle = "Wall of Steam",
+      spellPreviewDescription = "Create a wall of fog that emits scalding steam in one direction.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "86",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "conjuration (creation, fire)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "scalding fog up to 20 ft. long/level or a ring with a radius up to 5 ft./2 levels; either form up to 20 ft. high",
+      spellDuration = "concentration + 1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "This spell functions as wall of fog, except you can select one side of the wall to give off searing steam. Creatures within 5 feet of this side of the wall take 2d4 fire damage, and those beyond 5 feet but within 10 feet take 1d4 fire damage. The wall deals this damage when it appears and on your turn each subsequent round. In addition, the wall deals 3d4 fire damage to any creature passing through it. If you conjure the wall so that it appears where creatures are, each creature takes damage as if passing through the wall.\n" +
+              "\n" +
+              "The steam can be dispersed as a wall of fog can. Also, if any 5-foot length of wall takes 10 or more cold damage in 1 round, that length crystallizes and melts away, disappearing.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 6","Witchwarper 6"),
+      spellClassesWithLevelPreview = listOf("Tchn 6","WtchW 6"),
+      spellTitle = "Wall of Steel",
+      spellPreviewDescription = "Wall has 45 Hit Points per inch of thickness and hardness 15.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "385",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "steel wall with area up to one 5-ft. square/level; see text",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You cause a flat, vertical steel wall to spring into existence. The stress of casting this spell requires you to spend 1 Resolve Point. The wall can fit into any space of surrounding nonliving material if its area is sufficient to do so. The wall can’t be conjured so that it occupies the same space as a creature or another object. It must always be a flat plane, though you can shape its edges to fit the available space.\n" +
+              "\n" +
+              "A wall of steel is 4 inches thick. You can double the wall’s area by halving its thickness. Each 5-foot square of the wall has hardness 15 and 45 Hit Points per inch of thickness. A section of wall that is reduced to 0 Hit Points is breached. The DC of the Strength check for a creature to break through the wall with a single attack is 30. The wall is firmly anchored to its surroundings, and it doesn’t easily tip over; it can’t be summoned into any area where it is likely to fall or collapse.\n" +
+              "\n" +
+              "Like any steel wall, this wall is subject to perforation and other natural phenomena, though it doesn’t rust or corrode under typical circumstances. The metal created by this spell is not suitable for use in the creation of other objects and can’t be sold.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 4"),
+      spellClassesWithLevelPreview = listOf("Tchn 4"),
+      spellTitle = "Wall of Stone",
+      spellPreviewDescription = "Wall has 15 Hit Points per inch of thickness and hardness 10.",
+      spellSourceBookPreview = "AdvP#17",
+      spellSourcePage = "58",
+      spellSourceBookFull = "Adventure Path #17: Solar Strike",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "stone wall with area up to one 5-ft. square/level; see text",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You cause a flat, vertical stone wall to spring into existence. The stress of casting this spell requires you to spend 1 Resolve Point. The wall can fit into any space of surrounding nonliving material if its area is sufficient to do so. The wall can’t be conjured so that it occupies the same space as a creature or another object. It must always be a flat plane, though you can shape its edges to fit the available space.\n" +
+              "\n" +
+              "A wall of stone is 4 inches thick. You can double the wall’s area by halving its thickness. Each 5-foot square of the wall has hardness 10 and 15 Hit Points per inch of thickness. A section of wall that is reduced to 0 Hit Points is breached. The DC of the Strength check for a creature to break through the wall with a single attack is 25. The wall is firmly anchored to its surroundings, and it doesn’t easily tip over; it can’t be summoned into any area where it is likely to fall or collapse.\n" +
+              "\n" +
+              "Like any stone wall, this wall is subject to perforation and other natural phenomena, though it doesn’t rust or corrode under typical circumstances. The metal created by this spell is not suitable for use in the creation of other objects and can’t be sold.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 0","Witchwarper 0"),
+      spellClassesWithLevelPreview = listOf("Tchn 0","WtchW 0"),
+      spellTitle = "Wardrobe Change",
+      spellPreviewDescription = "You magically alter whatever clothes you’re wearing, transforming them into a new outfit.",
+      spellSourceBookPreview = "AdvP#44",
+      spellSourcePage = "49",
+      spellSourceBookFull = "Adventure Path #44: Allies Against the Eye pg. 49",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "personal",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "permanent",
+      spellSavingThrow = "",
+      spellResistance = "",
+      spellDescriptionFull = "You magically alter whatever clothes you’re wearing, transforming them into a new outfit. Your new clothes must have a price in credits equal to or less than your original clothing. For example, if you’re wearing formal clothing with a price of 5 credits, you could transform your clothes into professional clothing or a different set of formal clothing, but you couldn’t transform your clothes into environmental or travel clothing, both of which have a price of 10 credits.\n" +
+              "\n" +
+              "This spell also allows you to create other minor, cosmetic changes to your appearance, such as altering your hairstyle; it doesn’t, however, disguise you, and it grants no bonus to Disguise checks. If you want to create especially fashionable clothing, or clothing especially appropriate to a given situation (such as your first encounter with a new alien species or duplicating the uniform of a security guard you wish to impersonate), your GM might ask you to attempt a Culture check with a DC based on the complexity of the clothing you want to create.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Witchwarper 9"),
+      spellClassesWithLevelPreview = listOf("WtchW -"),
+      spellTitle = "Warp Reality",
+      spellPreviewDescription = "Alter reality to better suit you.",
+      spellSourceBookPreview = "Ch Op",
+      spellSourcePage = "143",
+      spellSourceBookFull = "Character Operations Manual",
+      spellSchool = "universal",
+      spellCastingTime = "1 standard action",
+      spellRange = "see text",
+      spellTargets = "see text",
+      spellArea = "see text",
+      spellEffect = "see text",
+      spellDuration = "see text",
+      spellSavingThrow = "see text",
+      spellResistance = "see text",
+      spellDescriptionFull = "Beckoning to all realities at once, you pull in new possibilities and alter your world to suit you. A warp reality spell can produce one of the following effects.\n" +
+              "\n" +
+              "-Duplicate any witchwarper spell of 6th level or lower.\n" +
+              "\n" +
+              "-Duplicate any other spell of 5th level or lower.\n" +
+              "\n" +
+              "-Undo the harmful effects of certain spells, such as feeblemind.\n" +
+              "\n" +
+              "-Produce an effect of a power level in line with the above.\n" +
+              "\n" +
+              "At the GM’s discretion, warp reality can produce greater effects but can be dangerous or might have only a partial effect.\n" +
+              "\n" +
+              "A duplicated spell allows saving throws and spell resistance as normal, but the save DCs are as for a 7th-level spell. For other effects based on spell level, warp reality is a 9th-level spell.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 3","Witchwarper 3"),
+      spellClassesWithLevelPreview = listOf("Myst 3","WtchW 3"),
+      spellTitle = "Warpwave",
+      spellPreviewDescription = "You blast your target with the ripples of myriad realities, causing it to transform in unpredictable ways that are typically temporary.",
+      spellSourceBookPreview = "Alien#4",
+      spellSourcePage = "87",
+      spellSourceBookFull = "Alien Archive 4",
+      spellSchool = "transmutation",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level (see text)",
+      spellSavingThrow = "Fortitude negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "You blast your target with the ripples of myriad realities, causing it to transform in unpredictable ways that are typically temporary. If the target fails its initial saving throw, roll on the Warpwave Effect table and apply the resulting condition, critical hit effect, or spell effect to the target. If the target is immune to this selected effect, roll a second time and apply the second effect instead (if it’s also immune to the second effect, it’s unaffected by the spell).\n" +
+              "\n" +
+              "The effects’ durations vary. Those effects marked with a superscript 1 are instantaneous, whereas those marked with a superscript 2 are effects for which the target can attempt a new saving throw at the end of each of its turns to end the effect early. For effects marked with a superscript 3, each minute an affected creature can attempt a new saving throw to end that effect early. Unannotated effects follow their normal rules for duration. Except for baleful polymorph, a warpwave’s effects cannot be dispelled, but they can be removed by break enchantment, remove affliction, and any effect that specifically removes the imposed condition.\n" +
+              "\n" +
+              "D12 - Warpwave Effect\n" +
+              "1 - Severe wound1 (caster chooses the wound)\n" +
+              "2 - Paralyzed2\n" +
+              "3 - Wound1\n" +
+              "4 - Baleful polymorph (3rd level)\n" +
+              "5 - Bleeding, Burning, or Corrode 3d6\n" +
+              "6 - Nauseated2\n" +
+              "7 - Blinded2\n" +
+              "8 - Staggered2\n" +
+              "9 - Shaken3\n" +
+              "10 - Sickened3\n" +
+              "11 - Off-target3\n" +
+              "12 - Dazzled3",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5"),
+      spellTitle = "Wave of Warning",
+      spellPreviewDescription = "Attempt a ranged attack against up to three creatures to deal 10d8 nonlethal bludgeoning damage and cause them to be shaken.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "87",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "evocation (mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "up to three creatures that are no more than 30 ft. apart from each other",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "Will partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "Maraquoi spellcasters developed this spell to deter sapient aggressors from bloodshed. You thrust a wave of mental determination at up to three targets, attempting a ranged attack against each target's KAC to deal 10d8 nonlethal bludgeoning damage. Each creature damaged by this spell is shaken for 5 rounds, or 1 round if they succeed at a Will saving throw.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Precog 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5","Prcg 5"),
+      spellTitle = "Waves of Fatigue",
+      spellPreviewDescription = "Several targets become fatigued.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "385",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "necromancy",
+      spellCastingTime = "1 standard action",
+      spellRange = "30 ft.",
+      spellTargets = "",
+      spellArea = "cone-shaped burst",
+      spellEffect = "",
+      spellDuration = "instantaneous",
+      spellSavingThrow = "none",
+      spellResistance = "yes",
+      spellDescriptionFull = "Waves of negative energy render all living creatures in the spell’s area fatigued. This spell has no effect on a creature that is already fatigued.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 5","Precog 5","Witchwarper 5"),
+      spellClassesWithLevelPreview = listOf("Myst 5","Prcg 5","WtchW 5"),
+      spellTitle = "Weight of Ages",
+      spellPreviewDescription = "Deal 10d8 damage to multiple creatures and cause them to become encumbered.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "87",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "necromancy",
+      spellCastingTime = "1 standard action",
+      spellRange = "medium (100 ft. + 10 ft./level)",
+      spellTargets = "up to one living creature/level, no two of which can be more than 30 ft. apart",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "Fortitude partial, see text",
+      spellResistance = "yes",
+      spellDescriptionFull = "You burden the targets with all the aches, pains, and sorrows of a lifetime. The targets take 10d8 damage and become encumbered for the duration, or they become overburdened if already encumbered. Each target can attempt a Fortitude saving throw to halve the damage dealt by this spell and negate the encumbered condition.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Technomancer 9"),
+      spellClassesWithLevelPreview = listOf("Tchn -"),
+      spellTitle = "Wish",
+      spellPreviewDescription = "Alter reality to better suit you.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "385",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "universal",
+      spellCastingTime = "1 standard action",
+      spellRange = "see text",
+      spellTargets = "see text",
+      spellArea = "see text",
+      spellEffect = "see text",
+      spellDuration = "see text",
+      spellSavingThrow = "see text",
+      spellResistance = "see text",
+      spellDescriptionFull = "By simply speaking aloud, you can alter reality to better suit you. Even wish, however, has its limits. A wish spell can produce any one of the following effects.\n" +
+              "\n" +
+              "-Duplicate any technomancer spell of 6th level or lower.\n" +
+              "\n" +
+              "-Duplicate any other spell of 5th level or lower.\n" +
+              "\n" +
+              "-Undo the harmful effects of certain spells, such as feeblemind.\n" +
+              "\n" +
+              "-Produce any effect whose power level is in line with the above effects.\n" +
+              "\n" +
+              "At the GM’s discretion, you may try to use a wish to produce greater effects than these, but doing so may be dangerous or the spell may have only a partial effect.\n" +
+              "\n" +
+              "A duplicated spell allows saving throws and spell resistance as normal, but the save DCs are the same as for a 7th-level spell. For the purpose of other effects that depend on spell level, wish counts as a 9th-level spell.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 1","Witchwarper 1"),
+      spellClassesWithLevelPreview = listOf("Myst 1","WtchW 1"),
+      spellTitle = "Wisp Ally",
+      spellPreviewDescription = "Create wisp of energy that shines light and distracts an enemy.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "385",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "conjuration (creation)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "",
+      spellEffect = "one distracting, glowing servant",
+      spellDuration = "1 round/level",
+      spellSavingThrow = "none",
+      spellResistance = "no",
+      spellDescriptionFull = "You draw forth otherworldly energy to create a small, spherical, floating wisp that can distract your enemies in combat. This wisp can move 60 feet per round in any direction, and you can direct it as a move action on your turn. If the wisp occupies the same space as an enemy, the wisp provides your choice of either harrying fire or covering fire (see pages 246–247) against the enemy each round on your turn, and it follows that enemy within range automatically unless you direct it to change targets. The wisp is made of pure light and energy and can’t be damaged in combat, though it can be dispelled as normal.\n" +
+              "\n" +
+              "In addition to the function described above, the wisp sheds light in a 20-foot radius in a color of your choice (chosen when you cast the spell).",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Technomancer 4","Witchwarper 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Tchn 4","WtchW 4"),
+      spellTitle = "Wonder Warp",
+      spellPreviewDescription = "You alter the magical forces in the area near you into an unpredictable field of eldritch entropy, potentially causing a number of effects both positive and negatives for those who find themselves in the area",
+      spellSourceBookPreview = "GaExM",
+      spellSourcePage = "115",
+      spellSourceBookFull = "Galaxy Exploration Manual",
+      spellSchool = "evocation",
+      spellCastingTime = "1 standard action",
+      spellRange = "30 ft.",
+      spellTargets = "",
+      spellArea = "60-ft.-radius sphere centered on you",
+      spellEffect = "",
+      spellDuration = "1 round/level (D)",
+      spellSavingThrow = "varies, see text",
+      spellResistance = "varies, see text",
+      spellDescriptionFull = "You alter the magical forces in the area near you into an unpredictable field of eldritch entropy, potentially causing a number of effects both positive and negatives for those who find themselves in the area.\n" +
+              "\n" +
+              "When you cast this spell, and each time you start your turn during the duration of the spell, roll d% on the following table. Each time there’s a new effect, you can attempt a Will saving throw. If you succeed, you can choose the targets affected by the warped magic. Otherwise, the effect affects all creatures (and sometimes objects) in the area, including you, as described. If the effect is a spell, the spell’s normal parameters (including saves to avoid its effects) apply, except for duration.\n" +
+              "\n" +
+              "Each effect lasts only until you roll again, or for the duration specified in the effect, whichever is shorter (except on a result of 100; in which case you use the spell’s normal duration). Subject to the GM’s discretion, in a low-magic area, you might have to subtract 10 from your d% rolls for this spell; in a highmagic area, you might have to add 10 instead.\n" +
+              "\n" +
+              "D%\nEffect\n-------------------------------------\n" +
+              "1\nAll magic ceases working, including for you, even if you succeed at the spell’s Will save. Unless you expend a 2nd-level spell slot at the start of your next turn, this spell ends.\n-------------------------------------\n" +
+              "2–5\nDecrease the area, damage, duration, and range of spells and spell-like abilities used by half. If you failed the spell’s Will save, that includes the duration of this spell.\n-------------------------------------\n" +
+              "6–10\nNo effect.\n-------------------------------------\n" +
+              "11–14\nCreatures are affected by the lesser confusion spell.\n-------------------------------------\n" +
+              "15–18\nCreatures become vulnerable to one energy type; roll a d10 to determine which: on a 1–2, use acid; on a 3–4, use cold; on a 5–6, use electricity; on a 7–8, use fire; on a 9–10, use sonic. If you succeed at the spell’s Will save, you can choose the type for each target instead.\n-------------------------------------\n" +
+              "19–22\nA Medium aeon arrives, as if summoned by a 3rd-level summon creature (Alien Archive 144 ) spell, and it’s hostile to you. Its turn occurs just after yours. If you succeed at the spell’s Will save, the aeon remains when the spell’s effect changes.\n-------------------------------------\n" +
+              "23–26\nDreamlike realities appear, customized to each creature; each creature who fails a Will save becomes fascinated.\n-------------------------------------\n" +
+              "27–30\nCreatures must attempt a Fortitude save; on a failure, a random technological item they have ceases to function. A technological construct that fails is instead staggered.\n-------------------------------------\n" +
+              "31–34\nYou can read the surface thoughts of creatures in the area as if they were affected by the third round of the detect thoughts spell.\n-------------------------------------\n" +
+              "35–38\nThe area becomes zero gravity (Core Rulebook 402).\n-------------------------------------\n" +
+              "39–42\nCreatures are affected by a 1st-level baleful polymorph (Alien Archive 2 147) spell.\n-------------------------------------\n" +
+              "43–46\nCreatures are affected by the grease spell.\n-------------------------------------\n" +
+              "47–50\nEach creature is affected by the force blast spell; you can attempt the additional bull rush combat maneuver granted by the spell.\n-------------------------------------\n" +
+              "51–54\nCountless Diminutive creatures appear flying in the air and scrambling on the ground, making the area difficult terrain. To move at more than half speed in the area, a creature must succeed at a DC 15 Acrobatics check.\n-------------------------------------\n" +
+              "55–58\nChaotic illusions render creatures dazzled.\n-------------------------------------\n" +
+              "59–62\nCreatures and objects become invisible.\n-------------------------------------\n" +
+              "63–66\nEach creature switches positions with another randomly determined creature (no save). No creature arrives in a place immediately hazardous to it, instead appearing in the closest safe space.\n-------------------------------------\n" +
+              "67–70\nCreatures gain a fly speed of 30 feet with average maneuverability. If a creature is airborne when the effect ends, it falls.\n-------------------------------------\n" +
+              "71–74\nA random Medium creature arrives, as if summoned by a 3rd-level summon creature (Alien Archive 144 ) spell. If you succeed at wonder warp’s Will save, the creature acts as if you summoned it. Otherwise, it’s hostile to everyone.\n-------------------------------------\n" +
+              "75–78\nCreatures gain resistance 5 to one energy type; roll a d10 to determine which: on a 1–2, use acid; on a 3–4, use cold; on a 5–6, use electricity; on a 7–8, use fire; on a 9–10, use sonic. If you succeed at the spell’s Will save, you can choose the type for each target instead.\n-------------------------------------\n" +
+              "79–82\nEach creature regains 2d4 Hit Points or Stamina Points (creature’s choice).\n-------------------------------------\n" +
+              "83–86\nYou cast magic missile without expending a spell slot. If you take (and have taken) no other actions this turn, you can fire a third missile.\n-------------------------------------\n" +
+              "87–90\nYou create one effect of the prescience (Character Operations Manual 139 ) spell.\n-------------------------------------\n" +
+              "91–95\nIncrease the area, damage, duration, and range of spells and spell-like abilities used by 50%. That doesn’t include the duration of this spell.\n-------------------------------------\n" +
+              "96–99\nRoll two effects, treating 1 and 96–100 as no effect. Each effect affects only targets of your choice.\n-------------------------------------\n" +
+              "100\nYou can cast any 1st- or 2nd-level spell you know without expending a spell slot. You must abide by the spell’s normal parameters, and it lasts for its normal duration.\n",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 4","Precog 4","Technomancer 4"),
+      spellClassesWithLevelPreview = listOf("Myst 4","Prcg 4","Tchn 4"),
+      spellTitle = "X-Ray Vision",
+      spellPreviewDescription = "Grant a creature x-ray vision.",
+      spellSourceBookPreview = "Glt Mgc",
+      spellSourcePage = "87",
+      spellSourceBookFull = "Galactic Magic",
+      spellSchool = "divination",
+      spellCastingTime = "1 standard action",
+      spellRange = "touch",
+      spellTargets = "one creature",
+      spellArea = "",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "Will negates (harmless)",
+      spellResistance = "yes (harmless)",
+      spellDescriptionFull = "You confer upon the target sense through (vision) with a range of 60 feet. This ability is blocked by materials one-fifth as dense as those that block normal sense through (2 feet of wood or plastic, 1 foot of stone, 2 inches of common metal, or 1 inch of lead or any starmetal), and it limits the target to black-and-white vision while in use. The target doesn't gain the benefit of any other special visual senses (such as lowlight vision) while using x-ray vision, and the target can't attempt sight-based Perception checks beyond 60 feet.",
+  ), SpellDataModel(
+      spellClassWithLevel = listOf("Mystic 2"),
+      spellClassesWithLevelPreview = listOf("Myst 2"),
+      spellTitle = "Zone of Truth",
+      spellPreviewDescription = "Creatures within range can’t lie.",
+      spellSourceBookPreview = "CRB",
+      spellSourcePage = "385",
+      spellSourceBookFull = "Core Rulebook",
+      spellSchool = "enchantment (compulsion, mind-affecting)",
+      spellCastingTime = "1 standard action",
+      spellRange = "close (25 ft. + 5 ft./2 levels)",
+      spellTargets = "",
+      spellArea = "20-ft.-radius emanation",
+      spellEffect = "",
+      spellDuration = "1 minute/level",
+      spellSavingThrow = "Will negates",
+      spellResistance = "yes",
+      spellDescriptionFull = "Creatures within the emanation area can’t speak any deliberate and intentional lies. Each potentially affected creature can attempt a Will saving throw to avoid the effect when the spell is cast or when that creature first enters the emanation area. Affected creatures are aware of this enchantment, and they can therefore avoid answering questions to which they would normally respond with a lie, or they can be evasive as long as they remain within the boundaries of the truth. Creatures who leave the area are free to speak as they choose.",
   )
 )
