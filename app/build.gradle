@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.spelllistapplication'
+    namespace 'com.example.spelltablet'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.spelllistapplication"
+        applicationId "com.example.spelltablet"
         minSdk 24
         targetSdk 34
         versionCode 1
