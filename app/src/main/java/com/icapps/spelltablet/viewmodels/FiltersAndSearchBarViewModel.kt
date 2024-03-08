@@ -16,7 +16,6 @@ class FiltersAndSearchBarViewModel: ViewModel(){
 
     val _searchText = MutableStateFlow("")
 
-
     val searchText = _searchText.asStateFlow()
 
     // Buffer if searching outside sources

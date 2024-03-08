@@ -100,6 +100,7 @@ fun SpellList(
         "Core Rulebook",
         "Adventure Path",
         "Alien Archive",
+        "Angels of the Drift",
         "Armory",
         "Character Operations Manual",
         "Drift Crisis",
@@ -111,6 +112,7 @@ fun SpellList(
         "Pact Worlds",
         "Ports of Call",
         "Redshift Rally",
+        "Starfinder Enhanced",
         "Tech Revolution"
     )
 
