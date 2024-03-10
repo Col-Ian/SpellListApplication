@@ -1,5 +1,6 @@
 package com.icapps.spelltablet.components.textcomponents.character
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -7,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -22,6 +24,8 @@ fun CharacterHeadingSelected(
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Normal
         ),
-        text = text
+        text = text,
+        softWrap = false,
+        overflow = TextOverflow.Ellipsis,
     )
 }

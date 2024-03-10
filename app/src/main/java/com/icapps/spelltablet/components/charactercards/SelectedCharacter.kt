@@ -68,7 +68,8 @@ fun SelectedCharacter(
             Column(
                 modifier = Modifier
                     .fillMaxHeight()
-                    .padding(2.dp),
+                    .padding(2.dp)
+                    .fillMaxWidth(0.7f),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 CharacterHeadingSelected(text = character.characterName)
