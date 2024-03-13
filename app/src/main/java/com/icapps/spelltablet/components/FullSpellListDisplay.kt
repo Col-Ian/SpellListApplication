@@ -22,6 +22,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -29,6 +30,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.icapps.spelltablet.components.spellinteractions.DropDownFilter
@@ -220,9 +222,22 @@ fun SpellList(
                 .background(MaterialTheme.colorScheme.background)
         ) {
             Spacer(modifier = Modifier.height(8.dp))
-
+            if(spellData.isEmpty() && learnableSwitch.learnableSwitch.value){
+                Text(
+                    modifier = Modifier.padding(4.dp),
+                    textAlign = TextAlign.Center,
+                    text = "No spells available. Check your spelling, filters, or that the character has spell slots for the level of spell you're looking for."
+                )
+            } else if(spellData.isEmpty()){
+                Text(
+                    modifier = Modifier.padding(4.dp),
+                    textAlign = TextAlign.Center,
+                    text = "No spells available. Check your spelling in the search bar."
+                )
+            }
 
             if(learnableSwitch.learnableSwitch.value) {
+
                 LazyColumn(
                     modifier = modifier
                 ) {
@@ -237,6 +252,7 @@ fun SpellList(
                     }
                 }
             } else{
+
                 LazyColumn(
                     modifier = modifier
                 ){
