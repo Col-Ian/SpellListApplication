@@ -18,9 +18,11 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.icapps.spelltablet.components.charactercards.SelectedCharacter
@@ -69,6 +71,15 @@ fun CharacterScreen(
         if (characterState.isAddingCharacter){
             AddCharacterDialog(state = characterState, onEvent = onCharacterEvent)
         }
+
+        if(characterState.characters.isEmpty()){
+            Text(
+                modifier = Modifier.padding(4.dp),
+                textAlign = TextAlign.Center,
+                text = "No characters found. Select the \"+\" button to create a new character."
+            )
+        }
+
         LazyColumn(
             contentPadding = padding,
             modifier = Modifier
