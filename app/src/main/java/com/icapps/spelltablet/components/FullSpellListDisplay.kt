@@ -44,6 +44,7 @@ import com.icapps.spelltablet.components.textcomponents.spelllist.LevelFilterPla
 import com.icapps.spelltablet.data.characterspelllist.CustomListEvent
 import com.icapps.spelltablet.data.characterspelllist.CustomListState
 import com.icapps.spelltablet.viewmodels.FiltersAndSearchBarViewModel
+import com.icapps.spelltablet.viewmodels.IsListEmptyViewModel
 import com.icapps.spelltablet.viewmodels.LearnableSwitchViewModel
 import com.icapps.spelltablet.viewmodels.SearchBarValueViewModel
 import com.icapps.spelltablet.viewmodels.SetCharacterViewModel
@@ -135,6 +136,9 @@ fun SpellList(
 
     // State of our switch for displaying only learnable spells
     val learnableSwitch: LearnableSwitchViewModel = viewModel()
+
+    // State of our isListEmpty value to display when learnable spells search results empty.
+    val isListEmpty: IsListEmptyViewModel = viewModel()
 
     Column(
         modifier = Modifier
@@ -228,9 +232,7 @@ fun SpellList(
             Spacer(modifier = Modifier.height(8.dp))
 
             if(learnableSwitch.learnableSwitch.value) {
-                val isListEmpty = remember{
-                    mutableStateOf(true)
-                }
+                isListEmpty.isListEmpty.value = true
                 LazyColumn(
                     modifier = modifier
                 ) {
@@ -245,7 +247,7 @@ fun SpellList(
                         )
                     }
 //                    Will display if there are no results when Learnable is selected.
-                    if(isListEmpty.value){
+                    if(isListEmpty.isListEmpty.value){
                         items(emptyList) {
                             Text(
                                 modifier = Modifier.padding(4.dp),

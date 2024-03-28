@@ -21,6 +21,7 @@ import com.icapps.spelltablet.components.spellinteractions.addSpellButtonValidat
 import com.icapps.spelltablet.data.allspellslist.SpellDataModel
 import com.icapps.spelltablet.data.characterspelllist.CustomListEvent
 import com.icapps.spelltablet.data.characterspelllist.CustomListState
+import com.icapps.spelltablet.viewmodels.IsListEmptyViewModel
 import com.icapps.spelltablet.viewmodels.SetCharacterViewModel
 import com.icapps.spelltablet.viewmodels.spellsKnownMaximum
 
@@ -38,6 +39,10 @@ fun SpellCard(
     val characterClass = setCharacterViewModel.characterClass.value
     val characterLevel = setCharacterViewModel.characterLevel.intValue
     val context = LocalContext.current
+
+
+    // State of our isListEmpty value to display when learnable spells search results empty.
+    val isListEmpty: IsListEmptyViewModel = viewModel()
 
     // Validate spell is already in character's list
     val characterHasSpell = remember {
@@ -88,6 +93,7 @@ fun SpellCard(
 
 
     if(showSpell.value) {
+        isListEmpty.isListEmpty.value = false
         Box(
             // to add padding between cards
             modifier = Modifier.padding(4.dp)
