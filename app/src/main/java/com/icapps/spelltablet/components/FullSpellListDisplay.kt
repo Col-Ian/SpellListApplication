@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -24,6 +25,8 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableIntState
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -220,27 +223,18 @@ fun SpellList(
         Column(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.background)
+                .fillMaxHeight()
         ) {
             Spacer(modifier = Modifier.height(8.dp))
-            if(spellData.isEmpty() && learnableSwitch.learnableSwitch.value){
-                Text(
-                    modifier = Modifier.padding(4.dp),
-                    textAlign = TextAlign.Center,
-                    text = "No spells available. Check your spelling, filters, or that the character has spell slots for the level of spell you're looking for."
-                )
-            } else if(spellData.isEmpty()){
-                Text(
-                    modifier = Modifier.padding(4.dp),
-                    textAlign = TextAlign.Center,
-                    text = "No spells available. Check your spelling in the search bar."
-                )
-            }
 
             if(learnableSwitch.learnableSwitch.value) {
-
+                val isListEmpty = remember{
+                    mutableStateOf(true)
+                }
                 LazyColumn(
                     modifier = modifier
                 ) {
+                    val emptyList = (1)
                     items(spellData.sortedBy { it.spellTitle }) { item ->
                         SpellCard(
                             customListState = customListState,
@@ -250,9 +244,18 @@ fun SpellList(
                             showAllSpells = false
                         )
                     }
+//                    Will display if there are no results when Learnable is selected.
+                    if(isListEmpty.value){
+                        items(emptyList) {
+                            Text(
+                                modifier = Modifier.padding(4.dp),
+                                textAlign = TextAlign.Center,
+                                text = "No spells available. Check your spelling, filters, or that the character has spell slots for the level of spell you're looking for."
+                            )
+                        }
+                    }
                 }
             } else{
-
                 LazyColumn(
                     modifier = modifier
                 ){
@@ -265,6 +268,14 @@ fun SpellList(
                             showAllSpells = true
                         )
                     }
+                }
+//                Will display if there are no results based on the search criteria.
+                if(spellData.isEmpty()){
+                    Text(
+                        modifier = Modifier.padding(4.dp),
+                        textAlign = TextAlign.Center,
+                        text = "No spells available. Check your spelling in the search bar."
+                    )
                 }
             }
         }
