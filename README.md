@@ -12,6 +12,7 @@ In the Full List tab, you can search up any spell, use filters, or toggle the Le
 The spells are shown in a preview mode. When you select the spell, you can get the full description.
 
 ## Saved Spells
-In the Saved Spells tab, the spells that your character has saved will be displayed. All spells will be ordered by spell level with collapsable lists for each level. You can see how many spells your character should know, and how many spells per day of that level you may cast.
 
 <img src="https://github.com/Col-Ian/spell-tablet-images/blob/main/Screenshot_4.png?raw=true" height="400">
+
+In the Saved Spells tab, the spells that your character has saved will be displayed. All spells will be ordered by spell level with collapsable lists for each level. You can see how many spells your character should know, and how many spells per day of that level you may cast.
